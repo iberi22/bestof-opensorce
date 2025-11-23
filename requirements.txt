@@ -1,0 +1,10 @@
+playwright
+moviepy
+google-generativeai
+firebase-admin
+requests
+python-dotenv
+pytest
+foundry-local-sdk
+openai
+edge-tts
