@@ -1,5 +1,47 @@
 # 🚀 Guía de Inicio Rápido
 
+## 🎙️ Voice Translation Studio (Nuevo!)
+
+### Inicio Rápido en 5 Minutos
+
+1. **Instalar dependencias**:
+```bash
+pip install -r requirements.txt
+cd web && npm install
+```
+
+2. **Iniciar servicios**:
+```bash
+# Terminal 1: Backend API
+python api/multilingual_api.py
+
+# Terminal 2: Frontend
+cd web
+npm run dev
+```
+
+3. **Abrir en navegador**: `http://localhost:5173`
+
+4. **Usar Voice Studio**:
+   - 🎤 Click en el micrófono para grabar
+   - 📝 Revisa la transcripción
+   - 🌍 Selecciona idiomas destino
+   - 🗣️ Sintetiza voz clonada
+   - 🖼️ Sube imágenes personalizadas
+   - 🎬 Genera videos profesionales
+
+### Características
+- ✅ Grabación en navegador
+- ✅ Transcripción automática (Whisper)
+- ✅ Traducción a 10+ idiomas
+- ✅ Clonación de voz (XTTS v2)
+- ✅ Videos verticales 9:16
+- ✅ Música de fondo y efectos
+
+---
+
+## 📹 Pipeline Original (GitHub Scanner)
+
 ## Configuración Inicial
 
 ### 1. Instalar Dependencias
