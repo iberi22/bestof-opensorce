@@ -1,25 +1,4 @@
-import requests
-import datetime
-import os
-import logging
 
-class GitHubScanner:
-    def __init__(self, token):
-        self.token = token
-        self.headers = {
-            "Authorization": f"token {self.token}",
-            "Accept": "application/vnd.github.v3+json"
-        }
-        self.api_url = "https://api.github.com"
-
-    def scan_recent_repos(self, query="created:>2023-01-01", limit=10):
-        # In a real scenario, we would calculate the timestamp for "last hour"
-        # one_hour_ago = (datetime.datetime.utcnow() - datetime.timedelta(hours=1)).isoformat()
-        # query = f"created:>{one_hour_ago} {query}"
-
-        url = f"{self.api_url}/search/repositories?q={query}&sort=updated&order=desc&per_page={limit}"
-        response = requests.get(url, headers=self.headers)
-        if response.status_code != 200:
 import requests
 import datetime
 import os

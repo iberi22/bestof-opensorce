@@ -8,3 +8,6 @@ pytest
 foundry-local-sdk
 openai
 edge-tts
+google-auth-oauthlib
+google-api-python-client
+Pillow

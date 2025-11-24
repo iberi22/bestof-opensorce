@@ -4,7 +4,7 @@ import json
 import logging
 
 class ScriptWriter:
-    def __init__(self, api_key=None, provider="gemini", model_name="gemini-1.5-flash"):
+    def __init__(self, api_key=None, provider="gemini", model_name="gemini-2.5-flash"):
         self.provider = provider
         self.model_name = model_name
 
@@ -64,7 +64,7 @@ class ScriptWriter:
 
         try:
             # Basic cleanup if markdown code blocks are returned
-            text = text_response.replace("```json", "").replace("```", "")
+            text = text_response.replace("```json", "").replace("```", "").strip()
             return json.loads(text)
         except Exception as e:
             print(f"Error parsing response: {e}")

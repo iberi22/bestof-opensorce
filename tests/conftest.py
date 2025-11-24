@@ -1,0 +1,25 @@
+import pytest
+import os
+from unittest.mock import MagicMock
+
+@pytest.fixture(autouse=True)
+def mock_env_vars():
+    """Set mock environment variables for all tests."""
+    os.environ["GITHUB_TOKEN"] = "mock_github_token"
+    os.environ["GOOGLE_API_KEY"] = "mock_google_api_key"
+    os.environ["YOUTUBE_CLIENT_SECRET"] = "mock_client_secret.json"
+    os.environ["YOUTUBE_REFRESH_TOKEN"] = "mock_refresh_token"
+
+@pytest.fixture
+def mock_repo_data():
+    return {
+        "name": "test-repo",
+        "full_name": "user/test-repo",
+        "description": "A test repository",
+        "html_url": "https://github.com/user/test-repo",
+        "created_at": "2023-01-01T00:00:00Z",
+        "updated_at": "2023-01-02T00:00:00Z",
+        "language": "Python",
+        "stargazers_count": 100,
+        "forks_count": 10
+    }

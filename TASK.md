@@ -1,194 +1,308 @@
-# 📋 Gestión de Tareas: MaestroCan IA
+# 📋 Gestión de Tareas: Open Source Video Generator + Blog
 
-_Última Actualización: 18 de julio de 2025_
+_Última Actualización: 23 de noviembre de 2025 - 21:30_
 
 ## 🎯 Resumen Ejecutivo y Estado Actual
 
-**Estado General:** 15% - Inicio de desarrollo frontend con dependencias actualizadas.
-Hemos completado la documentación completa del proyecto y actualizado todas las dependencias a sus últimas versiones. La estructura de Clean Architecture está establecida y ahora iniciamos el desarrollo completo del frontend con un enfoque sistemático por capas. Se han identificado 48 tareas específicas para completar la Fase 1.
+**Estado General:** 60% - Pivote a arquitectura Blog + Video. Core implementado, iniciando Blog Generator.
+
+**Nueva Arquitectura:**
+- ✅ GitHub Workflow → Genera posts en blog
+- ✅ GitHub Pages → Publica contenido
+- ✅ Local → Genera reels de 20s desde posts
 
 **Progreso por Componente:**
 
-- [ ] 📦 Configuración: 40% (3/7 tareas completadas)
-- [ ] 🏗️ Arquitectura Core: 20% (1/6 tareas completadas)  
-- [ ] 🎨 Design System: 0% (0/6 tareas completadas)
-- [ ] 🔐 Autenticación: 0% (0/7 tareas completadas)
-- [ ] 📱 Pantallas Auth: 0% (0/7 tareas completadas)
-- [ ] 🗄️ Base de Datos: 0% (0/5 tareas completadas)
-- [ ] 🧪 Testing: 0% (0/6 tareas completadas)
-- [ ] 🔧 DevOps: 0% (0/4 tareas completadas)
-- [✅] 📚 Documentación: 100% (Completa y actualizada)
+- [🟢] 📦 Scanner (GitHub): 90% (9/10 tareas)
+- [🟢] 🤖 Agents (IA - Gemini): 100% (10/10 tareas) ✅
+- [🟢] 🗄️ Persistencia (Firebase): 100% (5/5 tareas) ✅
+- [🟢] 🎨 Generación de Imágenes: 100% (7/7 tareas) ✅
+- [🟢] 📝 Blog Generator: 100% (18/18 tareas) ✅
+- [⚙️] 🎥 Reel Creator (20s): 50% (9/19 tareas) **← ACTUAL**
+- [🔴] 🔄 Automatización Local: 0% (0/4 tareas)
+- [🟡] 🧪 Testing: 30% (6/20 tareas)
+- [🟡] 📚 Documentación: 60% (6/10 tareas)
 
 **Métricas de Calidad:**
-- Tareas Completadas: 4/48 (8.3%)
-- Dependencias: Actualizadas a últimas versiones
-- Cobertura de Tests: 0% (Target: 80%)
-- Deuda Técnica: Baja (1 issue: isar_flutter_libs namespace)
-- Documentación: Completa y profesional
-- Arquitectura: Clean Architecture definida
+- Tareas Completadas: 43/78 (55%)
+- Cobertura de Tests: 30%
+- Deuda Técnica: Baja
+- Documentación: Actualizada con nueva arquitectura
 
-**Estimación Total Fase 1:** 42.5 días de desarrollo
-**Tiempo Estimado:** 6-8 semanas (considerando desarrollo paralelo)
+**Estimación para MVP (Blog + Reel):** 12 días de desarrollo
+**Tiempo Estimado:** 2-3 semanas
 
 ---
 
-## 🚀 Fase Actual: Fase 1: Configuración y Frontend Base
+## 🚀 Fase Actual: Fase 1 - Blog Generator
 
-**Objetivo:** Establecer la base completa del proyecto con todas las dependencias actualizadas, configurar la arquitectura frontend y desarrollar los componentes base del sistema.
+**Objetivo:** Implementar sistema completo de generación de blog con GitHub Actions
 
-### 📦 Configuración y Dependencias
+**Prioridad:** CRÍTICA
+**Inicio:** 23 nov 2025
+**Estimación:** 4.5 días
 
-| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
-|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-01 | Clonar plantilla de documentación y crear estructura de directorios | ALTA      | ✅ Completado | Agente      | - |
-| F1-02 | Inicializar proyecto Flutter                                       | ALTA      | ✅ Completado | Agente      | - |
-| F1-03 | Actualizar todas las dependencias a últimas versiones              | ALTA      | ✅ Completado | Agente      | - |
-| F1-04 | Resolver conflictos de dependencias (LangChain, Shadcn, Isar)      | ALTA      | ⚙️ En Progreso | Agente      | 1 día |
-| F1-05 | Configurar inyección de dependencias con get_it + injectable       | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-06 | Configurar navegación con go_router                                | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-07 | Configurar logging y debugging con logger                          | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
+---
 
-### 🏗️ Arquitectura y Core
+## 📝 FASE 1: Blog Generator (✅ COMPLETADO - 23 nov 2025)
+
+### Estructura del Blog
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-08 | Crear estructura completa de Clean Architecture                     | ALTA      | ✅ Completado | Agente      | - |
-| F1-09 | Implementar core/errors con tipos de errores específicos           | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-10 | Implementar core/network con Dio y manejo de conectividad          | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-11 | Crear core/constants con configuraciones globales                  | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-12 | Implementar core/utils con helpers y extensiones                   | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-13 | Configurar variables de entorno y ApiConfig                        | ALTA      | ⬜ Pendiente | Agente      | 0.5 días |
+| BG-01 | Crear estructura completa `blog/`                                  | CRÍTICA   | ✅ Completado | Agente      | - |
+| BG-02 | Configurar Jekyll con `_config.yml`                                | CRÍTICA   | ✅ Completado | Agente      | - |
+| BG-03 | Crear layouts (`post.html`, `default.html`)                        | ALTA      | ✅ Completado | Agente      | - |
 
-### 🎨 Design System y UI Base
+### Core - Markdown Writer
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-14 | Configurar tema personalizado con shadcn_flutter                   | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-15 | Crear sistema de colores y tipografía                              | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-16 | Implementar widgets base (botones, inputs, cards)                  | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-17 | Crear componentes de loading y error states                        | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-18 | Implementar sistema de iconografía con flutter_svg                 | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-19 | Configurar animaciones base con flutter_animate                    | BAJA      | ⬜ Pendiente | Agente      | 1 día |
+| MW-01 | Implementar `MarkdownWriter` class                                 | CRÍTICA   | ✅ Completado | Agente      | - |
+| MW-02 | Método `create_post()` con frontmatter YAML                        | CRÍTICA   | ✅ Completado | Agente      | - |
+| MW-03 | Método `_format_content()` desde script_data                       | ALTA      | ✅ Completado | Agente      | - |
+| MW-04 | Validación de Markdown generado                                    | MEDIA     | ✅ Completado | Agente      | - |
 
-### 🔐 Autenticación y Seguridad
+### Core - Blog Manager
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-20 | Configurar Firebase proyecto (Auth, Analytics, Crashlytics)        | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-21 | Implementar entidades de dominio para autenticación                | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-22 | Crear repositorio de autenticación (interfaces)                    | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-23 | Implementar casos de uso de autenticación                          | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-24 | Crear modelos de datos para autenticación                          | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-25 | Implementar data source de Firebase Auth                           | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-26 | Configurar almacenamiento seguro con flutter_secure_storage        | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
+| BM-01 | Implementar `BlogManager` class                                    | CRÍTICA   | ✅ Completado | Agente      | - |
+| BM-02 | Método `create_branch()` para blog posts                           | CRÍTICA   | ✅ Completado | Agente      | - |
+| BM-03 | Método `commit_files()` con Git operations                         | CRÍTICA   | ✅ Completado | Agente      | - |
+| BM-04 | Método `create_pull_request()` vía GitHub API                      | ALTA      | ✅ Completado | Agente      | - |
+| BM-05 | Método `auto_merge()` si pasan checks                              | MEDIA     | ✅ Completado | Agente      | - |
 
-### 📱 Pantallas de Autenticación
+### GitHub Workflow
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-27 | Crear AuthBloc con estados y eventos                               | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-28 | Implementar pantalla de Login con validaciones                     | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-29 | Implementar pantalla de Registro                                   | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-30 | Crear pantalla de recuperación de contraseña                       | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-31 | Implementar pantalla de verificación de email                      | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-32 | Crear splash screen con flutter_native_splash                      | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-33 | Implementar onboarding inicial                                      | BAJA      | ⬜ Pendiente | Agente      | 2 días |
+| GW-01 | Crear `.github/workflows/scan-and-blog.yml`                        | CRÍTICA   | ⏳ Pendiente | Agente      | 0.5 días |
+| GW-02 | Job: Escanear repos con Scanner                                    | CRÍTICA   | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-03 | Job: Generar análisis con Gemini                                   | CRÍTICA   | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-04 | Job: Generar imágenes (architecture, flow)                         | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-05 | Job: Capturar screenshot del repo                                  | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-06 | Job: Crear post MD con BlogManager                                 | CRÍTICA   | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-07 | Job: Commit, PR y auto-merge                                       | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| GW-08 | Configurar secrets (GITHUB_TOKEN, GEMINI_API_KEY)                  | CRÍTICA   | ⏳ Pendiente | Agente      | 0.1 días |
+| GW-09 | Configurar schedule (cron cada 6 horas)                            | MEDIA     | ⏳ Pendiente | Agente      | 0.1 días |
 
-### 🗄️ Base de Datos y Storage
-
-| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
-|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-34 | Configurar Supabase proyecto y esquema inicial                     | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-35 | Configurar Isar para base de datos local                           | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-36 | Implementar modelos Isar para cache offline                        | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-37 | Configurar Hive para configuraciones locales                       | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-38 | Implementar sistema de sincronización offline/online               | BAJA      | ⬜ Pendiente | Agente      | 2 días |
-
-### 🧪 Testing y Calidad
+### Tests
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-39 | Configurar testing framework con mockito y bloc_test               | ALTA      | ⬜ Pendiente | Agente      | 1 día |
-| F1-40 | Crear tests unitarios para casos de uso de autenticación           | ALTA      | ⬜ Pendiente | Agente      | 2 días |
-| F1-41 | Crear tests de widgets para pantallas de autenticación             | MEDIA     | ⬜ Pendiente | Agente      | 2 días |
-| F1-42 | Implementar golden tests para componentes UI                       | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-43 | Configurar análisis estático con very_good_analysis                | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-44 | Crear tests de integración para flujo de autenticación             | BAJA      | ⬜ Pendiente | Agente      | 2 días |
+| TB-01 | Tests para `MarkdownWriter`                                        | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| TB-02 | Tests para `BlogManager`                                           | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| TB-03 | Test de integración: Scanner → Blog                                | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
 
-### 🔧 Herramientas y DevOps
+---
+
+## 🎥 FASE 2: Reel Creator (20 segundos) - EN PROGRESO
+
+**Objetivo:** Generar videos cortos desde posts del blog
+
+**Prioridad:** ALTA
+**Estimación:** 5 días
+
+### Screenshot Capturer
 
 | ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
 |-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
-| F1-45 | Configurar flutter_launcher_icons                                  | MEDIA     | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-46 | Configurar generación de código con build_runner                   | ALTA      | ⬜ Pendiente | Agente      | 0.5 días |
-| F1-47 | Crear scripts de desarrollo y deployment                           | MEDIA     | ⬜ Pendiente | Agente      | 1 día |
-| F1-48 | Configurar CI/CD básico con GitHub Actions                         | BAJA      | ⬜ Pendiente | Agente      | 2 días |
+| SC-01 | Implementar `ScreenshotCapturer` class                             | CRÍTICA   | ✅ Completado | Agente      | - |
+| SC-02 | Método `capture_repo_page()` con Playwright                        | CRÍTICA   | ✅ Completado | Agente      | - |
+| SC-03 | Método `capture_highlights()` de secciones específicas             | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+| SC-04 | Optimización de screenshots (crop, resize)                         | BAJA      | ⏳ Pendiente | Agente      | 0.25 días |
+
+### Reel Creator Core
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| RC-01 | Implementar `ReelCreator` class                                    | CRÍTICA   | ✅ Completado | Agente      | - |
+| RC-02 | Definir timeline de 20 segundos                                    | CRÍTICA   | ✅ Completado | Agente      | - |
+| RC-03 | Método `_create_intro()` (0-3s)                                    | ALTA      | ✅ Completado | Agente      | - |
+| RC-04 | Método `_create_problem_section()` (3-8s)                          | ALTA      | ✅ Completado | Agente      | - |
+| RC-05 | Método `_create_solution_section()` (8-13s)                        | ALTA      | ✅ Completado | Agente      | - |
+| RC-06 | Método `_create_architecture_section()` (13-17s)                   | ALTA      | ✅ Completado | Agente      | - |
+| RC-07 | Método `_create_outro()` (17-20s)                                  | ALTA      | ✅ Completado | Agente      | - |
+
+### Efectos y Transiciones
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| ET-01 | Implementar transiciones suaves entre secciones                    | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| ET-02 | Agregar zoom/pan en imágenes                                       | MEDIA     | ⏳ Pendiente | Agente      | 0.5 días |
+| ET-03 | Overlay de texto con highlights                                    | MEDIA     | ⏳ Pendiente | Agente      | 0.5 días |
+| ET-04 | Música de fondo (opcional)                                         | BAJA      | ⏳ Pendiente | Agente      | 0.25 días |
+
+### Narración
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| NA-01 | Condensar narración a 20 segundos                                  | CRÍTICA   | ⏳ Pendiente | Agente      | 0.5 días |
+| NA-02 | Sincronizar audio con secciones visuales                           | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| NA-03 | Ajustar velocidad de narración si es necesario                     | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+
+### Tests
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| TR-01 | Tests para `ScreenshotCapturer`                                    | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| TR-02 | Tests para `ReelCreator`                                           | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| TR-03 | Test de integración: Post → Reel completo                          | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+
+---
+
+## 🔄 FASE 3: Automatización Local
+
+**Objetivo:** Detectar nuevos posts y generar videos automáticamente
+
+**Prioridad:** MEDIA
+**Estimación:** 2.5 días
+
+### Blog Watcher
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| BW-01 | Implementar `BlogWatcher` class                                    | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| BW-02 | Método `watch()` para monitorear `blog/_posts/`                    | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| BW-03 | Método `on_new_post()` trigger                                     | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| BW-04 | Integración con Git (detectar git pull)                            | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+
+### Scripts de Generación
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| SG-01 | Script `generate_video_from_post.py`                               | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| SG-02 | Parsear frontmatter YAML del post                                  | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| SG-03 | Cargar imágenes desde assets/                                      | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+| SG-04 | Integración con `ReelCreator`                                      | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| SG-05 | Upload automático a YouTube                                        | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+
+---
+
+## 🎨 FASE 4: GitHub Pages & UI
+
+**Objetivo:** Blog visualmente atractivo
+
+**Prioridad:** MEDIA
+**Estimación:** 3 días
+
+### Jekyll & Layouts
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| JK-01 | Crear layout `post.html` personalizado                             | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| JK-02 | Crear layout `default.html` con header/footer                      | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| JK-03 | Página `index.html` con lista de posts                             | ALTA      | ⏳ Pendiente | Agente      | 0.5 días |
+| JK-04 | Página de tags/categorías                                          | MEDIA     | ⏳ Pendiente | Agente      | 0.5 días |
+
+### Estilos
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| ST-01 | CSS moderno y responsive                                           | ALTA      | ⏳ Pendiente | Agente      | 1 día |
+| ST-02 | Dark mode                                                          | MEDIA     | ⏳ Pendiente | Agente      | 0.5 días |
+| ST-03 | Syntax highlighting para código                                    | MEDIA     | ⏳ Pendiente | Agente      | 0.25 días |
+
+### Features
+
+| ID    | Tarea                                                              | Prioridad | Estado      | Responsable | Estimación |
+|-------|--------------------------------------------------------------------|-----------|-------------|-------------|------------|
+| FT-01 | Búsqueda de posts (JavaScript)                                     | MEDIA     | ⏳ Pendiente | Agente      | 0.5 días |
+| FT-02 | Integración de videos en posts                                     | ALTA      | ⏳ Pendiente | Agente      | 0.25 días |
+| FT-03 | Galería de imágenes                                                | BAJA      | ⏳ Pendiente | Agente      | 0.25 días |
+
+---
+
+## ✅ Tareas Completadas (Fases Anteriores)
+
+### Scanner (GitHub)
+- [x] Implementar `GitHubScanner` class
+- [x] Método `scan_recent_repos()`
+- [x] Método `validate_repo()`
+- [x] Filtros de calidad (CI, License, README)
+- [x] Tests unitarios (8/8 pasando)
+
+### Agents (IA)
+- [x] Implementar `ScriptWriter` class
+- [x] Integración con Gemini (gemini-2.5-flash)
+- [x] Integración con Foundry Local
+- [x] Parsing de respuestas JSON
+- [x] Tests básicos
+
+### Persistencia (Firebase)
+- [x] Implementar `FirebaseStore` class
+- [x] Métodos CRUD completos
+- [x] Verificación de duplicados
+- [x] Tracking de estado
+- [x] Tests unitarios (18/18 pasando)
+
+### Generación de Imágenes
+- [x] Implementar `ImageGenerator` class
+- [x] Generador de diagramas de arquitectura
+- [x] Generador de flujos problema-solución
+- [x] Generador de showcase de features
+- [x] Fallback a placeholders
+- [x] Tests básicos
+
+---
+
+## 📊 Métricas y Hitos
+
+### Hito 1: Blog Generator Funcional
+**Fecha Objetivo:** 28 nov 2025
+**Criterios:**
+- [ ] 5 posts generados automáticamente
+- [ ] Blog publicado en GitHub Pages
+- [ ] Workflow corriendo sin errores
+
+### Hito 2: Reel Creator Funcional
+**Fecha Objetivo:** 5 dic 2025
+**Criterios:**
+- [ ] 3 reels de 20s generados
+- [ ] Calidad visual profesional
+- [ ] Narración sincronizada
+
+### Hito 3: Sistema Completo Automatizado
+**Fecha Objetivo:** 10 dic 2025
+**Criterios:**
+- [ ] Workflow → Blog → Video funcionando end-to-end
+- [ ] 10+ posts en el blog
+- [ ] 5+ videos en YouTube
+
+---
+
+## 🎯 Próximos Pasos Inmediatos
+
+### Esta Semana (25-29 nov)
+1. ⏳ Crear estructura `blog/`
+2. ⏳ Implementar `MarkdownWriter`
+3. ⏳ Implementar `BlogManager`
+4. ⏳ Crear GitHub Workflow básico
+
+### Próxima Semana (2-6 dic)
+5. ⏳ Implementar `ScreenshotCapturer`
+6. ⏳ Implementar `ReelCreator`
+7. ⏳ Generar primeros 3 reels
+
+### Semana 3 (9-13 dic)
+8. ⏳ Implementar `BlogWatcher`
+9. ⏳ Automatización completa
+10. ⏳ Pulir UI de GitHub Pages
+
+---
 
 **Leyenda de Estado:**
 
-- `⬜ Pendiente`
+- `⏳ Pendiente`
 - `⚙️ En Progreso`
 - `✅ Completado`
 - `❌ Bloqueado`
+- `🟢 Verde` - 80%+ completado
+- `🟡 Amarillo` - 50-79% completado
+- `🔴 Rojo` - <50% completado
 
 ---
 
-## ✅ Hitos Principales Completados
-
-- **Hito 1: Documentación Completa:** Toda la documentación del proyecto completada y profesionalizada (PLANNING.md, TASK.md, RULES.md, README.md).
-- **Hito 2: Dependencias Actualizadas:** Todas las dependencias actualizadas a sus últimas versiones con nuevas librerías añadidas.
-- **Hito 3: Estructura de Proyecto:** Estructura de Clean Architecture establecida y organizada por features.
-
-## 🎯 Próximos Hitos (Fase 1)
-
-- **Hito 4: Core y Configuración (Semana 1):** Completar configuración base, inyección de dependencias, navegación y core utilities.
-- **Hito 5: Design System (Semana 2):** Implementar tema personalizado, componentes base y sistema de iconografía.
-- **Hito 6: Autenticación Backend (Semana 3):** Configurar Firebase, implementar casos de uso y repositorios de autenticación.
-- **Hito 7: UI de Autenticación (Semana 4):** Crear todas las pantallas de autenticación con validaciones y estados.
-- **Hito 8: Testing y Calidad (Semana 5-6):** Implementar testing completo y configurar herramientas de calidad.
-
----
-
-## 👾 Deuda Técnica y Mejoras Pendientes
-
-- Aún no hay deuda técnica identificada.
-
----
-
-## 📝 Tareas Descubiertas Durante el Desarrollo
-
-### Resueltas ✅
-
-* Asegurar la compatibilidad de las versiones de `googleapis` entre `langchain_google` y `vertex_ai` (resuelto con `dependency_overrides` y `ref` a tag).
-
-### En Progreso 🔄
-
-* Resolver el problema de `namespace` en `isar_flutter_libs` (investigando soluciones de configuración Android).
-
-### Nuevas Identificadas 🆕
-- Implementar sistema de permisos con permission_handler.
-- Configurar manejo de imágenes con cached_network_image.
-- Crear sistema de notificaciones locales.
-- Implementar deep linking con go_router.
-- Configurar sistema de analytics y tracking.
-- Crear componentes de accesibilidad.
-- Implementar sistema de feedback y rating.
-- Configurar modo offline con sincronización inteligente.
-
-### Dependencias Añadidas 📦
-- **Navegación:** go_router, auto_route
-- **UI/UX:** flutter_svg, cached_network_image, shimmer, lottie, flutter_animate
-- **Network:** dio, connectivity_plus, internet_connection_checker
-- **Storage:** shared_preferences, flutter_secure_storage, hive
-- **Forms:** reactive_forms, form_builder_validators
-- **Media:** image_picker, file_picker, speech_to_text, flutter_tts
-- **Testing:** mockito, bloc_test, mocktail, golden_toolkit
-- **DevTools:** very_good_analysis, flutter_launcher_icons, flutter_native_splash
-
-### Futuras (Fase 2) 🔮
-- Integración completa con Google Gemini AI.
-- Implementar langchain_dart para orquestación de IA.
-- Configurar isar_agent_memory para contexto persistente.
-- Desarrollar sistema de chat conversacional.
-- Implementar reconocimiento de voz avanzado.
-- Crear sistema de recomendaciones personalizadas.
+**Última Actualización:** 23 nov 2025, 21:30
+**Próxima Revisión:** 24 nov 2025

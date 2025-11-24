@@ -38,9 +38,6 @@ class VisualEngine:
 
             # Rename the video file (Playwright saves with random name)
             # Find the latest video in the dir and rename it
-            page.close()
-            context.close()
-            browser.close()
 
             # Playwright saves the video file after context close.
             # We need to find the file created in the directory.
@@ -55,13 +52,19 @@ class VisualEngine:
             if files:
                 latest_video = files[-1]
                 source = os.path.join(output_dir, latest_video)
-                # Playwright records in WebM usually. We might need to convert or just rename.
-                # If output_path ends in .mp4, we should probably convert, but for now let's just rename
-                # and let moviepy handle it (it handles webm).
 
-                if os.path.exists(output_path):
-                    os.remove(output_path)
+                # Playwright records in WebM.
+                # If the requested output_path is .mp4, we should ideally convert it.
+                # However, MoviePy (used in Renderer) can read WebM fine.
+                # To avoid "corrupt" files (WebM content in MP4 container), we force .webm extension here.
+                # The Renderer will handle the final conversion to MP4.
 
-                os.rename(source, output_path)
-                return output_path
+                base, _ = os.path.splitext(output_path)
+                final_path = f"{base}.webm"
+
+                if os.path.exists(final_path):
+                    os.remove(final_path)
+
+                os.rename(source, final_path)
+                return final_path
             return None
