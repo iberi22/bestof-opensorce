@@ -19,8 +19,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 # given a blog post or repo info.
 
 from video_generator.reel_creator import ReelCreator
-# from blog_generator.markdown_writer import MarkdownWriter # Placeholder
-# from agents.github_scanner import GitHubScanner # Placeholder
+from blog_generator.markdown_writer import MarkdownWriter
+from scanner.github_scanner import GitHubScanner
+from agents.scriptwriter import ScriptWriter
+from image_gen.image_generator import ImageGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -41,35 +43,84 @@ def main():
 
     logger.info(f"🚀 Starting pipeline for {repo_name}...")
 
-    # Step 1: Blog Generation (Placeholder for now, assuming we have data)
-    # In a full run, this would call GitHubScanner -> Gemini -> MarkdownWriter
+    # Step 1: Blog Generation
     logger.info("📝 Step 1: Blog Generation")
-    if not args.blog_post:
-        logger.info("No blog post provided. Simulating generation...")
-        # Simulate script data
-        script_data = {
-            "hook": f"Discover {repo_name}, the ultimate tool for developers.",
-            "solution": f"{repo_name} solves complex problems with simple APIs.",
-            "architecture": "Built with Python and React.",
-            "hook_highlights": ["ultimate tool"],
-            "solution_highlights": ["solves complex"],
-            "architecture_highlights": ["Python", "React"]
-        }
-        # Simulate images
-        images = {
-            "architecture": "blog/assets/images/placeholder/architecture.png",
-            "flow": "blog/assets/images/placeholder/flow.png",
-            "screenshot": "blog/assets/images/placeholder/screenshot.png"
-        }
-    else:
+
+    script_data = {}
+    images = {}
+
+    if args.blog_post:
         logger.info(f"Using existing blog post: {args.blog_post}")
-        # Parse markdown (simplified)
+        # Simplified parsing - in a real app we'd parse frontmatter properly
         script_data = {
             "hook": f"Deep dive into {repo_name}.",
             "solution": "Automated solution.",
             "architecture": "Modern stack."
         }
-        images = {} # Should parse from frontmatter
+        # Assume images are already generated if blog post exists
+        # images = ... (would need to parse frontmatter)
+    else:
+        logger.info("Generating content from scratch...")
+
+        # 1a. Scan/Get Repo Details
+        # For this script, since we have the URL, we can just 'validate' it or get metadata
+        # We need a token for this
+        github_token = os.getenv("GITHUB_TOKEN")
+        if github_token:
+            scanner = GitHubScanner(token=github_token)
+            # We can't easily "get" a single repo with scan_recent_repos, but let's assume we have data
+            # For now, we mock the repo metadata object or fetch it if we implemented `get_repo`
+            repo_data = {
+                "name": repo_name,
+                "full_name": f"owner/{repo_name}",
+                "description": "Automated analysis.",
+                "stargazers_count": 100,
+                "language": "Python",
+                "topics": ["ai", "automation"]
+            }
+        else:
+            logger.warning("GITHUB_TOKEN not found. Using mock repo data.")
+            repo_data = {"name": repo_name, "full_name": f"unknown/{repo_name}", "description": "Mock description"}
+
+        # 1b. Generate Analysis
+        google_key = os.getenv("GOOGLE_API_KEY")
+        if google_key:
+            writer = ScriptWriter(api_key=google_key, provider="gemini")
+            script_data = writer.generate_script(repo_data)
+        else:
+            logger.warning("GOOGLE_API_KEY not found. Using mock script.")
+            script_data = {
+                "hook": f"Discover {repo_name}, the ultimate tool.",
+                "solution": "Solves problems efficiently.",
+                "architecture": "Modular design.",
+                "pros": ["Fast", "Secure"],
+                "cons": ["Complex setup"],
+                "verdict": "Highly recommended."
+            }
+
+        # 1c. Generate Images
+        try:
+            img_gen = ImageGenerator(model_name="nano-banana-2", output_dir=f"blog/assets/images/{repo_name.lower()}")
+
+            arch_img = img_gen.generate_architecture_diagram(repo_data, script_data)
+            flow_img = img_gen.generate_problem_solution_flow(repo_data, script_data)
+
+            if arch_img: images['architecture'] = arch_img
+            if flow_img: images['flow'] = flow_img
+
+            # Placeholder for screenshot (ScreenshotCapturer would handle this in ReelCreator or here)
+            # images['screenshot'] = ...
+
+        except Exception as e:
+            logger.warning(f"Image generation skipped: {e}")
+
+        # 1d. Write Blog Post
+        md_writer = MarkdownWriter(output_dir="blog/_posts")
+        post_path = md_writer.create_post(repo_data, script_data, images)
+        logger.info(f"✅ Blog post created at: {post_path}")
+
+        # If we want ReelCreator to capture the blog, we might need to serve it or point to file
+        # For now, ReelCreator uses raw images if passed
 
     # Step 2: Video Generation
     logger.info("🎬 Step 2: Video Generation")
