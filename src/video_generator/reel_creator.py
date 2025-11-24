@@ -103,7 +103,7 @@ class ReelCreator:
             intro_clip = self._create_intro(repo_name, duration=section_durations['intro'])
             clips.append(intro_clip)
 
-            # 2. Problem
+            # 2. Problem (Flow Diagram from Blog)
             problem_img = images.get('flow')
             problem_text = script_data.get('hook', 'Problem Analysis')
             problem_highlights = script_data.get('hook_highlights', [])
@@ -116,7 +116,7 @@ class ReelCreator:
             )
             clips.append(problem_clip)
 
-            # 3. Solution
+            # 3. Solution (Screenshot from Blog or Repo)
             solution_img = images.get('screenshot')
             solution_text = script_data.get('solution', 'The Solution')
             solution_highlights = script_data.get('solution_highlights', [])
@@ -129,7 +129,7 @@ class ReelCreator:
             )
             clips.append(solution_clip)
 
-            # 4. Architecture
+            # 4. Architecture (Diagram from Blog)
             arch_img = images.get('architecture')
             arch_text = script_data.get('architecture', 'How it Works')
             arch_highlights = script_data.get('architecture_highlights', [])
