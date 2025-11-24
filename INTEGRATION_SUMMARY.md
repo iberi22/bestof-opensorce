@@ -1,7 +1,7 @@
 # PR #2 Integration Summary
 
-**Date**: November 24, 2025  
-**Status**: ✅ COMPLETED  
+**Date**: November 24, 2025
+**Status**: ✅ COMPLETED
 **Branch**: `video-gen-improvements` merged into `main`
 
 ## 🎯 Objetivos Completados
@@ -173,6 +173,6 @@ El PR #2 representa una **mejora significativa** del proyecto, añadiendo funcio
 
 ---
 
-**Integrado por**: GitHub Copilot  
-**Fecha**: 24 de noviembre de 2025  
+**Integrado por**: GitHub Copilot
+**Fecha**: 24 de noviembre de 2025
 **Commit**: 5b9dd2c (Fast-forward merge)

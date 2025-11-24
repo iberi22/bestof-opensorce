@@ -27,7 +27,9 @@ _Última Actualización: 24 de noviembre de 2025 - 18:30_
 - [🟢] 🌍 Multilingual Voice Translation: 100% (20/20 tareas) ✅
 - [🟢] 🎨 Blog Design (Jekyll): 100% (12/12 tareas) ✅
 - [🟡] 🔧 Setup & Dependencies: 60% (En progreso)
-- [🔴] 🔄 Automatización Local: 0% (0/4 tareas)
+- [🔴] ✂️ Editor de Video (OpenCut Integration): 0% (0/8 tareas) **NUEVO**
+- [🔴] 📤 YouTube Uploader (MCP Integration): 0% (0/10 tareas) **NUEVO**
+- [🔴] 🔄 Automatización End-to-End: 0% (0/6 tareas) **NUEVO**
 - [🟡] 🧪 Testing & QA: 65% (15/23 tareas)
 - [🟢] 📚 Documentación: 100% (13/13 tareas) ✅
 
@@ -37,8 +39,8 @@ _Última Actualización: 24 de noviembre de 2025 - 18:30_
 
 **Objetivo:** Verificar instalación completa, resolver dependencias y ejecutar tests
 
-**Prioridad:** CRÍTICA  
-**Inicio:** 24 nov 2025  
+**Prioridad:** CRÍTICA
+**Inicio:** 24 nov 2025
 **Estimación:** 1-2 días
 
 ### 🔧 Setup & Dependencies (EN PROGRESO - 60%)
@@ -212,3 +214,66 @@ _Última Actualización: 24 de noviembre de 2025 - 18:30_
 | FT-03 | Galería de imágenes                                                | BAJA      | ⏳ Pendiente | Agente      | 0.25 días |
 
 ---
+
+## ✂️ FASE 6: Editor de Video Integrado (OpenCut Integration)
+
+**Objetivo:** Permitir edición manual de videos generados automáticamente
+
+**Prioridad:** ALTA
+**Estimación:** 3-4 días
+**Repo:** https://github.com/OpenCut-app/OpenCut
+
+### Análisis (8h)
+- [ ] OC-01: Clonar y analizar OpenCut (2h)
+- [ ] OC-02: Identificar componentes reutilizables (3h)
+- [ ] OC-03: Evaluar Fork vs Extracción (1h)
+- [ ] OC-04: Documentar arquitectura OpenCut (2h)
+
+### Integración (14h)
+- [ ] OC-05: Diseñar interfaz integración (3h)
+- [ ] OC-06: Puente ReelCreator ↔ OpenCut (4h)
+- [ ] OC-07: Botón Edit Video en UI (2h)
+- [ ] OC-08: Flujo Auto → Manual → Export (4h)
+
+---
+
+## 📤 FASE 7: YouTube Automation (MCP Integration)
+
+**Objetivo:** Publicación automatizada a YouTube
+
+**Prioridad:** CRÍTICA
+**Estimación:** 2-3 días
+**Repo:** https://github.com/ZubeidHendricks/youtube-mcp-server
+
+### Research (8h)
+- [ ] YT-01: Analizar youtube-mcp-server (2h)
+- [ ] YT-02: Estudiar MCP protocol (3h)
+- [ ] YT-03: Evaluar MCP vs API directa (2h)
+- [ ] YT-04: Documentar OAuth flow (1h)
+
+### Implementación (14h)
+- [ ] YT-05: Cliente MCP o extracción API (4h)
+- [ ] YT-06: Upload automático desde Reel (3h)
+- [ ] YT-07: Metadata automation (2h)
+- [ ] YT-08: Retry logic (2h)
+- [ ] YT-09: Scheduling óptimo (3h)
+
+---
+
+## 🔄 FASE 8: Automatización End-to-End
+
+**Objetivo:** Pipeline completo automatizado
+
+**Prioridad:** ALTA
+**Estimación:** 2 días
+
+### Integración (18h)
+- [ ] E2E-01: Workflow único (4h)
+- [ ] E2E-02: Orquestador Celery/RQ (3h)
+- [ ] E2E-03: Sistema de colas (3h)
+- [ ] E2E-04: Webhooks para triggers (2h)
+- [ ] E2E-05: Dashboard monitoreo (4h)
+- [ ] E2E-06: Logging y alertas (2h)
+
+**Flujo:** Repo → Scanner → Script → Images → Voice → Reel → [Editor] → YouTube → Blog
+

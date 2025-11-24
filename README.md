@@ -208,14 +208,28 @@ pytest tests/test_voice_translation.py -v
 cd web
 npm test
 ```
-
 ## 📚 Documentation
 
 - [PLANNING.md](PLANNING.md) - Project architecture and roadmap
-- [TASK.md](TASK.md) - Detailed task tracking
+- [TASK.md](TASK.md) - Detailed task tracking with Phases 6-8 (NEW)
 - [RULES.md](RULES.md) - Development rules and standards
 - [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) - Latest implementation details
 - [docs/MULTILINGUAL_README.md](docs/MULTILINGUAL_README.md) - Multilingual features documentation
+- [CHANGELOG.md](CHANGELOG.md) - Detailed changelog of PR #2
+- [PR_REVIEW.md](PR_REVIEW.md) - Comprehensive code review and recommendations
+
+## 🚀 Next Development Phases
+
+### Phase 6: Video Editor Integration (OpenCut)
+Integrate [OpenCut](https://github.com/OpenCut-app/OpenCut) to allow manual editing of auto-generated videos. Goal: Fully automated with optional manual refinement.
+
+### Phase 7: YouTube Automation (MCP)
+Implement automated YouTube publishing using [youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server). Evaluate MCP protocol vs direct API integration.
+
+### Phase 8: End-to-End Automation
+Complete pipeline: GitHub Repo → Video Generation → [Optional Edit] → YouTube → Blog Post
+
+See [TASK.md](TASK.md) for detailed task breakdown and estimates.
 
 ## 🤝 Contributing
 
