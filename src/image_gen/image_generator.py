@@ -23,30 +23,36 @@ class ImageGenerator:
     perfect for creating diagrams and conceptual illustrations.
     """
 
-    def __init__(self, model_name: str = "nano-banana-2", output_dir: str = "output/images"):
+    def __init__(self, model_name: str = "nano-banana-2", output_dir: str = "output/images", manager=None):
         """
         Initialize Image Generator.
 
         Args:
             model_name: Foundry model alias for image generation.
             output_dir: Directory to save generated images.
+            manager: Optional FoundryLocalManager instance for dependency injection (testing).
         """
         self.logger = logging.getLogger(__name__)
         self.model_name = model_name
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Initialize Foundry Local for image generation
-        try:
-            from foundry_local import FoundryLocalManager
-            self.manager = FoundryLocalManager(self.model_name)
-            self.logger.info(f"Initialized Foundry Local with model: {self.model_name}")
-        except ImportError:
-            self.logger.error("foundry-local-sdk is required for image generation")
-            raise ImportError("Install foundry-local-sdk: pip install foundry-local-sdk")
-        except Exception as e:
-            self.logger.error(f"Failed to initialize Foundry Local: {e}")
-            raise
+        # Allow dependency injection for testing
+        if manager is not None:
+            self.manager = manager
+            self.logger.info(f"Using injected manager for model: {self.model_name}")
+        else:
+            # Initialize Foundry Local for image generation
+            try:
+                from foundry_local import FoundryLocalManager
+                self.manager = FoundryLocalManager(self.model_name)
+                self.logger.info(f"Initialized Foundry Local with model: {self.model_name}")
+            except ImportError:
+                self.logger.error("foundry-local-sdk is required for image generation")
+                raise ImportError("Install foundry-local-sdk: pip install foundry-local-sdk")
+            except Exception as e:
+                self.logger.error(f"Failed to initialize Foundry Local: {e}")
+                raise
 
     def generate_architecture_diagram(
         self,

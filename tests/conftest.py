@@ -1,6 +1,12 @@
 import pytest
 import os
-from unittest.mock import MagicMock
+import sys
+from unittest.mock import MagicMock, Mock
+
+# Mock whisper and TTS modules globally before any imports
+sys.modules['whisper'] = Mock()
+sys.modules['TTS'] = Mock()
+sys.modules['TTS.api'] = Mock()
 
 @pytest.fixture(autouse=True)
 def mock_env_vars():

@@ -25,7 +25,7 @@ class TestEndToEnd(unittest.TestCase):
     @patch('video_generator.reel_creator.ReelCreator._create_section')
     @patch('video_generator.reel_creator.ReelCreator._create_intro')
     @patch('video_generator.reel_creator.ReelCreator._create_outro')
-    @patch('moviepy.video.compositing.concatenate.concatenate_videoclips')
+    @patch('video_generator.reel_creator.concatenate_videoclips')
     def test_reel_creation_flow(self, mock_concat, mock_outro, mock_intro, mock_section):
         """
         Test the logical flow of creating a reel:
@@ -51,6 +51,7 @@ class TestEndToEnd(unittest.TestCase):
         # Mock moviepy clips
         mock_clip = MagicMock()
         mock_clip.duration = 5
+        mock_clip.write_videofile = MagicMock()  # Mock video output
         mock_intro.return_value = mock_clip
         mock_section.return_value = mock_clip
         mock_outro.return_value = mock_clip
@@ -78,6 +79,7 @@ class TestEndToEnd(unittest.TestCase):
         )
 
         self.assertTrue(mock_concat.called)
+        self.assertIsNotNone(video_path)
 
 if __name__ == '__main__':
     unittest.main()
