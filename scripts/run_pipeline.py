@@ -23,6 +23,7 @@ from blog_generator.markdown_writer import MarkdownWriter
 from scanner.github_scanner import GitHubScanner
 from agents.scriptwriter import ScriptWriter
 from image_gen.image_generator import ImageGenerator
+from persistence.firebase_store import FirebaseStore
 
 logging.basicConfig(
     level=logging.INFO,
@@ -42,6 +43,16 @@ def main():
     repo_name = repo_url.split("/")[-1]
 
     logger.info(f"🚀 Starting pipeline for {repo_name}...")
+
+    # Initialize Persistence
+    firebase_store = None
+    try:
+        firebase_store = FirebaseStore()
+        logging.info("Firebase persistence enabled")
+        repo_full_name = f"unknown/{repo_name}" # Placeholder until scan
+        # firebase_store.save_repo(repo_full_name, {"name": repo_name}, status="pending")
+    except Exception as e:
+        logging.warning(f"Firebase not available: {e}")
 
     # Step 1: Blog Generation
     logger.info("📝 Step 1: Blog Generation")
@@ -81,6 +92,9 @@ def main():
         else:
             logger.warning("GITHUB_TOKEN not found. Using mock repo data.")
             repo_data = {"name": repo_name, "full_name": f"unknown/{repo_name}", "description": "Mock description"}
+
+        if firebase_store:
+            firebase_store.save_repo(repo_data["full_name"], repo_data, status="processing")
 
         # 1b. Generate Analysis
         google_key = os.getenv("GOOGLE_API_KEY")
@@ -150,8 +164,13 @@ def main():
         else:
             logger.info("⏭️  Skipping upload (use --upload to enable)")
 
+        if firebase_store:
+            firebase_store.update_status(repo_data.get("full_name", repo_name), status="completed")
+
     else:
         logger.error("❌ Video generation failed.")
+        if firebase_store:
+            firebase_store.update_status(repo_data.get("full_name", repo_name), status="failed", error_message="Video generation failed")
         sys.exit(1)
 
     logger.info("🎉 Pipeline completed successfully!")

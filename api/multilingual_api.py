@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from video_generator.voice_translation import VoiceTranslationPipeline
 from video_generator.reel_creator import ReelCreator
+from persistence.firebase_store import FirebaseStore
 try:
     from video_editor.opencut_bridge import OpenCutBridge
 except ImportError:
@@ -79,6 +80,27 @@ def get_pipeline():
             tts_model="tts_models/multilingual/multi-dataset/xtts_v2"
         )
     return _pipeline
+
+# Initialize Persistence
+firebase_store = None
+try:
+    firebase_store = FirebaseStore()
+except Exception:
+    pass
+
+@app.route('/api/status', methods=['GET'])
+def get_status():
+    """Get processing status from Firebase."""
+    try:
+        limit = int(request.args.get('limit', 10))
+        if firebase_store:
+            # Mocking retrieval for now as FirebaseStore methods might need update to list all
+            # Assuming firebase_store has a method or we mock it.
+            # Real implementation would query 'processed_repos' collection
+            return jsonify({"status": "connected", "jobs": []})
+        return jsonify({"status": "disconnected", "jobs": []})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/api/languages', methods=['GET'])
 def get_languages():
