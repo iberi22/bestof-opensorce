@@ -2,8 +2,8 @@
 
 title: "Open Source Gems"
 description: "Discover amazing open source projects with AI-powered analysis"
-baseurl: "/op-to-video"
-url: "https://yourusername.github.io"
+baseurl: "/plantilla-ingenieria-contexto"
+url: "https://iberi22.github.io"
 
 # Build settings
 markdown: kramdown
