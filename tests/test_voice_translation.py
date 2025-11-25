@@ -34,7 +34,7 @@ def test_pipeline_initialization():
         # Setup mock returns
         mock_whisper_model = Mock()
         mock_whisper.return_value = mock_whisper_model
-        
+
         mock_tts_instance = Mock()
         mock_tts_instance.to.return_value = mock_tts_instance
         mock_tts.return_value = mock_tts_instance
@@ -78,11 +78,11 @@ def test_translate_text():
          patch('video_generator.voice_translation.TTS') as mock_tts, \
          patch('video_generator.voice_translation.MarianMTModel') as mock_marian, \
          patch('video_generator.voice_translation.MarianTokenizer') as mock_tokenizer:
-        
+
         # Setup Whisper mock
         mock_whisper_model = Mock()
         mock_whisper.return_value = mock_whisper_model
-        
+
         # Setup TTS mock
         mock_tts_instance = Mock()
         mock_tts_instance.to.return_value = mock_tts_instance
@@ -91,7 +91,7 @@ def test_translate_text():
         # Setup Translation mocks
         mock_tensor = Mock()
         mock_tensor.to.return_value = mock_tensor
-        
+
         mock_tokenizer_instance = Mock()
         mock_tokenizer_instance.return_value = {
             "input_ids": mock_tensor,
@@ -99,7 +99,7 @@ def test_translate_text():
         }
         mock_tokenizer_instance.decode.return_value = "Ceci est un test."
         mock_tokenizer.from_pretrained.return_value = mock_tokenizer_instance
-        
+
         mock_model_instance = Mock()
         mock_model_instance.generate.return_value = torch.tensor([[1, 2, 3]])
         mock_model_instance.to.return_value = mock_model_instance

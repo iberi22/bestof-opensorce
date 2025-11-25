@@ -151,14 +151,234 @@ Timeline:
 
 ## 5. Roadmap de Implementación
 
-### ✅ Fase 0: Fundamentos (COMPLETADO)
+### ✅ Fase 0-9: Fundamentos (COMPLETADO)
 - [x] Scanner de GitHub
 - [x] Integración con Gemini
 - [x] Generación de imágenes
 - [x] Firebase persistence
 - [x] Tests básicos
+- [x] Blog Generator
+- [x] Reel Creator
+- [x] Voice Translation
+- [x] CI/CD Pipeline
 
-### 🚀 Fase 1: Blog Generator (ACTUAL - Prioridad CRÍTICA)
+### 🔧 Fase 10: Enhanced Repository Analysis (EN PROGRESO - 2 días)
+**Objetivo:** Análisis profundo con métricas avanzadas y clasificación inteligente
+
+**Componentes Nuevos:**
+```
+src/scanner/
+├── insights_collector.py      # 15+ métricas de GitHub Insights API
+├── repo_classifier.py          # Detecta proyectos reales vs mocks/tutorials
+├── category_detector.py        # Taxonomía automática (10 categorías)
+└── adoption_metrics.py         # npm/PyPI/Docker stats
+```
+
+**Métricas Recopiladas (15+):**
+1. **Actividad:**
+   - Commits per week
+   - Issue velocity (issues cerrados/semana)
+   - PR merge rate (% PRs mergeados)
+   - Release frequency (releases/mes)
+
+2. **Adopción Real:**
+   - npm downloads (último mes)
+   - PyPI downloads (última semana)
+   - Docker Hub pulls
+   - GitHub dependents count
+   - Sponsors/funding
+
+3. **Calidad:**
+   - Contributors count
+   - CI/CD status
+   - Critical issues (security, breaking bugs)
+   - Code coverage (si disponible)
+   - Documentation quality score
+
+4. **Comunidad:**
+   - PR response time (promedio en horas)
+   - Issue response time
+   - % de PRs externos mergeados
+   - Diversity de contributors
+
+**Taxonomía de Categorías (10):**
+1. 🤖 **AI/ML & Data Science** - Frameworks ML, NLP, Computer Vision
+2. 🔒 **Cybersecurity** - Pentesting, Security auditing, Encryption
+3. 🎨 **UI/UX & Frontend** - Component libraries, Design systems
+4. 🌐 **Web Frameworks** - REST/GraphQL APIs, Full-stack
+5. 💾 **Databases & Storage** - SQL/NoSQL, ORMs, Vector DBs
+6. ⚙️ **DevOps & Infrastructure** - CI/CD, Containers, IaC
+7. 📱 **Mobile Development** - Cross-platform, Native tools
+8. 🧪 **Testing & QA** - Test frameworks, E2E, Load testing
+9. 📊 **Analytics & Observability** - Logging, Tracing, APM
+10. 🛠️ **Developer Tools** - CLI utils, Code generators, Linters
+
+**Algoritmo de Clasificación:**
+```python
+def classify_repo(repo: dict) -> dict:
+    """
+    Returns:
+    {
+        'categories': ['ai_ml', 'python'],  # Múltiples categorías
+        'is_real_project': True,
+        'confidence_score': 0.92,
+        'signals': {
+            'positive': ['high npm downloads', 'many dependents', ...],
+            'negative': ['contains tutorial keyword']
+        }
+    }
+    """
+```
+
+**Señales de Proyecto Real:**
+- ✅ Package downloads > 10K/month
+- ✅ Dependents > 50 proyectos
+- ✅ Contributors > 10
+- ✅ Issues cerrados > 100
+- ✅ Releases regulares (> 1 cada 3 meses)
+- ✅ Documentation site dedicado
+- ✅ Sponsors/funding activo
+
+**Señales de Mock/Tutorial:**
+- ❌ Nombre contiene: "example", "demo", "tutorial", "starter"
+- ❌ Solo 1-2 contributors
+- ❌ Sin releases
+- ❌ Descripción dice "learning project"
+- ❌ Commits solo del owner
+
+| Tarea | Descripción | Estimación |
+|-------|-------------|------------|
+| 10.1 | Expandir GitHubScanner con Insights API | 2 horas |
+| 10.2 | Implementar RepoClassifier | 3 horas |
+| 10.3 | Sistema de taxonomía automática | 2 horas |
+| 10.4 | Integración con npm/PyPI/Docker APIs | 2 horas |
+| 10.5 | Tests unitarios | 1 hora |
+
+**Total:** 10 horas / 2 días
+
+---
+
+### 🎨 Fase 11: Blog UI Redesign con Fira Code (SIGUIENTE - 1 día)
+**Objetivo:** Diseño moderno, arreglo de imágenes, Fira Code
+
+**Mejoras Visuales:**
+- 🔤 **Fira Code** como fuente principal (con ligatures)
+- 🌑 **Dark Theme** glassmorphism moderno
+- 🖼️ **Fix Crítico:** Rutas de imágenes con `{{ site.baseurl }}`
+- 🎨 **Color Palette:**
+  - Background: `#0a0e27`
+  - Cards: `#1a1f3a`
+  - Accent: `#00d9ff`
+  - Text: `#e4e4e7`
+
+**Componentes CSS:**
+```css
+/* main.css - Variables globales */
+:root {
+    --font-primary: 'Fira Code', monospace;
+    --font-size-base: 16px;
+    --color-primary: #00d9ff;
+    --color-bg: #0a0e27;
+    --color-card: #1a1f3a;
+    --color-text: #e4e4e7;
+    --color-text-muted: #94a3b8;
+}
+
+/* Glassmorphism effect */
+.card {
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+```
+
+**Inspiración:** GitHub Dark + Vercel + Railway
+
+| Tarea | Descripción | Estimación |
+|-------|-------------|------------|
+| 11.1 | Integrar Fira Code (Google Fonts) | 30 min |
+| 11.2 | Dark theme glassmorphism | 3 horas |
+| 11.3 | ⚠️ CRÍTICO: Arreglar rutas de imágenes | 1 hora |
+| 11.4 | Syntax highlighting mejorado | 1 hora |
+| 11.5 | Responsive design refinado | 1 hora |
+
+**Total:** 6.5 horas / 1 día
+
+---
+
+### 🗂️ Fase 12: Multi-Category Navigation System (FUTURO - 1 día)
+**Objetivo:** Sistema de filtrado y navegación por categorías
+
+**Características:**
+- 🔍 **Filtrado dinámico** sin recarga de página
+- 🏷️ **Badges visuales** por categoría (con emoji + color único)
+- 📑 **Página de índice** organizada por categorías
+- 🔗 **Deep linking** con URL hash (#category=ai_ml)
+- 📊 **Contador** de posts por categoría
+
+**Estructura:**
+```
+blog/
+├── categories.html              # Página principal con filtros
+├── _includes/
+│   ├── category-badge.html     # Componente de badge
+│   └── category-icon.html      # Íconos por categoría
+└── assets/
+    └── js/
+        └── category-filter.js  # Lógica de filtrado
+```
+
+| Tarea | Descripción | Estimación |
+|-------|-------------|------------|
+| 12.1 | Página de categorías con filtros | 2 horas |
+| 12.2 | JavaScript de filtrado dinámico | 1 hora |
+| 12.3 | Sistema de badges visuales | 1 hora |
+| 12.4 | Índice organizado por categoría | 1 hora |
+| 12.5 | SEO optimization por categoría | 1 hora |
+
+**Total:** 6 horas / 1 día
+
+---
+
+### 📊 Fase 13: Advanced Analytics Dashboard (BACKLOG - 1-2 días)
+**Objetivo:** Dashboard de métricas y health indicators
+
+**Componentes del Dashboard:**
+
+1. **Repo Metrics Card:**
+   ```
+   ⭐ 12,500 Stars        👥 45 Contributors
+   📦 450K Downloads      🔄 28 Commits/week
+   ✅ 85% PR Merge Rate   📈 0.8 Releases/month
+   ```
+
+2. **Production Ready Score:**
+   - Medidor circular (0-100%)
+   - Color coding: 🔴 < 50%, 🟡 50-80%, 🟢 > 80%
+   - Tooltip con breakdown detallado
+
+3. **Critical Issues Alert:**
+   ```
+   ⚠️ 2 Security Vulnerabilities Reported
+   - CVE-2024-1234: SQL Injection in auth module
+   - Issue #456: Memory leak in worker process
+   ```
+
+4. **Growth Charts (Chart.js):**
+   - Stars over time (últimos 6 meses)
+   - Commit activity timeline
+   - Issue velocity trend
+
+| Tarea | Descripción | Estimación |
+|-------|-------------|------------|
+| 13.1 | Componente de métricas detalladas | 2 horas |
+| 13.2 | Gráficos de tendencias (Chart.js) | 3 horas |
+| 13.3 | Alertas de issues críticos | 1 hora |
+| 13.4 | Score visual de "Production Ready" | 1 hora |
+
+**Total:** 7 horas / 1-2 días
 **Objetivo:** Crear sistema de generación de blog
 
 | Tarea | Descripción | Estimación |

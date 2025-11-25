@@ -74,3 +74,6 @@ coverage.xml
 Thumbs.db
 create_placeholders.py
 web/node_modules/
+
+#carpetas de configuracion
+.vscode

@@ -7,9 +7,9 @@ stars: 1234
 language: Python
 tags: [automation, devops, ci-cd]
 images:
-  architecture: /assets/images/awesome-project/architecture.png
-  flow: /assets/images/awesome-project/flow.png
-  screenshot: /assets/images/awesome-project/screenshot.png
+  architecture: assets/images/awesome-project/architecture.png
+  flow: assets/images/awesome-project/flow.png
+  screenshot: assets/images/awesome-project/screenshot.png
 ---
 
 ## 🎯 The Problem

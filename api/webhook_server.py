@@ -114,15 +114,15 @@ def github_webhook():
 def get_job_status(job_id):
     """
     Get the status and details of a queued job.
-    
+
     Returns job status, progress, and results if available.
     """
     if not redis_conn:
         return jsonify({"error": "Queue system unavailable"}), 503
-    
+
     try:
         job = Job.fetch(job_id, connection=redis_conn)
-        
+
         response = {
             "job_id": job.id,
             "status": job.get_status(),
@@ -133,9 +133,9 @@ def get_job_status(job_id):
             "error": str(job.exc_info) if job.is_failed else None,
             "meta": job.meta
         }
-        
+
         return jsonify(response), 200
-        
+
     except Exception as e:
         logger.error(f"Failed to fetch job {job_id}: {e}")
         return jsonify({"error": "Job not found", "details": str(e)}), 404
@@ -144,20 +144,20 @@ def get_job_status(job_id):
 def list_jobs():
     """
     List all jobs in the queue.
-    
+
     Query params:
         - status: Filter by status (queued, started, finished, failed)
         - limit: Maximum number of jobs to return (default: 50)
     """
     if not task_queue or not redis_conn:
         return jsonify({"error": "Queue system unavailable"}), 503
-    
+
     try:
         status_filter = request.args.get('status', 'all')
         limit = min(int(request.args.get('limit', 50)), 100)
-        
+
         jobs_list = []
-        
+
         # Get jobs by status
         if status_filter in ['all', 'queued']:
             queued_jobs = task_queue.jobs[:limit]
@@ -166,7 +166,7 @@ def list_jobs():
                 "status": "queued",
                 "created_at": job.created_at.isoformat() if job.created_at else None
             } for job in queued_jobs])
-        
+
         if status_filter in ['all', 'started']:
             started_registry = task_queue.started_job_registry
             for job_id in list(started_registry.get_job_ids())[:limit]:
@@ -179,7 +179,7 @@ def list_jobs():
                     })
                 except:
                     pass
-        
+
         if status_filter in ['all', 'finished']:
             finished_registry = task_queue.finished_job_registry
             for job_id in list(finished_registry.get_job_ids())[:limit]:
@@ -192,12 +192,12 @@ def list_jobs():
                     })
                 except:
                     pass
-        
+
         return jsonify({
             "count": len(jobs_list),
             "jobs": jobs_list[:limit]
         }), 200
-        
+
     except Exception as e:
         logger.error(f"Failed to list jobs: {e}")
         return jsonify({"error": "Failed to list jobs", "details": str(e)}), 500
@@ -210,14 +210,14 @@ def health_check():
         "redis_connected": redis_conn is not None,
         "queue_available": task_queue is not None
     }
-    
+
     if task_queue:
         try:
             health["queue_length"] = len(task_queue)
             health["workers_count"] = len(task_queue.workers)
         except:
             pass
-    
+
     status_code = 200 if health["redis_connected"] else 503
     return jsonify(health), status_code
 

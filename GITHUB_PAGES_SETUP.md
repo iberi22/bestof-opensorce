@@ -5,12 +5,15 @@
 He realizado las siguientes correcciones para habilitar GitHub Pages:
 
 ### 1. ✅ Creado `blog/Gemfile`
+
 Archivo de dependencias de Ruby para Jekyll.
 
 ### 2. ✅ Creado `.github/workflows/deploy-blog.yml`
+
 Workflow para auto-deploy del blog a GitHub Pages cuando se hace merge a main.
 
 ### 3. ✅ Actualizado `blog/_config.yml`
+
 ```yaml
 url: "https://iberi22.github.io"
 baseurl: "/plantilla-ingenieria-contexto"
@@ -22,7 +25,7 @@ baseurl: "/plantilla-ingenieria-contexto"
 
 ### Paso 1: Habilitar GitHub Pages en el Repositorio
 
-1. Ir a: https://github.com/iberi22/plantilla-ingenieria-contexto/settings/pages
+1. Ir a: <https://github.com/iberi22/plantilla-ingenieria-contexto/settings/pages>
 
 2. En **"Build and deployment"**, configurar:
    - **Source:** GitHub Actions
@@ -66,13 +69,14 @@ git push origin main
 
 ### Paso 3: Verificar el Deploy
 
-1. Ir a: https://github.com/iberi22/plantilla-ingenieria-contexto/actions
+1. Ir a: <https://github.com/iberi22/plantilla-ingenieria-contexto/actions>
 
 2. Buscar el workflow **"Deploy Blog to GitHub Pages"**
 
 3. Esperar a que complete (1-2 minutos)
 
 4. Visitar el blog:
+
    ```
    https://iberi22.github.io/plantilla-ingenieria-contexto/
    ```
@@ -82,11 +86,13 @@ git push origin main
 ## 🔍 Verificación
 
 ### Comando para Verificar GitHub Pages API
+
 ```bash
 gh api repos/iberi22/plantilla-ingenieria-contexto/pages
 ```
 
 ### Testing Local (Opcional)
+
 ```bash
 cd blog
 bundle install
@@ -101,10 +107,10 @@ bundle exec jekyll serve
 
 Después de completar estos pasos:
 
-✅ Blog accesible en: `https://iberi22.github.io/plantilla-ingenieria-contexto/`  
-✅ Auto-deploy cuando se hace merge a main  
-✅ Workflow `scan-and-blog.yml` crea posts automáticamente  
-✅ Posts visibles en el blog después de merge de PR  
+✅ Blog accesible en: `https://iberi22.github.io/plantilla-ingenieria-contexto/`
+✅ Auto-deploy cuando se hace merge a main
+✅ Workflow `scan-and-blog.yml` crea posts automáticamente
+✅ Posts visibles en el blog después de merge de PR
 
 ---
 
@@ -142,35 +148,40 @@ Después de completar estos pasos:
 
 ## 🐛 Troubleshooting
 
-### Si el workflow falla:
+### Si el workflow falla
 
 **Check 1: Permisos**
+
 ```bash
 # En Settings → Actions → General
 # Workflow permissions: "Read and write permissions"
 ```
 
 **Check 2: GitHub Pages habilitado**
+
 ```bash
 # En Settings → Pages
 # Source debe estar en "GitHub Actions"
 ```
 
 **Check 3: Logs del workflow**
+
 ```bash
 gh run list --workflow=deploy-blog.yml
 gh run view <run-id> --log
 ```
 
-### Si el blog no se ve bien:
+### Si el blog no se ve bien
 
 **Check URLs en _config.yml:**
+
 ```yaml
 url: "https://iberi22.github.io"
 baseurl: "/plantilla-ingenieria-contexto"
 ```
 
 **Rebuild forzado:**
+
 ```bash
 gh workflow run deploy-blog.yml
 ```
@@ -180,6 +191,7 @@ gh workflow run deploy-blog.yml
 ## 📊 Estado Actual vs Deseado
 
 ### Antes
+
 ```
 ❌ GitHub Pages: No configurado
 ❌ Deploy: Manual
@@ -188,6 +200,7 @@ gh workflow run deploy-blog.yml
 ```
 
 ### Después (al completar pasos)
+
 ```
 ✅ GitHub Pages: Configurado con Actions
 ✅ Deploy: Automático en cada merge
@@ -243,7 +256,7 @@ schedule:
 
 ---
 
-**Estado:** ✅ Preparado para deploy  
-**Acción requerida:** Habilitar GitHub Pages en settings y push cambios  
-**Tiempo:** ~8 minutos  
+**Estado:** ✅ Preparado para deploy
+**Acción requerida:** Habilitar GitHub Pages en settings y push cambios
+**Tiempo:** ~8 minutos
 **Resultado:** Blog completamente funcional y auto-actualizado

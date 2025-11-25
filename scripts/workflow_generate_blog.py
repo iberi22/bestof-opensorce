@@ -112,12 +112,12 @@ def main():
                 script_data
             )
 
-            # Prepare image paths for blog post
+            # Prepare image paths for blog post (relative to site root for Jekyll)
             images = {}
             if arch_img:
-                images['architecture'] = f"/assets/images/{repo_name}/architecture.png"
+                images['architecture'] = f"assets/images/{repo_name}/architecture.png"
             if flow_img:
-                images['flow'] = f"/assets/images/{repo_name}/flow.png"
+                images['flow'] = f"assets/images/{repo_name}/flow.png"
 
             logger.info(f"✅ Generated {len(images)} images")
 
