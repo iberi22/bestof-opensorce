@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import VoiceRecorder from './components/VoiceRecorder';
 import Dashboard from './components/Dashboard';
 

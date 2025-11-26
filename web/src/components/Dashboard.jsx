@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Activity, CheckCircle, XCircle, Clock, Database } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Activity, Database } from 'lucide-react';
 
 function Dashboard() {
   const [status, setStatus] = useState({ status: 'loading', jobs: [] });

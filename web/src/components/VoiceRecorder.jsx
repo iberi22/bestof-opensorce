@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Mic, Square, Play, Pause, Globe, Video, Download, Edit, Image as ImageIcon, Check, Loader } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mic, Square, Play, Pause, Globe, Video, Download, Edit, Image as ImageIcon, Loader } from 'lucide-react';
 
 function VoiceRecorder() {
   // Step 1: Recording
