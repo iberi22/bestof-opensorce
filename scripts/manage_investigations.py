@@ -220,5 +220,7 @@ def main():
     elif args.check:
         manager.check_updates()
     else:
-        parser.print_help()if __name__ == "__main__":
+        parser.print_help()
+
+if __name__ == "__main__":
     main()
