@@ -9,8 +9,8 @@ This document describes the split architecture between the public and private re
 ## 📋 Repository Overview
 
 ### 🌐 Public Repository: `bestof-opensorce`
-**URL:** https://github.com/iberi22/bestof-opensorce  
-**Visibility:** PUBLIC  
+**URL:** https://github.com/iberi22/bestof-opensorce
+**Visibility:** PUBLIC
 **Purpose:** Community-driven open source project collection, blog, and investigation database
 
 **Contains:**
@@ -33,8 +33,8 @@ This document describes the split architecture between the public and private re
 ---
 
 ### 🔐 Private Repository: `bestof-pipeline`
-**URL:** https://github.com/iberi22/bestof-pipeline  
-**Visibility:** PRIVATE  
+**URL:** https://github.com/iberi22/bestof-pipeline
+**Visibility:** PRIVATE
 **Purpose:** Content generation pipeline (videos, audio, blog posts)
 
 **Contains:**
@@ -177,7 +177,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Scanner
         run: python scripts/run_scanner.py
-      
+
       - name: Trigger Private Pipeline
         if: success()
         run: |
@@ -203,12 +203,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Generate Blog Post
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python scripts/manage_investigations.py --check
-      
+
       - name: Commit to Public Repo
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -297,6 +297,6 @@ For questions about this architecture:
 
 ---
 
-**Last Updated:** 2025-01-23  
-**Migration Status:** ✅ Complete  
+**Last Updated:** 2025-01-23
+**Migration Status:** ✅ Complete
 **Verification:** ✅ All tests passed

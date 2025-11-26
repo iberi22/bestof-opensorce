@@ -1,39 +1,78 @@
 # 📋 Gestión de Tareas: Open Source Video Generator + Blog
 
-_Última Actualización: 25 de noviembre de 2025 - Post Jules Integration_
+_Última Actualización: 26 de noviembre de 2025 - Post Migración a Dos Repositorios_
 
 ## 🎯 Resumen Ejecutivo y Estado Actual
 
-**Estado General:** 87% - Core Completo, Tests y Optimización Pendientes.
+**Estado General:** 75% - Migración Completada, Arquitectura de Dos Repositorios Activa.
 
 **Logros Recientes:**
-- ✅ **Fase 9 (CI/CD):** Workflow de tests automatizados (`ci.yml`).
-- ✅ **Fase 4 (Blog UI):** Diseño finalizado con búsqueda, tags y galería de imágenes.
-- ✅ **Fase 8 (Automation):** Implementado `run_pipeline.py` y `webhook_server.py` para automatización completa.
-- ✅ **Testing:** Tests unitarios para Voice Pipeline y API Integration.
+- ✅ **Migración Completada:** Separación exitosa en dos repositorios (público/privado)
+- ✅ **Repositorio Público:** bestof-opensorce - Blog, investigations, scanner, frontends
+- ✅ **Repositorio Privado:** bestof-pipeline - Generación de contenido, APIs, código propietario
+- ✅ **Fase 14 (Web):** Astro + Tailwind + Svelte implementado con éxito
+- ✅ **Fase 9 (CI/CD):** Workflow de tests automatizados y deploy automatizado
+- ✅ **Documentación:** TWO_REPO_ARCHITECTURE.md y QUICKSTART_TWO_REPOS.md creados
 
-**Progreso por Componente:**
+**Progreso por Componente (Repositorio Público):**
 
-- [🟢] 📦 Scanner (GitHub): 90% (9/10 tareas)
-- [🟢] 🤖 Agents (IA - Gemini): 100% (10/10 tareas) ✅
-- [🟢] 🗄️ Persistencia (Firebase): 100% (5/5 tareas) ✅
-- [🟢] 🎨 Generación de Imágenes: 100% (7/7 tareas) ✅
-- [🟢] 📝 Blog Generator: 100% (18/18 tareas) ✅
-- [🟢] 🎥 Reel Creator (20s): 100% (21/21 tareas) ✅
-- [🟡] 🌍 Multilingual Voice Translation: 80% (16/20 tareas) - Tests fallan por dependencias
-- [🟢] 🎨 Blog Design (Jekyll): 100% (12/12 tareas) ✅
+- [🟢] 📦 Scanner (GitHub): 100% (10/10 tareas) ✅
+- [🟢] 🗄️ Persistencia (Local Store): 100% (5/5 tareas) ✅
+- [🟢] 📚 Investigations Database: 100% (Base de datos activa) ✅
+- [🟢] 🎨 Website (Astro): 95% (18/19 tareas) - Migración de posts pendiente
+- [🟢] 🖥️ Dashboard (React): 100% (12/12 tareas) ✅
 - [🟢] 🔧 Setup & Dependencies: 100% (7/7 tareas) ✅
-- [🟢] ✂️ Editor de Video (OpenCut Integration): 100% (8/8 tareas) ✅
-- [🟢] 📤 YouTube Uploader (MCP Integration): 100% (10/10 tareas) ✅
-- [🟡] 🔄 Automatización End-to-End: 90% (5/6 tareas) - Webhook needs production queue
-- [🟢] 🧪 Testing & QA: 100% (23/23 tareas) ✅
-- [🟢] 📚 Documentación: 100% (13/13 tareas) ✅
+- [🟡] 🔄 CI/CD & Automation: 85% (Deploy funcionando, webhook pendiente)
+- [🟢] 📚 Documentación: 100% (15/15 tareas) ✅
+
+**Progreso por Componente (Repositorio Privado - bestof-pipeline):**
+
+- [🟢] 🤖 Blog Generator (IA - Gemini): 100% (10/10 tareas) ✅
+- [🟢] 🎨 Image Generator: 100% (7/7 tareas) ✅
+- [🔴] 🎥 Video Pipeline: 40% (Código migrado, no funcional)
+- [🔴] 🎤 TTS & Voice: 30% (Código migrado, no funcional)
+- [🟡] 🔌 API Flask: 80% (Implementada, sin producción)
+- [🟡] 📤 YouTube Uploader: 70% (Código migrado, requiere testing)
+
+**Estado Global del Proyecto:** 75%
+
+**Próximos Pasos Críticos:**
+1. Configurar webhook entre repositorios
+2. Probar flujo end-to-end de generación
+3. Activar pipeline de videos (opcional)
+4. Configurar secrets en repo privado
 
 ---
 
-## 🚀 Fase Actual: Finalización y Entrega
+## 🚀 Fase Actual: Integración de Dos Repositorios
 
-**Objetivo:** Merge final y despliegue.
+**Objetivo:** Establecer comunicación entre repositorios y activar pipeline completo.
+
+### Tareas Inmediatas
+
+#### 🔗 FASE 15: Webhook Integration (🔥 PRIORIDAD MÁXIMA)
+**Objetivo:** Conectar repo público con privado para automatización completa
+
+- [ ] 15.1: Configurar GitHub Webhook en repo público
+  - Evento: Push a `investigations/`
+  - Target: API del repo privado
+  - Payload: Nombre del archivo modificado
+
+- [ ] 15.2: Implementar endpoint en repo privado
+  - `/webhook/investigation-created`
+  - Validar firma de GitHub
+  - Encolar job de generación
+
+- [ ] 15.3: Configurar GitHub Secrets
+  - Repo privado: `GOOGLE_API_KEY`, `GITHUB_TOKEN`
+  - Repo público: `WEBHOOK_SECRET`
+
+- [ ] 15.4: Probar flujo end-to-end
+  - Scanner encuentra repo → Investigation created
+  - Webhook dispara → Blog post generado
+  - Commit back → Website actualizado
+
+**Total Estimado:** 4 horas / 1 día
 
 ---
 

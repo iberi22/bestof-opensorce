@@ -21,7 +21,7 @@ def temp_store_dir():
 
 def test_save_and_get_investigation(temp_store_dir):
     store = LocalStore(storage_dir=temp_store_dir)
-    
+
     repo_data = {
         "name": "test-repo",
         "full_name": "owner/test-repo",
@@ -30,16 +30,16 @@ def test_save_and_get_investigation(temp_store_dir):
         "language": "Python",
         "latest_commit_hash": "abc123456"
     }
-    
+
     analysis = {
         "version": "1.0.0",
         "content": "This is a test analysis."
     }
-    
+
     # Save
     path = store.save_investigation(repo_data, analysis)
     assert os.path.exists(path)
-    
+
     # Get
     data = store.get_investigation("owner/test-repo")
     assert data is not None
@@ -48,13 +48,13 @@ def test_save_and_get_investigation(temp_store_dir):
 
 def test_list_investigations(temp_store_dir):
     store = LocalStore(storage_dir=temp_store_dir)
-    
+
     repo_data = {
         "name": "test-repo",
         "full_name": "owner/test-repo",
         "latest_commit_hash": "abc"
     }
     store.save_investigation(repo_data, {"content": "test"})
-    
+
     items = store.list_investigations()
     assert "owner/test-repo" in items

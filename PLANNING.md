@@ -1,6 +1,6 @@
-# 📋 Planificación del Proyecto: Open Source Video Generator + Blog
+# 📋 Planificación del Proyecto: Best of Open Source
 
-_Última Actualización: 23 de noviembre de 2025_
+_Última Actualización: 26 de noviembre de 2025 - Arquitectura de Dos Repositorios_
 
 ## 1. Visión y Propósito
 
@@ -9,87 +9,138 @@ _Última Actualización: 23 de noviembre de 2025_
 **Propósito:**
 - Ayudar a desarrolladores a descubrir herramientas útiles
 - Dar visibilidad a creadores de Open Source
-- Crear una base de conocimiento persistente (blog)
-- Generar contenido visual atractivo (reels)
+- Crear una base de conocimiento persistente (blog + investigations)
+- Generar contenido visual atractivo (videos y reels)
 
-**Filosofía:** "Cloud First, Local Friendly, Content Reusable"
-- GitHub Actions para descubrimiento y blog
-- GitHub Pages como base de datos de contenido
-- Generación local de videos desde el blog
+**Filosofía:** "Two-Repo Architecture: Public Discovery, Private Content Generation"
+- **Repositorio Público:** Scanner, investigations, blog, dashboards
+- **Repositorio Privado:** Generación de contenido con IA, APIs, código propietario
+- GitHub Actions para descubrimiento y análisis
+- Webhook para comunicación entre repositorios
 - Reutilización de contenido entre formatos
 
 ---
 
-## 2. Arquitectura del Sistema
+## 2. Arquitectura del Sistema (Dos Repositorios)
 
 ### 2.1 Flujo General
 
 ```mermaid
 graph TB
-    A[GitHub Workflow] -->|Escanea| B[Repos Destacados]
-    B -->|Analiza con IA| C[Genera Post MD]
-    C -->|Commit + PR| D[GitHub Pages Blog]
-    D -->|Git Pull| E[Detección Local]
-    E -->|Nuevo Post| F[Genera Reel 20s]
-    F -->|Upload| G[YouTube/Social Media]
+    A[GitHub Action: Scanner] -->|Discover Repos| B[Public: bestof-opensorce]
+    B -->|Create Investigation| C[investigations/*.md]
+    C -->|Webhook Trigger| D[Private: bestof-pipeline]
+    D -->|Generate Content| E[Blog Post + Images]
+    D -->|Future: Generate| F[Video + Audio]
+    E -->|Commit Back| B
+    B -->|Auto Deploy| G[GitHub Pages]
 
     style A fill:#4CAF50
-    style D fill:#2196F3
-    style F fill:#FF9800
+    style B fill:#2196F3
+    style D fill:#FF6B6B
+    style G fill:#00D9FF
 ```
 
-### 2.2 Componentes del Ecosistema
+### 2.2 Repositorio PÚBLICO (bestof-opensorce)
 
-#### 🌐 Cloud (GitHub Actions)
-1. **Scanner** → Encuentra repos de calidad
-2. **Analyzer** → Genera análisis con Gemini
-3. **Blog Generator** → Crea posts en Markdown
-4. **Image Generator** → Genera diagramas explicativos
-5. **Screenshot Capturer** → Captura web del repo
-6. **Git Manager** → Crea branch, commit, PR
+**URL:** https://github.com/iberi22/bestof-opensorce
 
-#### 📚 Storage (GitHub Pages)
-```
-blog/
-├── _posts/
-│   └── YYYY-MM-DD-repo-name.md
-├── assets/
-│   ├── images/repo-name/
-│   │   ├── architecture.png
-│   │   ├── screenshot.png
-│   │   └── flow.png
-│   └── videos/
-│       └── repo-name-reel.mp4
-└── index.html
-```
+**Contenido:**
+- ✅ `investigations/` - Base de datos Markdown con análisis de repos
+- ✅ `website/` - Blog Astro (SSG) con Tailwind + Svelte
+- ✅ `web/` - Dashboard React para voice recorder y traducciones
+- ✅ `src/scanner/` - Herramientas de descubrimiento de repositorios
+- ✅ `src/persistence/` - Capa de almacenamiento local
+- ✅ `scripts/run_scanner.py` - Script público de scanning
+- ✅ `.github/workflows/` - CI/CD para deploy y scanning
 
-#### 🎬 Local (Video Generation)
-1. **Blog Watcher** → Detecta nuevos posts
-2. **Reel Creator** → Genera videos de 20s
-3. **Video Uploader** → Sube a YouTube
+**Características:**
+- 🌐 100% Open Source
+- 📊 Investigations como database
+- 🚀 Deploy automático a GitHub Pages
+- 🔍 Scanner ejecutado cada 4 horas
+- 📱 Dashboard React para traducciones
+
+### 2.3 Repositorio PRIVADO (bestof-pipeline)
+
+**URL:** https://github.com/iberi22/bestof-pipeline
+
+**Contenido:**
+- 🔐 `src/blog_generator/` - Generación de posts con Gemini AI
+- 🔐 `src/image_gen/` - Creación de thumbnails e imágenes
+- 🔐 `api/multilingual_api.py` - API Flask para generación
+- 🔐 `api/worker.py` - Procesador de jobs con Redis Queue
+- 🔐 `TTS/` - Modelos de Text-to-Speech
+- 🔐 `Trainer/` - Checkpoints de modelos
+- 🔐 Docker configs y secrets
+
+**Características:**
+- 🔒 Código propietario protegido
+- 🤖 Integración con Gemini AI
+- 🎨 Generación de imágenes con IA
+- 📡 Webhook endpoint para recibir eventos
+- 🔄 Queue system con Redis
+
+### 2.4 Comunicación Entre Repositorios
+
+**Flujo de Webhook:**
+
+1. **Trigger (Público):**
+   - GitHub Action ejecuta scanner
+   - Crea/actualiza archivo en `investigations/`
+   - Push a rama `main`
+
+2. **Webhook Dispatch:**
+   - GitHub webhook envía evento a API privada
+   - Payload: `{ "file": "investigations/repo-name.md", "action": "created" }`
+
+3. **Procesamiento (Privado):**
+   - API recibe webhook
+   - Valida firma de GitHub
+   - Encola job de generación
+   - Worker procesa: Lee investigation → Genera blog post con IA
+
+4. **Commit Back (Privado → Público):**
+   - Clona repo público
+   - Crea branch `content/blog-post-name`
+   - Commit de archivos generados
+   - Push y crea PR (o commit directo a main)
+
+5. **Deploy Automático (Público):**
+   - GitHub Action detecta cambios en `website/`
+   - Build de Astro
+   - Deploy a GitHub Pages
 
 ---
 
 ## 3. Stack Tecnológico
 
-### Cloud (GitHub Actions)
-- **Runtime:** Ubuntu Latest
+### Repositorio Público (bestof-opensorce)
+
+**Frontend:**
+- **Website:** Astro + Tailwind CSS + Svelte (SSG)
+- **Dashboard:** React + Vite + Tailwind
+- **Deploy:** GitHub Actions → GitHub Pages
+
+**Backend/Scanner:**
 - **Python:** 3.11+
-- **APIs:** GitHub REST API, Gemini API
-- **Storage:** Git (blog como DB)
+- **APIs:** GitHub REST API
+- **Storage:** Local JSON + Markdown files
+- **Tests:** pytest
 
-### Local (Video Generation)
-- **Navegación:** `playwright` (Screenshots)
-- **Edición:** `moviepy` (Reels de 20s)
-- **IA:** `google-generativeai` (Gemini)
-- **TTS:** `edge-tts` (Narración)
-- **Imágenes:** PIL/Pillow (Composición)
+### Repositorio Privado (bestof-pipeline)
 
-### Infraestructura
-- **CI/CD:** GitHub Actions
-- **Hosting:** GitHub Pages (gratis)
-- **Persistencia:** Markdown + Git
-- **CDN:** GitHub Assets
+**Content Generation:**
+- **IA:** Google Gemini API (blog generation)
+- **Image Gen:** Gemini Imagen / Stable Diffusion
+- **TTS:** edge-tts / Coqui TTS (futuro)
+- **Video:** moviepy (futuro)
+
+**API & Workers:**
+- **Framework:** Flask
+- **Queue:** Redis + RQ (Redis Queue)
+- **Storage:** Local filesystem
+- **Deploy:** Docker (futuro: Cloud Run / Railway)
 
 ---
 
