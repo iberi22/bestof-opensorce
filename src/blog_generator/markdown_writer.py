@@ -104,10 +104,11 @@ class MarkdownWriter:
         tags = topics[:5] if topics else [language.lower()] if language else []
 
         # Build frontmatter for Astro
+        escaped_description = description.replace('"', '\"')
         frontmatter = "---\n"
         frontmatter += f"title: \"{title}\"\n"
         frontmatter += f"date: {datetime.now().strftime('%Y-%m-%d')}\n"
-        frontmatter += f"description: \"{description.replace('\"', '\\\"')}\"\n"
+        frontmatter += f"description: \"{escaped_description}\"\n"
         frontmatter += f"repo: {repo_full_name}\n"
         frontmatter += f"stars: {stars}\n"
         frontmatter += f"language: {language}\n"
@@ -115,7 +116,7 @@ class MarkdownWriter:
         # Astro Schema: repo_data object
         frontmatter += "repo_data:\n"
         frontmatter += f"  full_name: {repo_full_name}\n"
-        frontmatter += f"  description: \"{description.replace('\"', '\\\"')}\"\n"
+        frontmatter += f"  description: \"{escaped_description}\"\n"
         frontmatter += f"  stars: {stars}\n"
         frontmatter += f"  language: {language}\n"
         frontmatter += f"  url: {repo_data.get('html_url', '')}\n"
