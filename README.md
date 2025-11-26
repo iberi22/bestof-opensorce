@@ -1,264 +1,89 @@
-# bestof-opensorce
+# 🌟 Best of Open Source
 
-[![CI Status](https://github.com/iberi22/plantilla-ingenieria-contexto/actions/workflows/ci.yml/badge.svg)](https://github.com/iberi22/plantilla-ingenieria-contexto/actions)
-[![Tests](https://img.shields.io/badge/tests-49%2F49%20passing-brightgreen)](https://github.com/iberi22/plantilla-ingenieria-contexto)
-[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)]()
-[![Status](https://img.shields.io/badge/status-95%25%20complete-blue)]()
-[![Queue](https://img.shields.io/badge/queue-RQ%20%2B%20Redis-orange)]()
-[![Production](https://img.shields.io/badge/production-ready-success)]()
+**Community-driven collection** of high-quality open source projects, with weekly investigations published to our blog.
 
-Automated tool to scan GitHub for trending repositories, generate a blog and video script using AI (Gemini or Foundry Local), record a visual tour, and narrate it. Now with **Voice Translation Studio** for creating multilingual video reels with voice cloning!
+> 📝 **Note:** This repository contains the public blog and investigation data. Video generation and content processing is handled in a private pipeline.
 
-## 📊 Current Status (Nov 2025)
+## 🎯 What's Here
 
-- ✅ **Core pipeline:** Scanner → Blog → Video → Upload (operational)
-- ✅ **CI/CD:** GitHub Actions for testing and blog generation
-- ✅ **Test Coverage:** **100%** (49/49 tests passing) 🎉
-- ✅ **Sprint 1 Complete:** All critical fixes delivered ([details](SPRINT1_COMPLETE.md))
-- ✅ **Sprint 2 Complete:** Queue system + 100% coverage ([details](SPRINT2_COMPLETE.md))
-- ✅ **Queue System:** Production-ready RQ + Redis ([setup guide](docs/QUEUE_SYSTEM_GUIDE.md))
-- 🚀 **Status:** **READY FOR STAGING DEPLOYMENT**
-- 📝 **Documentation:** [Full Status Report](PROJECT_STATUS_REPORT.md) | [Executive Summary](EXECUTIVE_SUMMARY.md)
+- **Investigations Database** - Markdown files with detailed analysis of open source projects
+- **Blog Frontend** - Astro-based static site with search and tags
+- **Scanner Module** - Public tools for discovering repositories
+- **Community Contributions** - Open to pull requests for new investigations!
 
-## ✨ Features
+## 🌐 Live Site
 
-### Core Features
-- **GitHub Scanner**: Finds recent, high-quality repositories (CI passing, good description).
-- **AI Scriptwriter**: Generates engaging scripts using Google Gemini or Microsoft Foundry Local (for local LLMs).
-- **Visual Engine**: Records a browser tour of the repository using Playwright.
-- **Content Renderer**: Generates professional narration using Edge TTS and combines it with the video.
-- **Image Generator**: Creates explanatory diagrams (architecture, problem-solution flows, feature showcases) using Nano Banana 2.
-- **Firebase Persistence**: Tracks processed repositories to avoid duplicates and monitor status.
-- **YouTube Uploader**: Uploads the final video to YouTube (OAuth2 authenticated).
+Visit our blog at: **[https://iberi22.github.io/bestof-opensorce](https://iberi22.github.io/bestof-opensorce)**
 
-### New Features (Voice Translation Studio)
-- **🎙️ Voice Recording**: Record narration directly from your browser
-- **📝 Transcription**: Automatic speech-to-text with language detection using Whisper
-- **🌍 Translation**: Translate content to 10+ languages (English, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, Arabic)
-- **🗣️ Voice Cloning**: Synthesize translated audio with your voice characteristics using XTTS v2
-- **🎬 Video Generation**: Create professional 9:16 vertical reels with:
-  - Dynamic scene durations
-  - Keyword highlighting in text overlays
-  - Background music mixing with volume ducking
-  - Custom image support
-- **🎨 Modern Blog Design**: Dark-themed Jekyll blog with video embedding support
+## 🏗️ Project Structure
 
-## 📋 Prerequisites
-
-- Python 3.11+
-- FFmpeg (for MoviePy)
-- Google API Key (if using Gemini)
-- Foundry Local (if using local LLMs)
-- Firebase Project (optional, for persistence)
-
-## 🚀 Installation
-
-1. Clone the repository.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   playwright install chromium
-   ```
-3. Create a `.env` file based on `.env.example`:
-   ```bash
-   cp .env.example .env
-   ```
-4. Configure your environment variables:
-   - `GITHUB_TOKEN`: Your GitHub personal access token
-   - `GOOGLE_API_KEY`: Your Google Gemini API key (if using Gemini)
-   - `FIREBASE_CREDENTIALS`: Path to Firebase service account JSON or base64-encoded credentials
-   - `YOUTUBE_CLIENT_SECRET`: YouTube OAuth2 client secret
-   - `YOUTUBE_REFRESH_TOKEN`: YouTube OAuth2 refresh token
-
-## 💻 Usage
-
-### Voice Translation Studio (New!)
-
-Start the backend API and frontend:
-
-```bash
-# Terminal 1: Start Flask API
-python api/multilingual_api.py
-
-# Terminal 2: Start React frontend
-cd web
-npm install
-npm run dev
-```
-
-Then open `http://localhost:5173` in your browser to access the Voice Studio interface.
-
-**Workflow:**
-1. **Record**: Click the microphone to record your narration
-2. **Transcribe**: Review and edit the transcribed text
-3. **Translate**: Select target languages and translate
-4. **Synthesize**: Generate voice cloned audio in each language
-5. **Upload Images**: Add custom architecture, flow, or screenshot images
-6. **Generate**: Create professional 9:16 vertical video reels
-
-### Original Pipeline (GitHub Scanner)
-
-### Basic Usage (Run Once)
-
-```bash
-python src/main.py --mode once
-```
-
-### Run as Daemon (Hourly Scan)
-
-```bash
-python src/main.py --mode daemon
-```
-
-### Use Local LLM (Foundry Local)
-
-Ensure Foundry Local is running or installed.
-
-```bash
-python src/main.py --provider foundry --model phi-3.5-mini
-```
-
-### Enable Firebase Persistence
-
-Avoid processing duplicate repositories:
-
-```bash
-python src/main.py --use-firebase
-```
-
-### Enable Image Generation
-
-Generate explanatory diagrams with Nano Banana 2:
-
-```bash
-python src/main.py --generate-images
-```
-
-### Full-Featured Example
-
-```bash
-python src/main.py \
-  --provider foundry \
-  --model phi-3.5-mini \
-  --use-firebase \
-  --generate-images \
-  --headless
-```
-
-### Headless Mode (for Server/CI)
-
-```bash
-python src/main.py --headless
-```
-
-## 🧪 Testing
-
-Run the test suite:
-```bash
-# Run all tests
-pytest tests/ -v
-
-# Run specific test modules
-pytest tests/test_scanner.py -v
-cd web
-npm install
-npm run dev
-```
-
-## 🏗️ Architecture
-
-```text
+\\\
+investigations/      # Markdown database (⭐ main content)
+website/             # Astro blog frontend
+web/                 # React dashboard (legacy)
 src/
-├── scanner/             # GitHub API interaction
-├── agents/              # LLM interaction (Gemini/Foundry)
-├── engine/              # Visual recording (Playwright) and Rendering (MoviePy + EdgeTTS)
-├── uploader/            # YouTube API interaction
-├── persistence/         # Firebase Firestore integration
-├── image_gen/           # Image generation with Nano Banana 2
-├── video_generator/     # NEW: Reel creation with voice translation
-│   ├── reel_creator.py          # Video generation with dynamic durations & music
-│   ├── voice_translation.py     # Voice cloning and translation pipeline
-│   └── narration_generator.py   # Audio synthesis
-├── blog_generator/      # Blog post generation and management
-api/
-└── multilingual_api.py  # NEW: Flask API for voice studio
-web/
-└── src/components/
-    └── VoiceRecorder.jsx  # NEW: React voice studio interface
-```
+├── scanner/         # GitHub repository scanner
+└── persistence/     # Data storage layer
+scripts/
+└── run_scanner.py   # Public scanner script
+\\\
 
-### Pipeline Flow
+## 🚀 Contributing
 
-**Original Video Generator:**
-1. **Scan** → Find quality repositories on GitHub
-2. **Check** → Verify not already processed (Firebase)
-3. **Analyze** → Generate script with AI (Gemini/Foundry)
-4. **Visualize** → Generate explanatory images (Nano Banana 2)
-5. **Record** → Capture repository tour (Playwright)
-6. **Render** → Combine video + narration (MoviePy + EdgeTTS)
-7. **Upload** → Publish to YouTube
-8. **Track** → Update status in Firebase
+We welcome contributions! To add a new investigation:
 
-**Voice Translation Studio (New):**
-1. **Record** → Capture narration in browser
-2. **Transcribe** → Convert speech to text (Whisper)
-3. **Translate** → Translate to target languages (Google Translate API)
-4. **Synthesize** → Clone voice in each language (XTTS v2)
-5. **Generate** → Create professional vertical reels with custom visuals
-6. **Export** → Download videos for social media
+1. Fork this repository
+2. Create a new markdown file in \investigations/\
+3. Follow the frontmatter format:
 
-## 🧪 Testing
+\\\yaml
+---
+url: https://github.com/owner/repo
+name: Project Name
+category: web-framework
+language: JavaScript
+stars: 10000
+status: active
+reviewed: false
+---
+\\\
 
-Run the test suite:
+4. Submit a pull request
 
-```bash
-# Run all tests
-pytest tests/ -v
+## 🔧 Local Development
 
-# Run specific test modules
-pytest tests/test_scanner.py -v
-pytest tests/test_reel_creator_features.py -v
+### Blog Website (Astro)
 
-# Test voice translation
-pytest tests/test_voice_translation.py -v
+\\\ash
+cd website
+npm install
+npm run dev
+\\\
 
-# Run frontend tests
-cd web
-npm test
-```
-## 📚 Documentation
+### Scanner Script
 
-- [PLANNING.md](PLANNING.md) - Project architecture and roadmap
-- [TASK.md](TASK.md) - Detailed task tracking with Phases 6-8 (NEW)
-- [RULES.md](RULES.md) - Development rules and standards
-- [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) - Latest implementation details
-- [docs/MULTILINGUAL_README.md](docs/MULTILINGUAL_README.md) - Multilingual features documentation
-- [docs/AUTOMATION_GUIDE.md](docs/AUTOMATION_GUIDE.md) - Guide for the new Automation Pipeline
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment instructions for API and Webhooks
-- [CHANGELOG.md](CHANGELOG.md) - Detailed changelog of PR #2
-- [PR_REVIEW.md](PR_REVIEW.md) - Comprehensive code review and recommendations
+\\\ash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python scripts/run_scanner.py
+\\\
 
-## 🚀 Automation Features
+## 📊 Stats
 
-### End-to-End Pipeline
-The `scripts/run_pipeline.py` script orchestrates the entire flow:
-1.  Scans/Analyses a Repo.
-2.  Generates a Blog Post (simulated).
-3.  Creates a Video Reel with audio and images.
-4.  Auto-uploads to YouTube (if enabled).
+- **Investigations:** Microsoft.PowerShell.Commands.GenericMeasureInfo.Count+ projects analyzed
+- **Categories:** AI, Web Frameworks, Developer Tools, DevOps, etc.
+- **Languages:** Python, JavaScript, TypeScript, Go, Rust, and more
 
-### Webhook Integration
-The `api/webhook_server.py` listens for GitHub events (e.g., Star) and automatically triggers the pipeline for the starred repository.
+## 🤝 Community
 
-### OpenCut Editor Bridge
-Videos generated can be opened in [OpenCut](https://github.com/OpenCut-app/OpenCut) for manual editing via the "Edit Video" button in the Voice Studio UI.
+- **Discussions:** [GitHub Discussions](https://github.com/iberi22/bestof-opensorce/discussions)
+- **Issues:** [Report bugs or request features](https://github.com/iberi22/bestof-opensorce/issues)
 
-See [TASK.md](TASK.md) for detailed task status.
+## 📝 License
 
-## 🤝 Contributing
+**MIT License** - This repository is open source and free to use.
 
-See [RULES.md](RULES.md) for development guidelines and coding standards.
+---
 
-## 📄 License
-
-MIT License - See LICENSE file for details
+**Note:** Video generation, TTS, and advanced content processing are handled in a private repository to protect API keys and proprietary assets.
