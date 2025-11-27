@@ -19,6 +19,7 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from scanner.github_scanner import GitHubScanner
+from scanner.rust_bridge import get_scanner, RustScanner
 from agents.scriptwriter import ScriptWriter
 from blog_generator.markdown_writer import MarkdownWriter
 
@@ -49,36 +50,58 @@ def main():
     gemini_api_key = os.getenv("GOOGLE_API_KEY")
 
     if not github_token:
-        logger.error("GITHUB_TOKEN not found in environment")
+        logger.error("❌ GITHUB_TOKEN not found in environment")
         sys.exit(1)
 
     if not gemini_api_key:
-        logger.error("GOOGLE_API_KEY not found in environment")
+        logger.error("❌ GOOGLE_API_KEY not found in environment")
         sys.exit(1)
 
+    logger.info(f"✅ Environment variables loaded:")
+    logger.info(f"   GITHUB_TOKEN: {'*' * 20}")
+    logger.info(f"   GOOGLE_API_KEY: {'*' * 20}")
+
     try:
-        # Step 1: Scan GitHub for repos
+        # Step 1: Scan GitHub for repos (try Rust first for speed)
         logger.info("\n📦 Step 1: Scanning GitHub for quality repositories...")
-        scanner = GitHubScanner(token=github_token)
-        # scan_recent_repos signature is (query, limit)
-        repos = scanner.scan_recent_repos(limit=10)
 
-        if not repos:
-            logger.warning("No repositories found")
-            return
+        # Try Rust scanner first
+        scanner = get_scanner(github_token, prefer_rust=True)
 
-        logger.info(f"Found {len(repos)} repositories")
-
-        # Step 2: Find a valid repo
         valid_repo = None
-        for repo in repos:
-            if scanner.validate_repo(repo):
-                valid_repo = repo
-                logger.info(f"✅ Selected repo: {repo['full_name']}")
-                break
+
+        if isinstance(scanner, RustScanner) and scanner.is_available():
+            # Use Rust scanner (much faster)
+            logger.info("🦀 Using Rust scanner for improved performance...")
+            valid_repo = scanner.scan_and_find_repo()
+
+            if valid_repo:
+                logger.info(f"✅ Rust scanner found: {valid_repo['full_name']}")
+
+        # Fallback to Python scanner if Rust fails or not available
+        if not valid_repo:
+            logger.info("🐍 Using Python scanner (fallback)...")
+            if isinstance(scanner, RustScanner):
+                from scanner.github_scanner import GitHubScanner
+                scanner = GitHubScanner(token=github_token)
+
+            repos = scanner.scan_recent_repos(limit=20)
+
+            if not repos:
+                logger.warning("⚠️  No repositories found")
+                return
+
+            logger.info(f"Found {len(repos)} repositories")
+
+            # Find a valid repo
+            for repo in repos:
+                if scanner.validate_repo(repo):
+                    valid_repo = repo
+                    logger.info(f"✅ Selected repo: {repo['full_name']}")
+                    break
 
         if not valid_repo:
-            logger.warning("No valid repositories found")
+            logger.warning("⚠️  No valid repositories found after validation")
             return
 
         # Step 3: Generate analysis with Gemini

@@ -41,25 +41,71 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Setup Rust (for faster scanner)
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Build Rust Scanner
+      id: rust_build
+      run: |
+        echo "🦀 Building Rust scanner..."
+        cd rust-scanner
+        if cargo build --release; then
+          echo "✅ Rust scanner built successfully"
+          echo "rust_available=true" >> $GITHUB_OUTPUT
+        else
+          echo "⚠️ Rust scanner build failed, will use Python fallback"
+          echo "rust_available=false" >> $GITHUB_OUTPUT
+        fi
+      continue-on-error: true  # Don't fail if Rust build fails, Python fallback exists
+
     - name: Configure Git
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+    - name: Debug Environment
+      run: |
+        echo "🔍 Debugging environment variables..."
+        echo "Event name: ${{ github.event_name }}"
+        echo "Input mode: ${{ inputs.mode }}"
+        echo "GITHUB_TOKEN present: ${{ secrets.GITHUB_TOKEN != '' }}"
+        echo "GOOGLE_API_KEY present: ${{ secrets.GOOGLE_API_KEY != '' }}"
+        echo "GH_PAT present: ${{ secrets.GH_PAT != '' }}"
+
     - name: Run Blog Generation Workflow
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }} # Use PAT if available, else default GITHUB_TOKEN
+        GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        RUST_LOG: info
       run: |
+        echo "🚀 Starting blog generation workflow..."
+        echo "Event: ${{ github.event_name }}"
+        echo "Rust build status: ${{ steps.rust_build.outputs.rust_available }}"
+
+        # Verify secrets are loaded
+        if [ -z "$GITHUB_TOKEN" ]; then
+          echo "❌ ERROR: GITHUB_TOKEN is empty!"
+          exit 1
+        fi
+
+        if [ -z "$GOOGLE_API_KEY" ]; then
+          echo "❌ ERROR: GOOGLE_API_KEY is empty!"
+          exit 1
+        fi
+
+        echo "✅ Secrets loaded successfully"
+
         if [ "${{ github.event_name }}" == "schedule" ]; then
-          # On schedule, generate blog posts
-          echo "Running scheduled blog generation..."
+          echo "📅 Running scheduled blog generation..."
           python scripts/workflow_generate_blog.py
         elif [ "${{ inputs.mode }}" == "discover" ]; then
-          echo "Running manual blog generation..."
+          echo "🔍 Running manual blog generation (discover mode)..."
           python scripts/workflow_generate_blog.py
         else
-          echo "Running scanner only..."
+          echo "🔎 Running scanner only..."
           python scripts/run_scanner.py
         fi
 
