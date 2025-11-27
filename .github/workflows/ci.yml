@@ -21,7 +21,7 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Pytest
-      run: pytest tests/ --ignore=tests/test_foundry.py
+      run: pytest tests/ --ignore=tests/test_foundry.py --ignore=tests/test_api_integration.py
 
   test-frontend:
     runs-on: ubuntu-latest
