@@ -14,6 +14,8 @@ repo_data:
   owner: example
 tags: [video, editor, typescript, web]
 categories: [video, web]
+images:
+  screenshot: ./header.png
 ---
 
 ## 🎯 The Problem

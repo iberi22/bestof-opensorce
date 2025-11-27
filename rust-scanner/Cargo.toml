@@ -15,6 +15,10 @@ path = "src/hidden_gems.rs"
 name = "complete-analyzer"
 path = "src/complete_analyzer.rs"
 
+[[bin]]
+name = "update-checker"
+path = "src/update_checker.rs"
+
 [dependencies]
 tokio = { version = "1.35", features = ["full"] }
 reqwest = { version = "0.11", features = ["json"] }

@@ -15,6 +15,8 @@ repo_data:
   language: "Python"
   topics: ["hacktoberfest"]
   html_url: "https://github.com/py-pdf/pdfly"
+images:
+  screenshot: ./header.png
 ---
 
 ## 🎯 The Problem

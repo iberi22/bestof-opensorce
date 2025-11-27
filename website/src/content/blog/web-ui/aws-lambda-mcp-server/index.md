@@ -14,6 +14,8 @@ repo_data:
   owner: poad
 tags: [typescript]
 categories: [typescript]
+images:
+  screenshot: ./header.png
 ---
 
 ## 🎯 The Problem

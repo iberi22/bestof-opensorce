@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "slug": "aws-lambda-mcp-server",
+      "category": "web-ui",
+      "title": "aws-lambda-mcp-server - Are you grappling with the complexity of deploying...",
+      "repo": "poad/aws-lambda-mcp-server",
+      "date": "2025-11-26",
+      "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
+      "path": "src/content/blog/web-ui/aws-lambda-mcp-server/index.md",
+      "last_updated": "2025-11-27T17:07:37.868935"
+    },
+    {
+      "slug": "opencut-video-editor",
+      "category": "web-ui",
+      "title": "OpenCut - Video Editor Made Simple",
+      "repo": "example/opencut",
+      "date": "2025-11-26",
+      "description": "A modern, browser-based video editor designed for simplicity and speed",
+      "path": "src/content/blog/web-ui/opencut-video-editor/index.md",
+      "last_updated": "2025-11-27T17:07:37.869546"
+    },
+    {
+      "slug": "remnawave-telegram-shop",
+      "category": "systems",
+      "title": "remnawave-telegram-shop",
+      "repo": "Jolymmiels/remnawave-telegram-shop",
+      "date": "2025-11-27",
+      "description": "Telegram bot for sell subs from Remnawave ",
+      "path": "src/content/blog/systems/remnawave-telegram-shop/index.md",
+      "last_updated": "2025-11-27T17:07:37.870162"
+    },
+    {
+      "slug": "easylist-mirror",
+      "category": "general",
+      "title": "easylist-mirror - Ever worried about your ad blocker failing because...",
+      "repo": "thedoggybrad/easylist-mirror",
+      "date": "2025-11-27",
+      "description": "An unofficial mirror for EasyList family of AdBlock filterlists by TheDoggyBrad Software Lab.",
+      "path": "src/content/blog/general/easylist-mirror/index.md",
+      "last_updated": "2025-11-27T17:07:37.871022"
+    },
+    {
+      "slug": "freecodecamp",
+      "category": "general",
+      "title": "freeCodeCamp - Tired of expensive bootcamps and inaccessible tech...",
+      "repo": "freeCodeCamp/freeCodeCamp",
+      "date": "2025-11-27",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "path": "src/content/blog/general/freecodecamp/index.md",
+      "last_updated": "2025-11-27T17:07:37.871640"
+    },
+    {
+      "slug": "example-post",
+      "category": "development",
+      "title": "Example Repo - Solving Developer Pain Points",
+      "repo": "example/awesome-project",
+      "date": "2025-11-23 21:35:00 -0500",
+      "description": "",
+      "path": "src/content/blog/development/example-post/index.md",
+      "last_updated": "2025-11-27T17:07:37.872463"
+    },
+    {
+      "slug": "pdfly",
+      "category": "development",
+      "title": "pdfly",
+      "repo": "py-pdf/pdfly",
+      "date": "2025-11-27",
+      "description": "CLI tool to extract (meta)data from PDF and manipulate PDF files",
+      "path": "src/content/blog/development/pdfly/index.md",
+      "last_updated": "2025-11-27T17:07:37.873060"
+    },
+    {
+      "slug": "test-automation-tool",
+      "category": "development",
+      "title": "test-automation-tool - Manual testing is slow and error-prone",
+      "repo": "testuser/test-automation-tool",
+      "date": "2025-11-23 22:02:45",
+      "description": "",
+      "path": "src/content/blog/development/test-automation-tool/index.md",
+      "last_updated": "2025-11-27T17:07:37.873765"
+    }
+  ],
+  "generated_at": "2025-11-27T17:07:37.874413"
+}

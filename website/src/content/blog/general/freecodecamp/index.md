@@ -13,6 +13,8 @@ repo_data:
   description: "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free."
   stargazers_count: 433442
   html_url: "https://github.com/freeCodeCamp/freeCodeCamp"
+images:
+  screenshot: ./header.png
 ---
 
 

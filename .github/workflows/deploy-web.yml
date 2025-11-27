@@ -28,6 +28,14 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Generate Blog Index
+        run: python scripts/generate_blog_index.py
+
       - name: Install dependencies
         working-directory: ./website
         run: npm install --legacy-peer-deps

@@ -1,0 +1,47 @@
+name: Rust Update Checker
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Generate Blog Index
+        run: python scripts/generate_blog_index.py
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Build Update Checker
+        run: |
+          cd rust-scanner
+          cargo build --release --bin update-checker
+
+      - name: Run Update Checker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+        run: |
+          cd rust-scanner
+          ./target/release/update-checker
+
+      # In the future, if the checker modifies files, we would commit them here.
+      # - name: Commit changes
+      #   ...

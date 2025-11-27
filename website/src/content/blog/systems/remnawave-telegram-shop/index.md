@@ -15,6 +15,8 @@ repo_data:
   language: "Go"
   topics: ["go", "remnawave", "telegrambot"]
   html_url: "https://github.com/Jolymmiels/remnawave-telegram-shop"
+images:
+  screenshot: ./header.png
 ---
 
 

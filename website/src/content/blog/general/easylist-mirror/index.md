@@ -14,6 +14,8 @@ repo_data:
   owner: thedoggybrad
 tags: [abp, adblock, ads, block, easylist]
 categories: [abp, adblock]
+images:
+  screenshot: ./header.png
 ---
 
 ## 🎯 The Problem

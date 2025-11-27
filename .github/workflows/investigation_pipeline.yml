@@ -79,6 +79,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         RUST_LOG: info
       run: |
         echo "🚀 Starting blog generation workflow..."
