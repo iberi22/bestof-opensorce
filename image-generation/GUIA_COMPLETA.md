@@ -1,4 +1,4 @@
-# Resumen: Generación de Imágenes para Blog
+# Resumen: Generación de Imágenes para Blog (Estilo Infografía 3D)
 
 ## 📊 Estado Actual
 
