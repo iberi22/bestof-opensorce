@@ -15,7 +15,7 @@ repo_data:
 tags: [video, editor, typescript, web]
 categories: [video, web]
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/opencut-video-editor-header.png"
 ---
 
 ## 🎯 The Problem

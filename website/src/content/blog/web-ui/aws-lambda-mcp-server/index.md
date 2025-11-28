@@ -15,7 +15,7 @@ repo_data:
 tags: [typescript]
 categories: [typescript]
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/aws-lambda-mcp-server-header.png"
 ---
 
 ## 🎯 The Problem

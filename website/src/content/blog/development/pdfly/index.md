@@ -16,7 +16,7 @@ repo_data:
   topics: ["hacktoberfest"]
   html_url: "https://github.com/py-pdf/pdfly"
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/pdfly-header.png"
 ---
 
 ## 🎯 The Problem

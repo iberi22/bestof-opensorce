@@ -16,7 +16,7 @@ repo_data:
   topics: ["go", "remnawave", "telegrambot"]
   html_url: "https://github.com/Jolymmiels/remnawave-telegram-shop"
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/remnawave-telegram-shop-header.png"
 ---
 
 

@@ -8,7 +8,7 @@ tags: [automation, testing, devops]
 images:
   architecture: /assets/images/test-automation-tool/architecture.png
   flow: /assets/images/test-automation-tool/flow.png
-  screenshot: /assets/images/test-automation-tool/screenshot.png
+  screenshot: "/bestof-opensorce/images/blog/test-automation-tool-header.png"
 ---
 
 ## 🎯 The Problem

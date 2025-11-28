@@ -8,7 +8,7 @@ tags: [automation, devops, ci-cd]
 images:
   architecture: /assets/images/awesome-project/architecture.png
   flow: /assets/images/awesome-project/flow.png
-  screenshot: /assets/images/awesome-project/screenshot.png
+  screenshot: "/bestof-opensorce/images/blog/example-post-header.png"
 ---
 
 ## 🎯 The Problem

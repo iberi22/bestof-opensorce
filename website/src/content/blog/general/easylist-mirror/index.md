@@ -15,7 +15,7 @@ repo_data:
 tags: [abp, adblock, ads, block, easylist]
 categories: [abp, adblock]
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/easylist-mirror-header.png"
 ---
 
 ## 🎯 The Problem

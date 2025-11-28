@@ -79,7 +79,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
         RUST_LOG: info
       run: |
         echo "🚀 Starting blog generation workflow..."
@@ -109,6 +108,14 @@ jobs:
           echo "🔎 Running scanner only..."
           python scripts/run_scanner.py
         fi
+
+        # Generate Images using Gemini
+        echo "🎨 Checking for missing images..."
+        python image-generation/generate_images_gemini.py
+
+        # Sync images to public folder
+        echo "🔄 Syncing images to public..."
+        python scripts/sync_images_to_public.py
 
     - name: Check for changes
       id: git-check

@@ -14,7 +14,7 @@ repo_data:
   stargazers_count: 433442
   html_url: "https://github.com/freeCodeCamp/freeCodeCamp"
 images:
-  screenshot: ./header.png
+  screenshot: "/bestof-opensorce/images/blog/freecodecamp-header.png"
 ---
 
 
