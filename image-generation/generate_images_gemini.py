@@ -1,38 +1,61 @@
 import os
 import sys
 import time
+import random
+import logging
 import google.generativeai as genai
 from pathlib import Path
-import re
 
 # Configure logging
-import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Global list of available keys
+API_KEYS = []
+CURRENT_KEY_INDEX = 0
+
 def setup_gemini():
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    if not api_key:
-        logging.error("GOOGLE_API_KEY not found in environment variables")
+    global API_KEYS
+
+    # Collect all available keys
+    keys = []
+    main_key = os.environ.get("GOOGLE_API_KEY")
+    if main_key:
+        keys.append(main_key)
+
+    # Check for additional keys (2 to 5)
+    for i in range(2, 6):
+        key = os.environ.get(f"GOOGLE_API_KEY_{i}")
+        if key:
+            keys.append(key)
+
+    if not keys:
+        logging.error("No GOOGLE_API_KEYs found in environment variables")
         return None
 
-    genai.configure(api_key=api_key)
+    API_KEYS = keys
+    logging.info(f"✅ Loaded {len(API_KEYS)} Gemini API keys for load balancing.")
+
+    # Configure with the first key initially
+    genai.configure(api_key=API_KEYS[0])
     return True
+
+def rotate_key():
+    """Rotates to the next available API key."""
+    global CURRENT_KEY_INDEX
+    if len(API_KEYS) <= 1:
+        return # No need to rotate
+
+    CURRENT_KEY_INDEX = (CURRENT_KEY_INDEX + 1) % len(API_KEYS)
+    new_key = API_KEYS[CURRENT_KEY_INDEX]
+    genai.configure(api_key=new_key)
+    logging.info(f"🔄 Rotated to API Key #{CURRENT_KEY_INDEX + 1}")
 
 def generate_image_gemini(prompt, output_path):
     """Generates an image using Google Gemini (Imagen 3)."""
     try:
-        # Check for available models that support image generation
-        # Note: The specific model name for Imagen 3 via API might vary (e.g., 'models/imagen-3.0-generate-001')
-        # We will try a few known ones or default to the latest.
-
         model_name = 'models/imagen-3.0-generate-001'
 
-        # Fallback logic could be added here if listing models was possible and reliable
-
         logging.info(f"🎨 Generating image with prompt: {prompt[:80]}...")
-
-        # The python SDK for Imagen is slightly different than text generation.
-        # As of late 2024/2025, it might be genai.ImageGenerationModel
 
         try:
             image_model = genai.ImageGenerationModel(model_name)
@@ -48,19 +71,21 @@ def generate_image_gemini(prompt, output_path):
                 image = response.images[0]
                 image.save(output_path)
                 logging.info(f"✅ Image saved to: {output_path}")
+                # Rotate key after success to spread load
+                rotate_key()
                 return True
             else:
                 logging.error("❌ No images returned in response")
+                rotate_key() # Rotate on failure too
                 return False
 
-        except AttributeError:
-            # Fallback for older SDK versions or different API structure
-            # Some versions use genai.generate_content with specific tools
-            logging.warning("⚠️ ImageGenerationModel not found, trying legacy/alternative method...")
+        except Exception as e:
+            logging.error(f"❌ Error calling API: {e}")
+            rotate_key() # Rotate on error
             return False
 
     except Exception as e:
-        logging.error(f"❌ Error generating image with Gemini: {e}")
+        logging.error(f"❌ Critical error generating image: {e}")
         return False
 
 def extract_frontmatter(md_file):
@@ -129,7 +154,7 @@ def process_blog_posts():
 
         if generate_image_gemini(prompt, image_path):
             # Wait to avoid rate limits
-            time.sleep(10)
+            time.sleep(5)
         else:
             logging.error(f"Failed to generate image for {title}")
 
