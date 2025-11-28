@@ -230,6 +230,17 @@ class MarkdownWriter:
                 if v is not None:
                     val_str = json.dumps(v)
                     frontmatter += f"  {k}: {val_str}\n"
+
+            # Add insights if available
+            insights = repo_data.get("insights", {})
+            if insights:
+                frontmatter += "insights:\n"
+                if "last_commit_date" in insights:
+                    frontmatter += f"  last_commit_date: \"{insights['last_commit_date']}\"\n"
+                if "open_issues_count" in insights:
+                    frontmatter += f"  open_issues_count: {insights['open_issues_count']}\n"
+                if "top_contributors" in insights:
+                    frontmatter += f"  top_contributors: {json.dumps(insights['top_contributors'])}\n"
         except Exception as e:
             self.logger.warning(f"Could not serialize repo_data: {e}")
 

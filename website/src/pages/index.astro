@@ -18,6 +18,23 @@ const realProjects: Project[] = blogPosts.map((post) => {
   if (data.tags && data.tags.some(t => t.toLowerCase().includes('ui') || t.toLowerCase().includes('css'))) category = ProjectCategory.UI_UX;
   if (data.tags && data.tags.some(t => t.toLowerCase().includes('database') || t.toLowerCase().includes('sql'))) category = ProjectCategory.DATABASES;
 
+  // Calculate relative time for last commit
+  let lastCommitDisplay = 'Recently';
+  if (data.insights?.last_commit_date) {
+    const lastCommitDate = new Date(data.insights.last_commit_date);
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - lastCommitDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) lastCommitDisplay = 'Today';
+    else if (diffDays === 1) lastCommitDisplay = 'Yesterday';
+    else lastCommitDisplay = `${diffDays} days ago`;
+
+    // Format date: DD/MM/YYYY
+    const dateStr = lastCommitDate.toLocaleDateString('en-GB');
+    lastCommitDisplay = `${dateStr} (${lastCommitDisplay})`;
+  }
+
   return {
     id: post.slug,
     name: data.repo ? data.repo.split('/')[1] : data.title,
@@ -33,9 +50,9 @@ const realProjects: Project[] = blogPosts.map((post) => {
     insights: {
       stars: data.stars || 0,
       forks: 0, // Not currently in frontmatter
-      openIssues: 0, // Not currently in frontmatter
-      seriousIssuesCount: 0,
-      lastCommit: 'Recently',
+      openIssues: data.insights?.open_issues_count || 0,
+      seriousIssuesCount: 0, // We don't have this yet, maybe infer?
+      lastCommit: lastCommitDisplay,
       summary: data.title
     }
   };

@@ -75,7 +75,7 @@
       <div class="space-y-3 mb-6">
         <div class="text-xs flex justify-between border-b border-white/5 pb-2">
           <span class="text-white/40">Issues</span>
-          <span class="text-bone-dark">{project.insights.openIssues} open ({project.insights.seriousIssuesCount} critical)</span>
+          <span class="text-bone-dark">{project.insights.openIssues} open</span>
         </div>
         <div class="text-xs flex justify-between border-b border-white/5 pb-2">
           <span class="text-white/40">Last Commit</span>
@@ -85,26 +85,9 @@
     </div>
 
     <div class="mt-auto space-y-2">
-      <!-- AI Insight Button -->
-      {#if aiAnalysis}
-        <div class="bg-emerald-900/20 border border-emerald-500/20 p-3 rounded-lg animate-fade-in-up">
-          <p class="text-xs text-emerald-100/90 font-mono">
-            <span class="font-bold text-emerald-400">AI INSIGHT:</span> {aiAnalysis}
-          </p>
-        </div>
-      {:else}
-         <button
-            on:click={handleAnalyzeClick}
-            disabled={loading}
-            class="w-full text-xs font-mono py-2 border border-dashed border-white/20 text-white/50 hover:bg-white/5 hover:text-white hover:border-white/40 transition-all rounded flex items-center justify-center gap-2"
-         >
-            {loading ? 'ANALYZING...' : 'GENERATE AI INSIGHTS'}
-         </button>
-      {/if}
-
        <!-- Link to Post -->
-       <a href={`${BASE_URL}/blog/${project.id}`} class="block w-full text-center text-xs font-bold uppercase tracking-widest text-bone-dark/60 hover:text-emerald-400 transition-colors py-1">
-          Read Full Post →
+       <a href={`${BASE_URL}/blog/${project.id}`} class="w-full text-xs font-mono py-2 border border-dashed border-white/20 text-white/50 hover:bg-white/5 hover:text-white hover:border-white/40 transition-all rounded flex items-center justify-center gap-2 uppercase tracking-widest">
+          View Insights →
        </a>
     </div>
   </div>

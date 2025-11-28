@@ -26,7 +26,10 @@ class InsightsCollector:
             "contributors_count": self._get_contributors_count(repo_full_name),
             "commit_frequency_score": self._get_commit_activity(repo_full_name),
             "health_percentage": self._get_community_health(repo_full_name),
-            "pr_merge_ratio": self._get_pr_merge_ratio(repo_full_name)
+            "pr_merge_ratio": self._get_pr_merge_ratio(repo_full_name),
+            "top_contributors": self._get_top_contributors(repo_full_name),
+            "last_commit_date": self._get_last_commit_date(repo_full_name),
+            "open_issues_count": self._get_open_issues_count(repo_full_name)
         }
 
         return insights
@@ -108,3 +111,49 @@ class InsightsCollector:
             return 0.0
         except Exception:
             return 0.0
+
+    def _get_top_contributors(self, repo_full_name: str) -> list:
+        """Get top 5 contributors with their commit counts."""
+        try:
+            url = f"{self.api_url}/repos/{repo_full_name}/contributors?per_page=5"
+            response = requests.get(url, headers=self.headers)
+            if response.status_code == 200:
+                contributors = []
+                for contrib in response.json():
+                    contributors.append({
+                        "login": contrib["login"],
+                        "avatar_url": contrib["avatar_url"],
+                        "html_url": contrib["html_url"],
+                        "contributions": contrib["contributions"]
+                    })
+                return contributors
+            return []
+        except Exception as e:
+            self.logger.warning(f"Failed to get top contributors: {e}")
+            return []
+
+    def _get_last_commit_date(self, repo_full_name: str) -> str:
+        """Get the date of the last commit."""
+        try:
+            url = f"{self.api_url}/repos/{repo_full_name}/commits/HEAD"
+            response = requests.get(url, headers=self.headers)
+            if response.status_code == 200:
+                commit = response.json()
+                # Return ISO format date
+                return commit["commit"]["committer"]["date"]
+            return ""
+        except Exception as e:
+            self.logger.warning(f"Failed to get last commit date: {e}")
+            return ""
+
+    def _get_open_issues_count(self, repo_full_name: str) -> int:
+        """Get the number of open issues."""
+        try:
+            url = f"{self.api_url}/repos/{repo_full_name}"
+            response = requests.get(url, headers=self.headers)
+            if response.status_code == 200:
+                return response.json().get("open_issues_count", 0)
+            return 0
+        except Exception as e:
+            self.logger.warning(f"Failed to get open issues count: {e}")
+            return 0

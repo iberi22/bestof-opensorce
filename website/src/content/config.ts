@@ -22,6 +22,16 @@ const blogCollection = defineCollection({
 		category: z.string().optional(),
 		categories: z.array(z.string()).optional(),
 		repo_data: z.any().optional(), // Allow any structure for repo_data
+		insights: z.object({
+			last_commit_date: z.string().optional(),
+			open_issues_count: z.number().optional(),
+			top_contributors: z.array(z.object({
+				login: z.string(),
+				avatar_url: z.string(),
+				html_url: z.string(),
+				contributions: z.number()
+			})).optional()
+		}).optional(),
 	}),
 });
 
