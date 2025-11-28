@@ -1,0 +1,260 @@
+[
+  {
+    "name": "insights",
+    "full_name": "linuxfoundation/insights",
+    "html_url": "https://github.com/linuxfoundation/insights",
+    "description": "Insights into the world's most critical open source software.",
+    "stargazers_count": 127,
+    "forks_count": 22,
+    "language": "TypeScript",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2025-01-17T14:23:53Z",
+    "updated_at": "2025-11-28T08:06:17Z",
+    "pushed_at": "2025-11-28T08:06:14Z",
+    "size": 12469,
+    "open_issues": 60,
+    "has_wiki": true,
+    "has_pages": false,
+    "topics": []
+  },
+  {
+    "name": "juno",
+    "full_name": "junobuild/juno",
+    "html_url": "https://github.com/junobuild/juno",
+    "description": "Build serverless apps with self-hosting control",
+    "stargazers_count": 338,
+    "forks_count": 69,
+    "language": "TypeScript",
+    "license": {
+      "name": "Other",
+      "spdx_id": "NOASSERTION"
+    },
+    "created_at": "2023-01-20T07:07:40Z",
+    "updated_at": "2025-11-28T08:05:56Z",
+    "pushed_at": "2025-11-28T08:05:53Z",
+    "size": 20554,
+    "open_issues": 74,
+    "has_wiki": false,
+    "has_pages": false,
+    "topics": [
+      "analytics",
+      "authentication",
+      "backend-as-a-service",
+      "container",
+      "database",
+      "hacktoberfest",
+      "hosting",
+      "internet-computer",
+      "self-hosting",
+      "serverless",
+      "serverless-functions",
+      "storage",
+      "wasm"
+    ]
+  },
+  {
+    "name": "mediawiki-skins-Citizen",
+    "full_name": "StarCitizenTools/mediawiki-skins-Citizen",
+    "html_url": "https://github.com/StarCitizenTools/mediawiki-skins-Citizen",
+    "description": "A beautiful, usable, responsive MediaWiki skin with in-depth extension support. Originally developed for the Star Citizen Wiki.",
+    "stargazers_count": 301,
+    "forks_count": 71,
+    "language": "Less",
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0"
+    },
+    "created_at": "2019-12-25T20:32:29Z",
+    "updated_at": "2025-11-28T08:05:46Z",
+    "pushed_at": "2025-11-28T08:05:42Z",
+    "size": 61985,
+    "open_issues": 47,
+    "has_wiki": true,
+    "has_pages": true,
+    "topics": [
+      "mediawiki-skin"
+    ]
+  },
+  {
+    "name": "php-wordpress-vite-assets",
+    "full_name": "idleberg/php-wordpress-vite-assets",
+    "html_url": "https://github.com/idleberg/php-wordpress-vite-assets",
+    "description": "Injects assets from a Vite manifest to the Wordpress head, supports themes and plugins",
+    "stargazers_count": 143,
+    "forks_count": 15,
+    "language": "PHP",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2022-02-21T15:53:11Z",
+    "updated_at": "2025-11-28T08:05:05Z",
+    "pushed_at": "2025-11-28T08:05:01Z",
+    "size": 250,
+    "open_issues": 0,
+    "has_wiki": false,
+    "has_pages": false,
+    "topics": [
+      "manifest-json",
+      "vite",
+      "vitejs",
+      "wordpress"
+    ]
+  },
+  {
+    "name": "EntityFrameworkCore.Generator",
+    "full_name": "loresoft/EntityFrameworkCore.Generator",
+    "html_url": "https://github.com/loresoft/EntityFrameworkCore.Generator",
+    "description": "Generate Entity Framework Core model from an existing database",
+    "stargazers_count": 386,
+    "forks_count": 94,
+    "language": "C#",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2018-09-18T14:44:17Z",
+    "updated_at": "2025-11-28T08:05:02Z",
+    "pushed_at": "2025-11-28T08:05:05Z",
+    "size": 2375,
+    "open_issues": 40,
+    "has_wiki": false,
+    "has_pages": true,
+    "topics": [
+      "database-schema",
+      "dbcontext",
+      "entity-framework"
+    ]
+  },
+  {
+    "name": "free-chat",
+    "full_name": "CNSeniorious000/free-chat",
+    "html_url": "https://github.com/CNSeniorious000/free-chat",
+    "description": "An elegant LLM chat UI forked from chatgpt-demo of @anse-app. Index site at https://free-chat.asia",
+    "stargazers_count": 190,
+    "forks_count": 53,
+    "language": "TypeScript",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2023-03-30T15:49:55Z",
+    "updated_at": "2025-11-28T08:04:55Z",
+    "pushed_at": "2025-11-28T08:04:50Z",
+    "size": 6485,
+    "open_issues": 16,
+    "has_wiki": true,
+    "has_pages": true,
+    "topics": [
+      "aibot",
+      "astro",
+      "chatgpt",
+      "openai",
+      "openai-api",
+      "solidjs",
+      "tiktoken"
+    ]
+  },
+  {
+    "name": "pt_mate",
+    "full_name": "JustLookAtNow/pt_mate",
+    "html_url": "https://github.com/JustLookAtNow/pt_mate",
+    "description": "\u57fa\u4e8e Flutter\uff08Material Design 3\uff09\u5f00\u53d1\u7684\u79c1\u6709\u79cd\u5b50\u7ad9\u70b9\u5ba2\u6237\u7aef\uff0c\u652f\u6301\u591a\u79cdPT\u7ad9\u70b9\u7684\u79cd\u5b50\u6d4f\u89c8\u3001\u641c\u7d22\u548c\u4e0b\u8f7d\u7ba1\u7406\u3002\u76ee\u524d\u652f\u6301M-Team\u548cNexusPHP\u7c7b\u578b\u7684\u7ad9\u70b9\u3002",
+    "stargazers_count": 290,
+    "forks_count": 14,
+    "language": "Dart",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2025-08-29T02:02:28Z",
+    "updated_at": "2025-11-28T08:04:47Z",
+    "pushed_at": "2025-11-28T08:04:43Z",
+    "size": 8276,
+    "open_issues": 11,
+    "has_wiki": true,
+    "has_pages": false,
+    "topics": [
+      "m-team",
+      "nexusphp",
+      "pt"
+    ]
+  },
+  {
+    "name": "nixcord",
+    "full_name": "KaylorBen/nixcord",
+    "html_url": "https://github.com/KaylorBen/nixcord",
+    "description": "Declarative Vencord plugins + options",
+    "stargazers_count": 201,
+    "forks_count": 29,
+    "language": "TypeScript",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2024-06-22T07:37:28Z",
+    "updated_at": "2025-11-28T08:04:43Z",
+    "pushed_at": "2025-11-28T08:04:39Z",
+    "size": 941,
+    "open_issues": 6,
+    "has_wiki": false,
+    "has_pages": true,
+    "topics": [
+      "discord",
+      "home-manager-module",
+      "nix",
+      "nix-flake",
+      "nixos",
+      "vencord"
+    ]
+  },
+  {
+    "name": "exelearning",
+    "full_name": "exelearning/exelearning",
+    "html_url": "https://github.com/exelearning/exelearning",
+    "description": "eXeLearning 3 is an AGPL-licensed free/libre tool to create and publish open educational resources.",
+    "stargazers_count": 111,
+    "forks_count": 14,
+    "language": "JavaScript",
+    "license": {
+      "name": "GNU Affero General Public License v3.0",
+      "spdx_id": "AGPL-3.0"
+    },
+    "created_at": "2025-05-08T08:10:19Z",
+    "updated_at": "2025-11-28T08:04:41Z",
+    "pushed_at": "2025-11-28T08:04:37Z",
+    "size": 180606,
+    "open_issues": 87,
+    "has_wiki": false,
+    "has_pages": true,
+    "topics": [
+      "educational",
+      "exelearning",
+      "hacktoberfest"
+    ]
+  },
+  {
+    "name": "rss-feeds",
+    "full_name": "Olshansk/rss-feeds",
+    "html_url": "https://github.com/Olshansk/rss-feeds",
+    "description": "Generate RSS feeds for all the blogs that don't have one",
+    "stargazers_count": 178,
+    "forks_count": 23,
+    "language": "Python",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2025-01-04T18:44:43Z",
+    "updated_at": "2025-11-28T08:04:38Z",
+    "pushed_at": "2025-11-28T08:04:35Z",
+    "size": 12143,
+    "open_issues": 5,
+    "has_wiki": false,
+    "has_pages": false,
+    "topics": []
+  }
+]
