@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Organize Blog Posts into Categories
-Moves existing markdown files in website/src/content/blog into subdirectories based on their content.
+Organize Blog Posts into Categories and Page Bundles
+Converts .md files to page bundles (folders with index.md) for proper image support.
 """
 
 import os
 import sys
 import shutil
 import json
+import re
 from pathlib import Path
 
 # Add src to path to import MarkdownWriter logic
@@ -41,49 +42,99 @@ def parse_frontmatter(content):
     except Exception:
         return {}
 
+
+def get_slug_from_filename(filename: str) -> str:
+    """Extract a clean slug from filename."""
+    # Remove date prefix and .md extension
+    name = filename.replace('.md', '')
+    # Remove date patterns like 20251129- or 2025-11-29-
+    name = re.sub(r'^\d{8}-', '', name)
+    name = re.sub(r'^\d{4}-\d{2}-\d{2}-', '', name)
+    return name
+
+
+def convert_to_page_bundle(md_file: Path, target_category_dir: Path) -> Path:
+    """
+    Convert a .md file to a page bundle (folder with index.md).
+    Returns the path to the new index.md file.
+    """
+    slug = get_slug_from_filename(md_file.name)
+    
+    # Create bundle directory
+    bundle_dir = target_category_dir / slug
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Move/copy content to index.md
+    index_path = bundle_dir / "index.md"
+    
+    with open(md_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    # Remove original file
+    md_file.unlink()
+    
+    return index_path
+
+
 def organize_posts():
     blog_dir = Path(__file__).parent.parent / 'website' / 'src' / 'content' / 'blog'
     writer = MarkdownWriter()
 
     print(f"📂 Organizing posts in {blog_dir}...")
 
-    # Get all .md files in the root of blog_dir
-    md_files = [f for f in blog_dir.glob("*.md") if f.is_file()]
+    # Get all .md files in the root of blog_dir and category subdirs
+    md_files = list(blog_dir.glob("*.md"))
+    
+    # Also check category directories for .md files that aren't in bundles
+    for category_dir in blog_dir.iterdir():
+        if category_dir.is_dir():
+            md_files.extend(category_dir.glob("*.md"))
 
     if not md_files:
-        print("ℹ️ No files to organize in the root directory.")
+        print("ℹ️ No files to organize.")
         return
 
+    converted_count = 0
+    
     for file_path in md_files:
+        # Skip if already in a bundle (parent is not a category dir)
+        if file_path.name == "index.md":
+            continue
+            
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
             metadata = parse_frontmatter(content)
             tags = metadata.get('tags', [])
-            if isinstance(tags, str): # Handle if parsing failed to convert list
+            if isinstance(tags, str):
                 tags = []
 
             language = metadata.get('language', 'Unknown')
 
-            # Use MarkdownWriter's logic
+            # Determine category
             categories = writer._determine_categories(tags, language)
             primary_category = categories[0].lower().replace(" ", "-") if categories else "general"
 
-            # Create target directory
+            # Target category directory
             target_dir = blog_dir / primary_category
             target_dir.mkdir(parents=True, exist_ok=True)
 
-            # Move file
-            target_path = target_dir / file_path.name
-            shutil.move(str(file_path), str(target_path))
-
-            print(f"  ✅ Moved {file_path.name} -> {primary_category}/")
+            # Convert to page bundle
+            new_path = convert_to_page_bundle(file_path, target_dir)
+            converted_count += 1
+            
+            slug = get_slug_from_filename(file_path.name)
+            print(f"  ✅ Converted {file_path.name} -> {primary_category}/{slug}/index.md")
 
         except Exception as e:
             print(f"  ❌ Failed to process {file_path.name}: {e}")
 
-    print("\n✨ Organization complete!")
+    print(f"\n✨ Organization complete! Converted {converted_count} posts to page bundles.")
+
 
 if __name__ == "__main__":
     organize_posts()

@@ -133,13 +133,13 @@ def process_blog_posts(blog_dir: Path = None, limit: int = None):
         blog_dir = Path(blog_dir)
 
     generated_count = 0
-    
+
     for md_file in blog_dir.rglob("index.md"):
         # Check limit
         if limit and generated_count >= limit:
             logging.info(f"🛑 Reached limit of {limit} images, stopping.")
             break
-            
+
         # Check if header.png exists
         image_path = md_file.parent / "header.png"
         if image_path.exists():
@@ -174,13 +174,13 @@ def process_blog_posts(blog_dir: Path = None, limit: int = None):
 
 def main():
     import argparse
-    
+
     parser = argparse.ArgumentParser(description='Generate blog header images using Gemini Imagen')
     parser.add_argument('--blog-dir', type=str, help='Path to blog directory')
     parser.add_argument('--limit', type=int, help='Maximum number of images to generate')
-    
+
     args = parser.parse_args()
-    
+
     process_blog_posts(blog_dir=args.blog_dir, limit=args.limit)
 
 if __name__ == "__main__":
