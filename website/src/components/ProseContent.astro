@@ -1,13 +1,13 @@
 ---
 /**
  * ProseContent Component
- * 
+ *
  * Optimized typography for long-form reading based on UX research.
- * 
+ *
  * Font choices based on readability studies:
  * - Source Serif 4: Modern serif designed for screen reading
  * - Inter: Highly legible sans-serif for headings
- * 
+ *
  * Typography best practices applied:
  * - Optimal line length: 60-75 characters
  * - Line height: 1.6-1.8 for body text
@@ -22,8 +22,10 @@
 </div>
 
 <style is:global>
-  /* Import optimized reading fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap');
+  /* 
+   * ProseContent - Optimized typography for long-form reading
+   * Fonts loaded in Layout.astro: Source Serif 4, Inter, JetBrains Mono
+   */
 
   .prose-content {
     /* Base typography - Source Serif 4 for optimal reading */
@@ -34,7 +36,7 @@
     font-weight: 400;
     letter-spacing: -0.01em;
     font-optical-sizing: auto;
-    
+
     /* Optimal reading width */
     max-width: 70ch; /* ~70 characters per line - ideal for readability */
     margin-left: auto;
@@ -81,10 +83,21 @@
 
   /* Paragraphs */
   .prose-content p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.75em;
     text-align: left;
     hyphens: auto;
     -webkit-hyphens: auto;
+  }
+
+  /* Paragraphs that start with bold (like "Score Breakdown:") - style as sub-headers */
+  .prose-content p > strong:first-child {
+    display: block;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #A7F3D0;
+    margin-bottom: 0.5em;
+    letter-spacing: -0.01em;
   }
 
   /* First paragraph after heading - no indent, slight larger */
@@ -120,17 +133,25 @@
   /* Lists */
   .prose-content ul,
   .prose-content ol {
-    margin: 1.5em 0;
-    padding-left: 1.5em;
+    margin: 1.75em 0;
+    padding-left: 1.75em;
   }
 
   .prose-content li {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.875em;
     padding-left: 0.5em;
+    line-height: 1.65;
+  }
+
+  /* Lists that contain bold text at start (like score breakdowns) */
+  .prose-content li > strong:first-child {
+    color: #D1FAE5;
+    font-weight: 500;
   }
 
   .prose-content ul li::marker {
-    color: rgba(110, 231, 183, 0.5);
+    color: rgba(110, 231, 183, 0.6);
+    font-size: 1.1em;
   }
 
   .prose-content ol li::marker {
@@ -141,7 +162,7 @@
   /* Nested lists */
   .prose-content li > ul,
   .prose-content li > ol {
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     margin-bottom: 0.5em;
   }
 
@@ -263,16 +284,15 @@
     color: #FFFFFF;
   }
 
-  /* Drop cap for first paragraph (optional, adds elegance) */
-  .prose-content > p:first-of-type::first-letter {
-    font-size: 3.5em;
-    font-weight: 700;
-    float: left;
-    line-height: 0.8;
-    padding-right: 0.1em;
-    padding-top: 0.1em;
-    color: #6EE7B7;
-    font-family: 'Source Serif 4', Georgia, serif;
+  /* H2 sections - add visual separation */
+  .prose-content h2 {
+    margin-top: 3em;
+  }
+
+  /* First h2 doesn't need top margin */
+  .prose-content > h2:first-child,
+  .prose-content > h2:first-of-type {
+    margin-top: 0;
   }
 
   /* Responsive adjustments */
@@ -284,6 +304,7 @@
 
     .prose-content h2 {
       font-size: 1.5rem;
+      margin-top: 2.5em;
     }
 
     .prose-content h3 {
@@ -294,10 +315,6 @@
       padding: 1em;
       font-size: 0.8125rem;
       border-radius: 8px;
-    }
-
-    .prose-content > p:first-of-type::first-letter {
-      font-size: 2.5em;
     }
   }
 
