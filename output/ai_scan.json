@@ -1,227 +1,144 @@
 [
   {
-    "repo": "ALIILAPRO/MTProtoProxy",
+    "repo": "jvxiao/speed-github",
     "recommendation": "APPROVE",
-    "total_score": 80.075,
+    "total_score": 81.65,
     "scores": {
       "commit_activity": 100,
-      "code_quality": 100,
-      "developer_engagement": 20.3,
+      "code_quality": 70,
+      "developer_engagement": 56.6,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "Get daily and high-speed MTProto proxy for Telegram.",
-      "stars": 128,
-      "forks": 15,
-      "language": "HTML",
-      "topics": [
-        "mtproto-proxy",
-        "mtproxy",
-        "python",
-        "telegram"
-      ],
-      "license": "MIT License",
-      "created_at": "2023-02-24T04:55:54Z",
-      "updated_at": "2025-11-29T02:18:39Z",
-      "pushed_at": "2025-11-29T02:18:36Z",
+      "description": "一键解决github在国内网页加载和下载速度慢的问题",
+      "stars": 331,
+      "forks": 47,
+      "language": "Python",
+      "topics": [],
+      "license": "GNU General Public License v3.0",
+      "created_at": "2020-03-20T13:56:34Z",
+      "updated_at": "2025-11-29T03:12:24Z",
+      "pushed_at": "2025-11-29T03:12:21Z",
       "readme": ""
     },
     "ai_review": {
-      "architecture": 1,
+      "architecture": 3,
       "documentation": 1,
       "testing": 1,
-      "best_practices": 1,
-      "innovation": 2,
-      "quality_score": 12.0,
-      "reasoning": "Currently, the repository lacks any code or documentation, making it essentially an empty project with potential but requiring significant development to fulfill its stated purpose.",
-      "strengths": [
-        "Clear project goal (providing MTProto proxies)",
-        "Simple concept",
-        "Active development (based on stars/forks)"
-      ],
-      "weaknesses": [
-        "Provide a README with instructions and context.",
-        "Implement actual proxy generation or retrieval logic.",
-        "Add code, even if it's just a basic script."
-      ]
-    }
-  },
-  {
-    "repo": "WHU-Sigma/HyperSIGMA",
-    "recommendation": "APPROVE",
-    "total_score": 72.825,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 90,
-      "developer_engagement": 44.5,
-      "project_maturity": 56.8
-    },
-    "metadata": {
-      "description": "The official repo for [TPAMI'25] \"HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model\"",
-      "stars": 315,
-      "forks": 26,
-      "language": "Python",
-      "topics": [
-        "computer-vision",
-        "deep-learning",
-        "foundation-model",
-        "foundation-models",
-        "hyperspectral-anomaly-detection",
-        "hyperspectral-change-detection",
-        "hyperspectral-datasets",
-        "hyperspectral-image-classification",
-        "hyperspectral-image-denoising",
-        "hyperspectral-image-segmentation",
-        "hyperspectral-super-resolution",
-        "hyperspectral-target-detection",
-        "hyperspectral-unmixing",
-        "pre-training",
-        "pytorch",
-        "remote-sensing",
-        "remote-sensing-foundation-model",
-        "self-attention",
-        "spectral-spatial-information-fusion",
-        "transformer"
-      ],
-      "license": "Apache License 2.0",
-      "created_at": "2024-05-09T12:11:20Z",
-      "updated_at": "2025-11-29T02:18:09Z",
-      "pushed_at": "2025-11-29T02:18:05Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "architecture": 6,
-      "documentation": 2,
-      "testing": 1,
-      "best_practices": 5,
-      "innovation": 8,
-      "quality_score": 44.0,
-      "reasoning": "This project presents a promising foundation model for hyperspectral data, but requires substantial improvements in documentation, testing, and code structure to reach its full potential.",
-      "strengths": [
-        "Focus on a novel hyperspectral intelligence comprehension foundation model.",
-        "Potential for significant impact in hyperspectral anomaly detection.",
-        "Early stage project with active development potential."
-      ],
-      "weaknesses": [
-        "Significantly improve documentation, including README, API docs, and examples.",
-        "Implement comprehensive testing and CI/CD pipelines.",
-        "Enhance code structure and modularity for better maintainability and scalability."
-      ]
-    }
-  },
-  {
-    "repo": "MrMohebi/xray-proxy-grabber-telegram",
-    "recommendation": "APPROVE",
-    "total_score": 77.375,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 43.0,
-      "project_maturity": 86.5
-    },
-    "metadata": {
-      "description": "Xray proxy grabber and checker + JSON and YAML Config - telegram channels",
-      "stars": 260,
-      "forks": 34,
-      "language": "Python",
-      "topics": [
-        "bot",
-        "clash",
-        "clash-meta",
-        "free",
-        "proxy",
-        "server",
-        "telegram",
-        "v2ray",
-        "vless",
-        "vmess",
-        "vpn",
-        "xray"
-      ],
-      "license": "MIT License",
-      "created_at": "2023-07-17T12:08:05Z",
-      "updated_at": "2025-11-29T02:18:01Z",
-      "pushed_at": "2025-11-29T02:17:58Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "architecture": 4,
-      "documentation": 2,
-      "testing": 1,
       "best_practices": 3,
-      "innovation": 5,
-      "quality_score": 30.0,
-      "reasoning": "The project shows promise in automating proxy acquisition but lacks sufficient documentation, testing, and architectural design for robust and reliable operation.",
+      "innovation": 4,
+      "quality_score": 24.0,
+      "reasoning": "The project has potential to solve a real problem, but lacks documentation, testing, and a well-defined architecture, hindering its usability and maintainability.",
       "strengths": [
-        "Automates proxy grabbing from Telegram",
-        "Provides JSON and YAML configuration support",
-        "Potentially useful for circumventing censorship"
+        "Addresses a common problem for users in China",
+        "Simple and potentially easy to use",
+        "Demonstrates awareness of network issues"
       ],
       "weaknesses": [
-        "Add comprehensive documentation including usage examples",
-        "Implement unit and integration tests",
-        "Improve code structure and modularity for better maintainability"
+        "Provide comprehensive documentation and usage instructions in the README",
+        "Implement testing to ensure reliability and prevent regressions",
+        "Improve code structure and modularity for maintainability"
       ]
     }
   },
   {
-    "repo": "MattParkerDev/SharpIDE",
+    "repo": "flyhunterl/flymd",
     "recommendation": "REJECT",
-    "total_score": 56.325,
+    "total_score": 53.8,
     "scores": {
       "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 43.3,
-      "project_maturity": 2.0
+      "code_quality": 70,
+      "developer_engagement": 41.599999999999994,
+      "project_maturity": 3.6
     },
     "metadata": {
-      "description": "A modern, cross platform IDE for .NET, built with .NET & Godot",
-      "stars": 378,
-      "forks": 11,
-      "language": "C#",
-      "topics": [
-        "csharp",
-        "dotnet",
-        "godot",
-        "razor",
-        "roslyn"
-      ],
-      "license": "MIT License",
-      "created_at": "2025-11-08T13:01:42Z",
-      "updated_at": "2025-11-29T02:17:55Z",
-      "pushed_at": "2025-11-29T02:17:50Z",
+      "description": "仅7MB的高性能Markdown笔记工具！内置免费AI模型，智能生成TODO便签、主动提醒推送、多人协同编辑。毫秒级启动，内存占用极低，短小精悍！  A 7MB high-performance Markdown note tool! Built-in free AI model for smart TODO generation, proactive reminders, and collaborative editing. Lightning-fast startup with minimal memory footprint—compact yet powerful!",
+      "stars": 311,
+      "forks": 21,
+      "language": "TypeScript",
+      "topics": [],
+      "license": "Other",
+      "created_at": "2025-10-24T01:35:37Z",
+      "updated_at": "2025-11-29T03:12:21Z",
+      "pushed_at": "2025-11-29T03:12:18Z",
       "readme": ""
     },
     "ai_review": null
   },
   {
-    "repo": "enzonotario/esjs-argentina-datos-api",
+    "repo": "yuzono/tachiyomi-extensions",
     "recommendation": "APPROVE",
-    "total_score": 67.15,
+    "total_score": 74.9,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 18.200000000000003,
-      "project_maturity": 70.4
+      "developer_engagement": 45.5,
+      "project_maturity": 74.1
     },
     "metadata": {
-      "description": "API pública para diferentes datos de Argentina",
-      "stars": 132,
-      "forks": 10,
-      "language": "TypeScript",
+      "description": "Source code of extensions for Komikku / Mihon & forks.",
+      "stars": 330,
+      "forks": 25,
+      "language": "Kotlin",
       "topics": [
-        "api",
-        "argentina",
-        "argentina-data",
-        "argentinadatos",
-        "datos",
-        "esjs",
-        "static-api"
+        "extension",
+        "komikku",
+        "manga",
+        "mihon",
+        "tachiyomi"
       ],
-      "license": "MIT License",
-      "created_at": "2023-12-25T21:36:32Z",
-      "updated_at": "2025-11-29T02:17:10Z",
-      "pushed_at": "2025-11-29T02:17:06Z",
+      "license": "Apache License 2.0",
+      "created_at": "2023-11-18T17:05:11Z",
+      "updated_at": "2025-11-29T03:11:47Z",
+      "pushed_at": "2025-11-29T03:11:43Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 7,
+      "documentation": 3,
+      "testing": 4,
+      "best_practices": 7,
+      "innovation": 6,
+      "quality_score": 54.0,
+      "reasoning": "This repository provides a valuable collection of extensions for Komikku/Mihon, but lacks comprehensive documentation and testing to ensure long-term maintainability and reliability.",
+      "strengths": [
+        "Kotlin usage for extension development",
+        "Active community indicated by stars and forks",
+        "Addresses a specific need for Komikku/Mihon users"
+      ],
+      "weaknesses": [
+        "Improve README with setup instructions and contribution guidelines",
+        "Add unit and integration tests for extensions",
+        "Implement CI/CD for automated testing and builds"
+      ]
+    }
+  },
+  {
+    "repo": "Multiverse/Multiverse-Inventories",
+    "recommendation": "APPROVE",
+    "total_score": 85.875,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 90,
+      "developer_engagement": 53.5,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "Per world inventories made easy!",
+      "stars": 120,
+      "forks": 83,
+      "language": "Java",
+      "topics": [
+        "bukkit",
+        "bukkit-plugin",
+        "hacktoberfest",
+        "java",
+        "multiverse"
+      ],
+      "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "created_at": "2012-01-19T04:23:50Z",
+      "updated_at": "2025-11-29T03:11:23Z",
+      "pushed_at": "2025-11-29T03:11:21Z",
       "readme": ""
     },
     "ai_review": {
@@ -231,16 +148,70 @@
       "best_practices": 5,
       "innovation": 7,
       "quality_score": 42.0,
-      "reasoning": "This project offers a valuable service by providing an API for Argentinian data, but it needs significant improvements in documentation, testing, and code structure to reach its full potential.",
+      "reasoning": "Multiverse-Inventories provides a valuable per-world inventory solution, but lacks sufficient documentation and testing to ensure long-term maintainability and reliability.",
       "strengths": [
-        "Provides a public API for Argentinian data.",
-        "Written in TypeScript.",
-        "Addresses a specific regional data need."
+        "Useful Bukkit plugin",
+        "Addresses a common need for server admins",
+        "Active development (implied by stars/forks)"
       ],
       "weaknesses": [
-        "Add comprehensive documentation, including API endpoints and usage examples.",
-        "Implement unit and integration tests to ensure code quality and reliability.",
-        "Improve code structure and modularity for better maintainability and scalability."
+        "Improve documentation with examples and API usage",
+        "Add unit and integration tests",
+        "Refactor for better modularity and scalability"
+      ]
+    }
+  },
+  {
+    "repo": "MatinGhanbari/v2ray-configs",
+    "recommendation": "APPROVE",
+    "total_score": 60.375,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 39.3,
+      "project_maturity": 22.2
+    },
+    "metadata": {
+      "description": "♾️ Free V2ray Configs, Updating Every 15 minutes. ",
+      "stars": 293,
+      "forks": 20,
+      "language": "HTML",
+      "topics": [
+        "gfw",
+        "shadowsocks",
+        "trojan",
+        "v2config",
+        "v2ray",
+        "v2ray-core",
+        "v2rayng",
+        "vless",
+        "vmess",
+        "vpn",
+        "vpn-service"
+      ],
+      "license": "MIT License",
+      "created_at": "2025-04-20T13:11:58Z",
+      "updated_at": "2025-11-29T03:11:00Z",
+      "pushed_at": "2025-11-29T03:10:56Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 1,
+      "documentation": 1,
+      "testing": 1,
+      "best_practices": 1,
+      "innovation": 2,
+      "quality_score": 12.0,
+      "reasoning": "This project provides a potentially useful service but lacks proper documentation, security considerations, and maintainable code.",
+      "strengths": [
+        "Automated config updates",
+        "Focus on circumvention tools",
+        "Easy accessibility of configs"
+      ],
+      "weaknesses": [
+        "Add detailed documentation on config usage",
+        "Implement security checks on configs",
+        "Improve code structure and maintainability"
       ]
     }
   }

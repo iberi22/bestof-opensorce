@@ -1,169 +1,140 @@
 [
   {
-    "repo": "ALIILAPRO/MTProtoProxy",
+    "repo": "jvxiao/speed-github",
     "recommendation": "APPROVE",
-    "total_score": 80.075,
+    "total_score": 81.65,
     "scores": {
       "commit_activity": 100,
-      "code_quality": 100,
-      "developer_engagement": 20.3,
+      "code_quality": 70,
+      "developer_engagement": 56.6,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "Get daily and high-speed MTProto proxy for Telegram.",
-      "stars": 128,
-      "forks": 15,
-      "language": "HTML",
-      "topics": [
-        "mtproto-proxy",
-        "mtproxy",
-        "python",
-        "telegram"
-      ],
-      "license": "MIT License",
-      "created_at": "2023-02-24T04:55:54Z",
-      "updated_at": "2025-11-29T02:18:39Z",
-      "pushed_at": "2025-11-29T02:18:36Z",
+      "description": "\u4e00\u952e\u89e3\u51b3github\u5728\u56fd\u5185\u7f51\u9875\u52a0\u8f7d\u548c\u4e0b\u8f7d\u901f\u5ea6\u6162\u7684\u95ee\u9898",
+      "stars": 331,
+      "forks": 47,
+      "language": "Python",
+      "topics": [],
+      "license": "GNU General Public License v3.0",
+      "created_at": "2020-03-20T13:56:34Z",
+      "updated_at": "2025-11-29T03:12:24Z",
+      "pushed_at": "2025-11-29T03:12:21Z",
       "readme": ""
     }
   },
   {
-    "repo": "WHU-Sigma/HyperSIGMA",
+    "repo": "flyhunterl/flymd",
+    "recommendation": "REJECT",
+    "total_score": 53.8,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 70,
+      "developer_engagement": 41.599999999999994,
+      "project_maturity": 3.6
+    },
+    "metadata": {
+      "description": "\u4ec57MB\u7684\u9ad8\u6027\u80fdMarkdown\u7b14\u8bb0\u5de5\u5177\uff01\u5185\u7f6e\u514d\u8d39AI\u6a21\u578b\uff0c\u667a\u80fd\u751f\u6210TODO\u4fbf\u7b7e\u3001\u4e3b\u52a8\u63d0\u9192\u63a8\u9001\u3001\u591a\u4eba\u534f\u540c\u7f16\u8f91\u3002\u6beb\u79d2\u7ea7\u542f\u52a8\uff0c\u5185\u5b58\u5360\u7528\u6781\u4f4e\uff0c\u77ed\u5c0f\u7cbe\u608d\uff01  A 7MB high-performance Markdown note tool! Built-in free AI model for smart TODO generation, proactive reminders, and collaborative editing. Lightning-fast startup with minimal memory footprint\u2014compact yet powerful!",
+      "stars": 311,
+      "forks": 21,
+      "language": "TypeScript",
+      "topics": [],
+      "license": "Other",
+      "created_at": "2025-10-24T01:35:37Z",
+      "updated_at": "2025-11-29T03:12:21Z",
+      "pushed_at": "2025-11-29T03:12:18Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "yuzono/tachiyomi-extensions",
     "recommendation": "APPROVE",
-    "total_score": 72.825,
+    "total_score": 74.9,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 45.5,
+      "project_maturity": 74.1
+    },
+    "metadata": {
+      "description": "Source code of extensions for Komikku / Mihon & forks.",
+      "stars": 330,
+      "forks": 25,
+      "language": "Kotlin",
+      "topics": [
+        "extension",
+        "komikku",
+        "manga",
+        "mihon",
+        "tachiyomi"
+      ],
+      "license": "Apache License 2.0",
+      "created_at": "2023-11-18T17:05:11Z",
+      "updated_at": "2025-11-29T03:11:47Z",
+      "pushed_at": "2025-11-29T03:11:43Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "Multiverse/Multiverse-Inventories",
+    "recommendation": "APPROVE",
+    "total_score": 85.875,
     "scores": {
       "commit_activity": 100,
       "code_quality": 90,
-      "developer_engagement": 44.5,
-      "project_maturity": 56.8
+      "developer_engagement": 53.5,
+      "project_maturity": 100
     },
     "metadata": {
-      "description": "The official repo for [TPAMI'25] \"HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model\"",
-      "stars": 315,
-      "forks": 26,
-      "language": "Python",
+      "description": "Per world inventories made easy!",
+      "stars": 120,
+      "forks": 83,
+      "language": "Java",
       "topics": [
-        "computer-vision",
-        "deep-learning",
-        "foundation-model",
-        "foundation-models",
-        "hyperspectral-anomaly-detection",
-        "hyperspectral-change-detection",
-        "hyperspectral-datasets",
-        "hyperspectral-image-classification",
-        "hyperspectral-image-denoising",
-        "hyperspectral-image-segmentation",
-        "hyperspectral-super-resolution",
-        "hyperspectral-target-detection",
-        "hyperspectral-unmixing",
-        "pre-training",
-        "pytorch",
-        "remote-sensing",
-        "remote-sensing-foundation-model",
-        "self-attention",
-        "spectral-spatial-information-fusion",
-        "transformer"
+        "bukkit",
+        "bukkit-plugin",
+        "hacktoberfest",
+        "java",
+        "multiverse"
       ],
-      "license": "Apache License 2.0",
-      "created_at": "2024-05-09T12:11:20Z",
-      "updated_at": "2025-11-29T02:18:09Z",
-      "pushed_at": "2025-11-29T02:18:05Z",
+      "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "created_at": "2012-01-19T04:23:50Z",
+      "updated_at": "2025-11-29T03:11:23Z",
+      "pushed_at": "2025-11-29T03:11:21Z",
       "readme": ""
     }
   },
   {
-    "repo": "MrMohebi/xray-proxy-grabber-telegram",
+    "repo": "MatinGhanbari/v2ray-configs",
     "recommendation": "APPROVE",
-    "total_score": 77.375,
+    "total_score": 60.375,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 43.0,
-      "project_maturity": 86.5
+      "developer_engagement": 39.3,
+      "project_maturity": 22.2
     },
     "metadata": {
-      "description": "Xray proxy grabber and checker + JSON and YAML Config - telegram channels",
-      "stars": 260,
-      "forks": 34,
-      "language": "Python",
+      "description": "\u267e\ufe0f Free V2ray Configs, Updating Every 15 minutes. ",
+      "stars": 293,
+      "forks": 20,
+      "language": "HTML",
       "topics": [
-        "bot",
-        "clash",
-        "clash-meta",
-        "free",
-        "proxy",
-        "server",
-        "telegram",
+        "gfw",
+        "shadowsocks",
+        "trojan",
+        "v2config",
         "v2ray",
+        "v2ray-core",
+        "v2rayng",
         "vless",
         "vmess",
         "vpn",
-        "xray"
+        "vpn-service"
       ],
       "license": "MIT License",
-      "created_at": "2023-07-17T12:08:05Z",
-      "updated_at": "2025-11-29T02:18:01Z",
-      "pushed_at": "2025-11-29T02:17:58Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "MattParkerDev/SharpIDE",
-    "recommendation": "REJECT",
-    "total_score": 56.325,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 43.3,
-      "project_maturity": 2.0
-    },
-    "metadata": {
-      "description": "A modern, cross platform IDE for .NET, built with .NET & Godot",
-      "stars": 378,
-      "forks": 11,
-      "language": "C#",
-      "topics": [
-        "csharp",
-        "dotnet",
-        "godot",
-        "razor",
-        "roslyn"
-      ],
-      "license": "MIT License",
-      "created_at": "2025-11-08T13:01:42Z",
-      "updated_at": "2025-11-29T02:17:55Z",
-      "pushed_at": "2025-11-29T02:17:50Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "enzonotario/esjs-argentina-datos-api",
-    "recommendation": "APPROVE",
-    "total_score": 67.15,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 18.200000000000003,
-      "project_maturity": 70.4
-    },
-    "metadata": {
-      "description": "API p\u00fablica para diferentes datos de Argentina",
-      "stars": 132,
-      "forks": 10,
-      "language": "TypeScript",
-      "topics": [
-        "api",
-        "argentina",
-        "argentina-data",
-        "argentinadatos",
-        "datos",
-        "esjs",
-        "static-api"
-      ],
-      "license": "MIT License",
-      "created_at": "2023-12-25T21:36:32Z",
-      "updated_at": "2025-11-29T02:17:10Z",
-      "pushed_at": "2025-11-29T02:17:06Z",
+      "created_at": "2025-04-20T13:11:58Z",
+      "updated_at": "2025-11-29T03:11:00Z",
+      "pushed_at": "2025-11-29T03:10:56Z",
       "readme": ""
     }
   }
