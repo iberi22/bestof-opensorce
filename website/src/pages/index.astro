@@ -64,9 +64,16 @@ realProjects.sort((a, b) => new Date(b.publishDate || '').getTime() - new Date(a
 // Combine or replace hardcoded projects.
 // For now, let's use ONLY real projects if they exist, otherwise fall back to sample for dev.
 const projectsToDisplay = realProjects.length > 0 ? realProjects : [];
+
+// SEO data
+const pageDescription = `Discover ${projectsToDisplay.length}+ curated open source projects. AI-powered reviews of trending GitHub repositories, developer tools, and software. Find the best open source alternatives and hidden gems.`;
 ---
 
-<Layout title="Best of Open Source">
+<Layout 
+  title="Directory" 
+  description={pageDescription}
+  type="website"
+>
   <main>
 		<Hero client:load projects={projectsToDisplay} />
 
