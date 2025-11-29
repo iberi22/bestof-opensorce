@@ -87,14 +87,14 @@ jobs:
         run: |
           python scripts/generate_blogs_from_analysis.py output/ai_scan.json
 
-      - name: 5. Generate Blog Images (Gemini Imagen)
+      - name: 5. Generate Professional Infographics (Gemini Imagen 4K)
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_API_KEY_2: ${{ secrets.GOOGLE_API_KEY_2 }}
           GOOGLE_API_KEY_3: ${{ secrets.GOOGLE_API_KEY_3 }}
         run: |
           cd image-generation
-          python generate_images_gemini.py --blog-dir ../website/src/content/blog --limit 5
+          python generate_infographics.py --blog-dir ../website/src/content/blog --limit 5
         continue-on-error: true
 
       - name: 6. Organize Blog Posts
