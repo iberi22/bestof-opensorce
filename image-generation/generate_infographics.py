@@ -4,7 +4,7 @@ Professional Infographic Generator for Blog Posts
 Generates 4K infographic images that visually explain repositories
 without needing to read the article.
 
-Uses Gemini Imagen 3 with detailed prompts for professional results.
+Uses Gemini Imagen 4 with detailed prompts for professional results.
 """
 
 import os
@@ -16,7 +16,8 @@ import yaml
 from pathlib import Path
 from typing import Dict, Optional, List
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 # Configure logging
 logging.basicConfig(
@@ -31,11 +32,12 @@ logger = logging.getLogger(__name__)
 
 API_KEYS: List[str] = []
 CURRENT_KEY_INDEX = 0
+CLIENT: genai.Client = None
 
 
 def setup_gemini() -> bool:
     """Initialize Gemini with all available API keys."""
-    global API_KEYS
+    global API_KEYS, CLIENT
     
     keys = []
     main_key = os.environ.get("GOOGLE_API_KEY")
@@ -52,19 +54,19 @@ def setup_gemini() -> bool:
         return False
     
     API_KEYS = keys
-    genai.configure(api_key=API_KEYS[0])
+    CLIENT = genai.Client(api_key=API_KEYS[0])
     logger.info(f"✅ Loaded {len(API_KEYS)} Gemini API keys for load balancing")
     return True
 
 
 def rotate_key():
     """Rotate to next available API key."""
-    global CURRENT_KEY_INDEX
+    global CURRENT_KEY_INDEX, CLIENT
     if len(API_KEYS) <= 1:
         return
     
     CURRENT_KEY_INDEX = (CURRENT_KEY_INDEX + 1) % len(API_KEYS)
-    genai.configure(api_key=API_KEYS[CURRENT_KEY_INDEX])
+    CLIENT = genai.Client(api_key=API_KEYS[CURRENT_KEY_INDEX])
     logger.info(f"🔄 Rotated to API key #{CURRENT_KEY_INDEX + 1}")
 
 
@@ -330,27 +332,30 @@ Tags for context: {', '.join(tags[:5]) if tags else 'open-source, developer-tool
 # =============================================================================
 
 def generate_infographic(prompt: str, output_path: Path, retries: int = 3) -> bool:
-    """Generate infographic image using Gemini Imagen 3."""
+    """Generate infographic image using Gemini Imagen 4."""
+    global CLIENT
     
     for attempt in range(1, retries + 1):
         try:
             logger.info(f"🎨 Generating infographic (attempt {attempt}/{retries})...")
             logger.debug(f"Prompt: {prompt[:200]}...")
             
-            model = genai.ImageGenerationModel('models/imagen-3.0-generate-001')
-            
-            response = model.generate_images(
+            response = CLIENT.models.generate_images(
+                model='imagen-3.0-generate-001',
                 prompt=prompt,
-                number_of_images=1,
-                aspect_ratio="16:9",  # Will be 4K-like quality
-                safety_filter_level="block_only_high",
-                person_generation="dont_allow"  # No people in infographics
+                config=types.GenerateImagesConfig(
+                    number_of_images=1,
+                    aspect_ratio="16:9",
+                    safety_filter_level="BLOCK_ONLY_HIGH",
+                    person_generation="DONT_ALLOW"
+                )
             )
             
-            if response.images:
-                image = response.images[0]
+            if response.generated_images:
+                image = response.generated_images[0]
                 output_path.parent.mkdir(parents=True, exist_ok=True)
-                image.save(str(output_path))
+                # Save the image data
+                image.image.save(str(output_path))
                 logger.info(f"✅ Infographic saved: {output_path}")
                 rotate_key()
                 return True

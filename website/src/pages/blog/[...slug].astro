@@ -18,23 +18,63 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   <main class="pt-24 pb-12">
     <article class="max-w-4xl mx-auto px-6">
 
-      <!-- Navigation & Translation -->
+      <!-- Navigation -->
       <div class="flex justify-between items-center mb-12">
         <a href={`${base}blog`} class="inline-flex items-center gap-2 text-sm font-mono text-bone-dark/60 hover:text-bone transition-colors group no-underline">
           <span class="group-hover:-translate-x-1 transition-transform">←</span> Back to Blog
         </a>
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
-          function googleTranslateElementInit() {
+      </div>
+
+      <!-- Auto Translation Script (detects browser language and translates automatically) -->
+      <script is:inline>
+        (function() {
+          // Get browser language (e.g., 'es', 'fr', 'de')
+          const browserLang = navigator.language?.split('-')[0] || 'en';
+          
+          // Skip if already English or if translation cookie exists
+          if (browserLang === 'en') return;
+          
+          // Check if already translated (Google sets a cookie)
+          const googtrans = document.cookie.match(/googtrans=([^;]+)/);
+          if (googtrans && googtrans[1].includes(browserLang)) return;
+          
+          // Set translation cookie for automatic translation
+          document.cookie = `googtrans=/en/${browserLang};path=/;domain=${location.hostname}`;
+          document.cookie = `googtrans=/en/${browserLang};path=/`;
+          
+          // Load Google Translate and auto-translate
+          function loadGoogleTranslate() {
+            const script = document.createElement('script');
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateInit';
+            script.async = true;
+            document.body.appendChild(script);
+          }
+          
+          window.googleTranslateInit = function() {
             new google.translate.TranslateElement({
               pageLanguage: 'en',
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-              autoDisplay: true
+              includedLanguages: 'es,fr,de,pt,it,ja,ko,zh-CN,ru,ar,hi',
+              layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+              autoDisplay: false
             }, 'google_translate_element');
+          };
+          
+          // Delay load to ensure page is ready
+          if (document.readyState === 'complete') {
+            loadGoogleTranslate();
+          } else {
+            window.addEventListener('load', loadGoogleTranslate);
           }
-        </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      </div>
+        })();
+      </script>
+      <div id="google_translate_element" class="hidden"></div>
+      
+      <!-- Hide Google Translate toolbar -->
+      <style is:global>
+        .goog-te-banner-frame, .skiptranslate { display: none !important; }
+        body { top: 0 !important; }
+        .goog-te-gadget { font-size: 0 !important; }
+      </style>
 
       <!-- Header -->
       <header class="mb-16 text-center">
