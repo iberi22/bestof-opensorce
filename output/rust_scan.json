@@ -1,128 +1,150 @@
 [
   {
-    "name": "arm-none-eabi-gcc-action",
-    "full_name": "carlosperate/arm-none-eabi-gcc-action",
-    "html_url": "https://github.com/carlosperate/arm-none-eabi-gcc-action",
-    "description": "GitHub Action to set-up the `arm-none-eabi-gcc` GNU Arm Embedded Toolchain.",
-    "stargazers_count": 125,
-    "forks_count": 26,
-    "language": "TypeScript",
+    "name": "v2rayNG-Config",
+    "full_name": "ALIILAPRO/v2rayNG-Config",
+    "html_url": "https://github.com/ALIILAPRO/v2rayNG-Config",
+    "description": "Get new and fast config for bypassing net.",
+    "stargazers_count": 264,
+    "forks_count": 39,
+    "language": "HTML",
     "license": {
-      "name": "MIT License",
-      "spdx_id": "MIT"
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0"
     },
-    "created_at": "2021-10-17T16:08:04Z",
-    "updated_at": "2025-11-29T01:59:52Z",
-    "pushed_at": "2025-11-29T01:59:52Z",
-    "size": 7386,
-    "open_issues": 8,
-    "has_wiki": false,
-    "has_pages": false,
-    "topics": [
-      "arm-gcc",
-      "arm-none-eabi-gcc",
-      "gcc",
-      "gcc-arm-toolchain",
-      "gcc-cross-compiler",
-      "github-actions",
-      "hacktoberfest"
-    ]
-  },
-  {
-    "name": "laravel-payment-gateways",
-    "full_name": "stephenjude/laravel-payment-gateways",
-    "html_url": "https://github.com/stephenjude/laravel-payment-gateways",
-    "description": "A simple Laravel API implementation for all payment providers.",
-    "stargazers_count": 109,
-    "forks_count": 26,
-    "language": "PHP",
-    "license": {
-      "name": "MIT License",
-      "spdx_id": "MIT"
-    },
-    "created_at": "2022-05-21T09:44:19Z",
-    "updated_at": "2025-11-29T01:59:17Z",
-    "pushed_at": "2025-11-29T01:59:13Z",
-    "size": 259,
-    "open_issues": 0,
-    "has_wiki": true,
-    "has_pages": false,
-    "topics": []
-  },
-  {
-    "name": "semantic-prs",
-    "full_name": "Ezard/semantic-prs",
-    "html_url": "https://github.com/Ezard/semantic-prs",
-    "description": "A GitHub app to check that pull requests follow the Conventional Commits spec",
-    "stargazers_count": 142,
-    "forks_count": 28,
-    "language": "TypeScript",
-    "license": {
-      "name": "MIT License",
-      "spdx_id": "MIT"
-    },
-    "created_at": "2022-05-06T09:33:49Z",
-    "updated_at": "2025-11-29T01:59:12Z",
-    "pushed_at": "2025-11-29T01:59:09Z",
-    "size": 39128,
-    "open_issues": 14,
-    "has_wiki": true,
-    "has_pages": false,
-    "topics": []
-  },
-  {
-    "name": "prettier-plugin-apex",
-    "full_name": "dangmai/prettier-plugin-apex",
-    "html_url": "https://github.com/dangmai/prettier-plugin-apex",
-    "description": "Code formatter for the Apex Programming Language",
-    "stargazers_count": 267,
-    "forks_count": 47,
-    "language": "Apex",
-    "license": {
-      "name": "MIT License",
-      "spdx_id": "MIT"
-    },
-    "created_at": "2018-08-18T03:24:25Z",
-    "updated_at": "2025-11-29T01:59:13Z",
-    "pushed_at": "2025-11-29T01:59:08Z",
-    "size": 276698,
-    "open_issues": 17,
-    "has_wiki": true,
-    "has_pages": false,
-    "topics": [
-      "apex",
-      "cli-application",
-      "formatter",
-      "prettier",
-      "salesforce",
-      "soql"
-    ]
-  },
-  {
-    "name": "Proxy",
-    "full_name": "ALIILAPRO/Proxy",
-    "html_url": "https://github.com/ALIILAPRO/Proxy",
-    "description": "Get new and fast proxy list every hour.",
-    "stargazers_count": 165,
-    "forks_count": 19,
-    "language": "CSS",
-    "license": {
-      "name": "MIT License",
-      "spdx_id": "MIT"
-    },
-    "created_at": "2023-02-26T03:29:06Z",
-    "updated_at": "2025-11-29T01:58:58Z",
-    "pushed_at": "2025-11-29T01:58:56Z",
-    "size": 1255724,
-    "open_issues": 0,
+    "created_at": "2023-11-12T00:48:10Z",
+    "updated_at": "2025-11-29T02:15:59Z",
+    "pushed_at": "2025-11-29T02:15:58Z",
+    "size": 55796,
+    "open_issues": 2,
     "has_wiki": true,
     "has_pages": true,
     "topics": [
       "aliilapro",
-      "http",
-      "proxy",
-      "socks4",
-      "socks5"
+      "config",
+      "v2ray",
+      "v2rayng",
+      "vless",
+      "vpn"
+    ]
+  },
+  {
+    "name": "unicodia",
+    "full_name": "Mercury13/unicodia",
+    "html_url": "https://github.com/Mercury13/unicodia",
+    "description": "Encyclopedia of Unicode characters",
+    "stargazers_count": 154,
+    "forks_count": 16,
+    "language": "C++",
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0"
+    },
+    "created_at": "2021-05-15T14:55:17Z",
+    "updated_at": "2025-11-29T02:15:47Z",
+    "pushed_at": "2025-11-29T02:15:43Z",
+    "size": 605245,
+    "open_issues": 39,
+    "has_wiki": true,
+    "has_pages": true,
+    "topics": [
+      "character-table",
+      "emoji-picker",
+      "emoji-unicode",
+      "encyclopedia",
+      "unicode",
+      "unicode-characters",
+      "unicode-data",
+      "unicode-table"
+    ]
+  },
+  {
+    "name": "py-win32more",
+    "full_name": "ynkdir/py-win32more",
+    "html_url": "https://github.com/ynkdir/py-win32more",
+    "description": "Python bindings for Win32 API generated from win32metadata.",
+    "stargazers_count": 204,
+    "forks_count": 18,
+    "language": "Python",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2022-05-01T14:33:58Z",
+    "updated_at": "2025-11-29T02:15:28Z",
+    "pushed_at": "2025-11-29T02:15:24Z",
+    "size": 283776,
+    "open_issues": 12,
+    "has_wiki": true,
+    "has_pages": false,
+    "topics": []
+  },
+  {
+    "name": "CVE2CAPEC",
+    "full_name": "Galeax/CVE2CAPEC",
+    "html_url": "https://github.com/Galeax/CVE2CAPEC",
+    "description": "Generate MITRE ATT&CK and D3FEND from a list of CVEs. Database with CVE, CWE, CAPEC, MITRE ATT&CK and D3FEND Techniques data is updated daily. Showcased at BlackHat Europe 2025 Arsenal.",
+    "stargazers_count": 250,
+    "forks_count": 43,
+    "language": "Python",
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0"
+    },
+    "created_at": "2024-10-18T08:58:56Z",
+    "updated_at": "2025-11-29T02:13:58Z",
+    "pushed_at": "2025-11-29T02:13:55Z",
+    "size": 444646,
+    "open_issues": 2,
+    "has_wiki": true,
+    "has_pages": true,
+    "topics": [
+      "blackhat",
+      "blackhat-arsenal",
+      "blackhateurope-2025",
+      "capec",
+      "cve",
+      "cves",
+      "cwe",
+      "cybersecurity",
+      "d3fend",
+      "infosec",
+      "infosectools",
+      "mitre-attack",
+      "mitre-attack-db",
+      "mitre-attack-navigator",
+      "mitre-capec",
+      "mitre-cwe",
+      "mitre-d3fend",
+      "mitre-defend",
+      "ttp"
+    ]
+  },
+  {
+    "name": "fzf-zsh-plugin",
+    "full_name": "unixorn/fzf-zsh-plugin",
+    "html_url": "https://github.com/unixorn/fzf-zsh-plugin",
+    "description": "ZSH plugin to enable fzf searches of a lot more stuff - docker, tmux, homebrew and more.",
+    "stargazers_count": 393,
+    "forks_count": 33,
+    "language": "Shell",
+    "license": {
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0"
+    },
+    "created_at": "2020-09-13T21:02:40Z",
+    "updated_at": "2025-11-29T02:13:34Z",
+    "pushed_at": "2025-11-29T02:13:30Z",
+    "size": 198,
+    "open_issues": 7,
+    "has_wiki": true,
+    "has_pages": false,
+    "topics": [
+      "command-history",
+      "fzf",
+      "fzf-scripts",
+      "hacktoberfest",
+      "zsh",
+      "zsh-plugin"
     ]
   }
 ]

@@ -1,137 +1,159 @@
 [
   {
-    "repo": "carlosperate/arm-none-eabi-gcc-action",
+    "repo": "ALIILAPRO/v2rayNG-Config",
     "recommendation": "APPROVE",
-    "total_score": 76.375,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 25.5,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "GitHub Action to set-up the `arm-none-eabi-gcc` GNU Arm Embedded Toolchain.",
-      "stars": 125,
-      "forks": 26,
-      "language": "TypeScript",
-      "topics": [
-        "arm-gcc",
-        "arm-none-eabi-gcc",
-        "gcc",
-        "gcc-arm-toolchain",
-        "gcc-cross-compiler",
-        "github-actions",
-        "hacktoberfest"
-      ],
-      "license": "MIT License",
-      "created_at": "2021-10-17T16:08:04Z",
-      "updated_at": "2025-11-29T01:59:52Z",
-      "pushed_at": "2025-11-29T01:59:52Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "stephenjude/laravel-payment-gateways",
-    "recommendation": "APPROVE",
-    "total_score": 75.975,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 23.9,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "A simple Laravel API implementation for all payment providers.",
-      "stars": 109,
-      "forks": 26,
-      "language": "PHP",
-      "topics": [],
-      "license": "MIT License",
-      "created_at": "2022-05-21T09:44:19Z",
-      "updated_at": "2025-11-29T01:59:17Z",
-      "pushed_at": "2025-11-29T01:59:13Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "Ezard/semantic-prs",
-    "recommendation": "APPROVE",
-    "total_score": 77.05,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 28.2,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "A GitHub app to check that pull requests follow the Conventional Commits spec",
-      "stars": 142,
-      "forks": 28,
-      "language": "TypeScript",
-      "topics": [],
-      "license": "MIT License",
-      "created_at": "2022-05-06T09:33:49Z",
-      "updated_at": "2025-11-29T01:59:12Z",
-      "pushed_at": "2025-11-29T01:59:09Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "dangmai/prettier-plugin-apex",
-    "recommendation": "APPROVE",
-    "total_score": 82.55,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 50.2,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "Code formatter for the Apex Programming Language",
-      "stars": 267,
-      "forks": 47,
-      "language": "Apex",
-      "topics": [
-        "apex",
-        "cli-application",
-        "formatter",
-        "prettier",
-        "salesforce",
-        "soql"
-      ],
-      "license": "MIT License",
-      "created_at": "2018-08-18T03:24:25Z",
-      "updated_at": "2025-11-29T01:59:13Z",
-      "pushed_at": "2025-11-29T01:59:08Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "ALIILAPRO/Proxy",
-    "recommendation": "APPROVE",
-    "total_score": 79.0,
+    "total_score": 77.675,
     "scores": {
       "commit_activity": 100,
       "code_quality": 90,
-      "developer_engagement": 26.0,
+      "developer_engagement": 45.900000000000006,
+      "project_maturity": 74.8
+    },
+    "metadata": {
+      "description": "Get new and fast config for bypassing net.",
+      "stars": 264,
+      "forks": 39,
+      "language": "HTML",
+      "topics": [
+        "aliilapro",
+        "config",
+        "v2ray",
+        "v2rayng",
+        "vless",
+        "vpn"
+      ],
+      "license": "GNU General Public License v3.0",
+      "created_at": "2023-11-12T00:48:10Z",
+      "updated_at": "2025-11-29T02:15:59Z",
+      "pushed_at": "2025-11-29T02:15:58Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "Mercury13/unicodia",
+    "recommendation": "APPROVE",
+    "total_score": 78.35,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 90,
+      "developer_engagement": 23.4,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "Get new and fast proxy list every hour.",
-      "stars": 165,
-      "forks": 19,
-      "language": "CSS",
+      "description": "Encyclopedia of Unicode characters",
+      "stars": 154,
+      "forks": 16,
+      "language": "C++",
       "topics": [
-        "aliilapro",
-        "http",
-        "proxy",
-        "socks4",
-        "socks5"
+        "character-table",
+        "emoji-picker",
+        "emoji-unicode",
+        "encyclopedia",
+        "unicode",
+        "unicode-characters",
+        "unicode-data",
+        "unicode-table"
       ],
+      "license": "GNU General Public License v3.0",
+      "created_at": "2021-05-15T14:55:17Z",
+      "updated_at": "2025-11-29T02:15:47Z",
+      "pushed_at": "2025-11-29T02:15:43Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "ynkdir/py-win32more",
+    "recommendation": "APPROVE",
+    "total_score": 77.35,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 29.4,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "Python bindings for Win32 API generated from win32metadata.",
+      "stars": 204,
+      "forks": 18,
+      "language": "Python",
+      "topics": [],
       "license": "MIT License",
-      "created_at": "2023-02-26T03:29:06Z",
-      "updated_at": "2025-11-29T01:58:58Z",
-      "pushed_at": "2025-11-29T01:58:56Z",
+      "created_at": "2022-05-01T14:33:58Z",
+      "updated_at": "2025-11-29T02:15:28Z",
+      "pushed_at": "2025-11-29T02:15:24Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "Galeax/CVE2CAPEC",
+    "recommendation": "APPROVE",
+    "total_score": 71.775,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 100,
+      "developer_engagement": 46.5,
+      "project_maturity": 40.6
+    },
+    "metadata": {
+      "description": "Generate MITRE ATT&CK and D3FEND from a list of CVEs. Database with CVE, CWE, CAPEC, MITRE ATT&CK and D3FEND Techniques data is updated daily. Showcased at BlackHat Europe 2025 Arsenal.",
+      "stars": 250,
+      "forks": 43,
+      "language": "Python",
+      "topics": [
+        "blackhat",
+        "blackhat-arsenal",
+        "blackhateurope-2025",
+        "capec",
+        "cve",
+        "cves",
+        "cwe",
+        "cybersecurity",
+        "d3fend",
+        "infosec",
+        "infosectools",
+        "mitre-attack",
+        "mitre-attack-db",
+        "mitre-attack-navigator",
+        "mitre-capec",
+        "mitre-cwe",
+        "mitre-d3fend",
+        "mitre-defend",
+        "ttp"
+      ],
+      "license": "GNU General Public License v3.0",
+      "created_at": "2024-10-18T08:58:56Z",
+      "updated_at": "2025-11-29T02:13:58Z",
+      "pushed_at": "2025-11-29T02:13:55Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "unixorn/fzf-zsh-plugin",
+    "recommendation": "APPROVE",
+    "total_score": 86.45,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 90,
+      "developer_engagement": 55.800000000000004,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "ZSH plugin to enable fzf searches of a lot more stuff - docker, tmux, homebrew and more.",
+      "stars": 393,
+      "forks": 33,
+      "language": "Shell",
+      "topics": [
+        "command-history",
+        "fzf",
+        "fzf-scripts",
+        "hacktoberfest",
+        "zsh",
+        "zsh-plugin"
+      ],
+      "license": "Apache License 2.0",
+      "created_at": "2020-09-13T21:02:40Z",
+      "updated_at": "2025-11-29T02:13:34Z",
+      "pushed_at": "2025-11-29T02:13:30Z",
       "readme": ""
     }
   }
