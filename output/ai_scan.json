@@ -1,218 +1,205 @@
 [
   {
-    "repo": "jvxiao/speed-github",
+    "repo": "nextcloud/registration",
     "recommendation": "APPROVE",
-    "total_score": 81.65,
+    "total_score": 80.65,
     "scores": {
       "commit_activity": 100,
       "code_quality": 70,
-      "developer_engagement": 56.6,
+      "developer_engagement": 52.6,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "一键解决github在国内网页加载和下载速度慢的问题",
-      "stars": 331,
-      "forks": 47,
-      "language": "Python",
-      "topics": [],
-      "license": "GNU General Public License v3.0",
-      "created_at": "2020-03-20T13:56:34Z",
-      "updated_at": "2025-11-29T03:12:24Z",
-      "pushed_at": "2025-11-29T03:12:21Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "architecture": 3,
-      "documentation": 1,
-      "testing": 1,
-      "best_practices": 3,
-      "innovation": 4,
-      "quality_score": 24.0,
-      "reasoning": "The project has potential to solve a real problem, but lacks documentation, testing, and a well-defined architecture, hindering its usability and maintainability.",
-      "strengths": [
-        "Addresses a common problem for users in China",
-        "Simple and potentially easy to use",
-        "Demonstrates awareness of network issues"
-      ],
-      "weaknesses": [
-        "Provide comprehensive documentation and usage instructions in the README",
-        "Implement testing to ensure reliability and prevent regressions",
-        "Improve code structure and modularity for maintainability"
-      ]
-    }
-  },
-  {
-    "repo": "flyhunterl/flymd",
-    "recommendation": "REJECT",
-    "total_score": 53.8,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 70,
-      "developer_engagement": 41.599999999999994,
-      "project_maturity": 3.6
-    },
-    "metadata": {
-      "description": "仅7MB的高性能Markdown笔记工具！内置免费AI模型，智能生成TODO便签、主动提醒推送、多人协同编辑。毫秒级启动，内存占用极低，短小精悍！  A 7MB high-performance Markdown note tool! Built-in free AI model for smart TODO generation, proactive reminders, and collaborative editing. Lightning-fast startup with minimal memory footprint—compact yet powerful!",
-      "stars": 311,
-      "forks": 21,
-      "language": "TypeScript",
-      "topics": [],
-      "license": "Other",
-      "created_at": "2025-10-24T01:35:37Z",
-      "updated_at": "2025-11-29T03:12:21Z",
-      "pushed_at": "2025-11-29T03:12:18Z",
-      "readme": ""
-    },
-    "ai_review": null
-  },
-  {
-    "repo": "yuzono/tachiyomi-extensions",
-    "recommendation": "APPROVE",
-    "total_score": 74.9,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 45.5,
-      "project_maturity": 74.1
-    },
-    "metadata": {
-      "description": "Source code of extensions for Komikku / Mihon & forks.",
-      "stars": 330,
-      "forks": 25,
-      "language": "Kotlin",
+      "description": "User registration app for Nextcloud",
+      "stars": 141,
+      "forks": 77,
+      "language": "JavaScript",
       "topics": [
-        "extension",
-        "komikku",
-        "manga",
-        "mihon",
-        "tachiyomi"
-      ],
-      "license": "Apache License 2.0",
-      "created_at": "2023-11-18T17:05:11Z",
-      "updated_at": "2025-11-29T03:11:47Z",
-      "pushed_at": "2025-11-29T03:11:43Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "architecture": 7,
-      "documentation": 3,
-      "testing": 4,
-      "best_practices": 7,
-      "innovation": 6,
-      "quality_score": 54.0,
-      "reasoning": "This repository provides a valuable collection of extensions for Komikku/Mihon, but lacks comprehensive documentation and testing to ensure long-term maintainability and reliability.",
-      "strengths": [
-        "Kotlin usage for extension development",
-        "Active community indicated by stars and forks",
-        "Addresses a specific need for Komikku/Mihon users"
-      ],
-      "weaknesses": [
-        "Improve README with setup instructions and contribution guidelines",
-        "Add unit and integration tests for extensions",
-        "Implement CI/CD for automated testing and builds"
-      ]
-    }
-  },
-  {
-    "repo": "Multiverse/Multiverse-Inventories",
-    "recommendation": "APPROVE",
-    "total_score": 85.875,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 90,
-      "developer_engagement": 53.5,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "Per world inventories made easy!",
-      "stars": 120,
-      "forks": 83,
-      "language": "Java",
-      "topics": [
-        "bukkit",
-        "bukkit-plugin",
         "hacktoberfest",
-        "java",
-        "multiverse"
+        "nextcloud",
+        "registration",
+        "signup"
       ],
-      "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-      "created_at": "2012-01-19T04:23:50Z",
-      "updated_at": "2025-11-29T03:11:23Z",
-      "pushed_at": "2025-11-29T03:11:21Z",
+      "license": "GNU Affero General Public License v3.0",
+      "created_at": "2014-08-28T15:28:39Z",
+      "updated_at": "2025-11-29T03:19:38Z",
+      "pushed_at": "2025-11-29T03:19:35Z",
       "readme": ""
     },
     "ai_review": {
       "architecture": 6,
       "documentation": 2,
-      "testing": 1,
-      "best_practices": 5,
-      "innovation": 7,
-      "quality_score": 42.0,
-      "reasoning": "Multiverse-Inventories provides a valuable per-world inventory solution, but lacks sufficient documentation and testing to ensure long-term maintainability and reliability.",
+      "testing": 3,
+      "best_practices": 6,
+      "innovation": 5,
+      "quality_score": 44.0,
+      "reasoning": "This Nextcloud app provides a useful registration feature, but needs significant improvements in documentation and testing to ensure long-term maintainability and reliability.",
       "strengths": [
-        "Useful Bukkit plugin",
-        "Addresses a common need for server admins",
-        "Active development (implied by stars/forks)"
+        "Provides a user registration feature for Nextcloud",
+        "Actively maintained with recent contributions",
+        "Uses JavaScript, a widely known language"
       ],
       "weaknesses": [
-        "Improve documentation with examples and API usage",
-        "Add unit and integration tests",
-        "Refactor for better modularity and scalability"
+        "Improve documentation with clear installation and usage instructions.",
+        "Add comprehensive unit and integration tests.",
+        "Refactor code for better modularity and maintainability."
       ]
     }
   },
   {
-    "repo": "MatinGhanbari/v2ray-configs",
+    "repo": "jkjkil4/JAnim",
     "recommendation": "APPROVE",
-    "total_score": 60.375,
+    "total_score": 76.675,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 39.3,
-      "project_maturity": 22.2
+      "developer_engagement": 26.7,
+      "project_maturity": 100
     },
     "metadata": {
-      "description": "♾️ Free V2ray Configs, Updating Every 15 minutes. ",
-      "stars": 293,
-      "forks": 20,
-      "language": "HTML",
+      "description": "A library for creating smooth animations",
+      "stars": 197,
+      "forks": 14,
+      "language": "Python",
       "topics": [
-        "gfw",
-        "shadowsocks",
-        "trojan",
-        "v2config",
-        "v2ray",
-        "v2ray-core",
-        "v2rayng",
-        "vless",
-        "vmess",
-        "vpn",
-        "vpn-service"
+        "animation",
+        "janim",
+        "python"
       ],
       "license": "MIT License",
-      "created_at": "2025-04-20T13:11:58Z",
-      "updated_at": "2025-11-29T03:11:00Z",
-      "pushed_at": "2025-11-29T03:10:56Z",
+      "created_at": "2022-10-03T00:48:11Z",
+      "updated_at": "2025-11-29T03:19:34Z",
+      "pushed_at": "2025-11-29T03:19:30Z",
       "readme": ""
     },
     "ai_review": {
-      "architecture": 1,
-      "documentation": 1,
+      "architecture": 5,
+      "documentation": 2,
       "testing": 1,
-      "best_practices": 1,
-      "innovation": 2,
-      "quality_score": 12.0,
-      "reasoning": "This project provides a potentially useful service but lacks proper documentation, security considerations, and maintainable code.",
+      "best_practices": 4,
+      "innovation": 6,
+      "quality_score": 36.0,
+      "reasoning": "JAnim shows promise as a simple animation library, but requires significant improvements in documentation, testing, and code structure to reach its full potential.",
       "strengths": [
-        "Automated config updates",
-        "Focus on circumvention tools",
-        "Easy accessibility of configs"
+        "Potential for creating visually appealing animations",
+        "Simple and focused purpose",
+        "Python-based, making it accessible to many users"
       ],
       "weaknesses": [
-        "Add detailed documentation on config usage",
-        "Implement security checks on configs",
-        "Improve code structure and maintainability"
+        "Comprehensive documentation with examples is needed",
+        "Implement a robust testing suite with CI/CD",
+        "Improve code structure and modularity for better maintainability"
       ]
     }
+  },
+  {
+    "repo": "MHaggis/ClickGrab",
+    "recommendation": "REJECT",
+    "total_score": 54.9,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 17.1,
+      "project_maturity": 22.5
+    },
+    "metadata": {
+      "description": "Finding ClickFix and FakeCAPTCHA like it's 1999",
+      "stars": 106,
+      "forks": 13,
+      "language": "HTML",
+      "topics": [
+        "clickfix",
+        "fakecaptcha"
+      ],
+      "license": "Apache License 2.0",
+      "created_at": "2025-04-17T20:22:34Z",
+      "updated_at": "2025-11-29T03:19:10Z",
+      "pushed_at": "2025-11-29T03:19:06Z",
+      "readme": ""
+    },
+    "ai_review": null
+  },
+  {
+    "repo": "catlog22/Claude-Code-Workflow",
+    "recommendation": "APPROVE",
+    "total_score": 66.225,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 90,
+      "developer_engagement": 66.7,
+      "project_maturity": 8.2
+    },
+    "metadata": {
+      "description": " JSON-driven multi-agent development framework with   intelligent CLI orchestration (Gemini/Qwen/Codex),   context-first architecture, and automated workflow   execution",
+      "stars": 437,
+      "forks": 46,
+      "language": "HTML",
+      "topics": [
+        "claude",
+        "claude-code",
+        "cli-tools",
+        "codex",
+        "context-management",
+        "gemini-cli",
+        "json-driven",
+        "qwen-code",
+        "task-orchestration",
+        "workflow-automation"
+      ],
+      "license": "MIT License",
+      "created_at": "2025-09-07T09:40:18Z",
+      "updated_at": "2025-11-29T03:19:04Z",
+      "pushed_at": "2025-11-29T03:19:17Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 5,
+      "documentation": 2,
+      "testing": 1,
+      "best_practices": 4,
+      "innovation": 7,
+      "quality_score": 38.0,
+      "reasoning": "The project presents an innovative concept but requires significant improvements in documentation, testing, and code structure to be considered production-ready.",
+      "strengths": [
+        "Multi-agent workflow concept",
+        "JSON-driven configuration",
+        "CLI orchestration"
+      ],
+      "weaknesses": [
+        "Comprehensive documentation including examples",
+        "Implementation of automated testing",
+        "Improved code structure and modularity"
+      ]
+    }
+  },
+  {
+    "repo": "MattParkerDev/SharpIDE",
+    "recommendation": "REJECT",
+    "total_score": 56.325,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 43.3,
+      "project_maturity": 2.0
+    },
+    "metadata": {
+      "description": "A modern, cross platform IDE for .NET, built with .NET & Godot",
+      "stars": 378,
+      "forks": 11,
+      "language": "C#",
+      "topics": [
+        "csharp",
+        "dotnet",
+        "godot",
+        "razor",
+        "roslyn"
+      ],
+      "license": "MIT License",
+      "created_at": "2025-11-08T13:01:42Z",
+      "updated_at": "2025-11-29T03:18:50Z",
+      "pushed_at": "2025-11-29T03:18:46Z",
+      "readme": ""
+    },
+    "ai_review": null
   }
 ]

@@ -1,140 +1,145 @@
 [
   {
-    "repo": "jvxiao/speed-github",
+    "repo": "nextcloud/registration",
     "recommendation": "APPROVE",
-    "total_score": 81.65,
+    "total_score": 80.65,
     "scores": {
       "commit_activity": 100,
       "code_quality": 70,
-      "developer_engagement": 56.6,
+      "developer_engagement": 52.6,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "\u4e00\u952e\u89e3\u51b3github\u5728\u56fd\u5185\u7f51\u9875\u52a0\u8f7d\u548c\u4e0b\u8f7d\u901f\u5ea6\u6162\u7684\u95ee\u9898",
-      "stars": 331,
-      "forks": 47,
-      "language": "Python",
-      "topics": [],
-      "license": "GNU General Public License v3.0",
-      "created_at": "2020-03-20T13:56:34Z",
-      "updated_at": "2025-11-29T03:12:24Z",
-      "pushed_at": "2025-11-29T03:12:21Z",
+      "description": "User registration app for Nextcloud",
+      "stars": 141,
+      "forks": 77,
+      "language": "JavaScript",
+      "topics": [
+        "hacktoberfest",
+        "nextcloud",
+        "registration",
+        "signup"
+      ],
+      "license": "GNU Affero General Public License v3.0",
+      "created_at": "2014-08-28T15:28:39Z",
+      "updated_at": "2025-11-29T03:19:38Z",
+      "pushed_at": "2025-11-29T03:19:35Z",
       "readme": ""
     }
   },
   {
-    "repo": "flyhunterl/flymd",
-    "recommendation": "REJECT",
-    "total_score": 53.8,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 70,
-      "developer_engagement": 41.599999999999994,
-      "project_maturity": 3.6
-    },
-    "metadata": {
-      "description": "\u4ec57MB\u7684\u9ad8\u6027\u80fdMarkdown\u7b14\u8bb0\u5de5\u5177\uff01\u5185\u7f6e\u514d\u8d39AI\u6a21\u578b\uff0c\u667a\u80fd\u751f\u6210TODO\u4fbf\u7b7e\u3001\u4e3b\u52a8\u63d0\u9192\u63a8\u9001\u3001\u591a\u4eba\u534f\u540c\u7f16\u8f91\u3002\u6beb\u79d2\u7ea7\u542f\u52a8\uff0c\u5185\u5b58\u5360\u7528\u6781\u4f4e\uff0c\u77ed\u5c0f\u7cbe\u608d\uff01  A 7MB high-performance Markdown note tool! Built-in free AI model for smart TODO generation, proactive reminders, and collaborative editing. Lightning-fast startup with minimal memory footprint\u2014compact yet powerful!",
-      "stars": 311,
-      "forks": 21,
-      "language": "TypeScript",
-      "topics": [],
-      "license": "Other",
-      "created_at": "2025-10-24T01:35:37Z",
-      "updated_at": "2025-11-29T03:12:21Z",
-      "pushed_at": "2025-11-29T03:12:18Z",
-      "readme": ""
-    }
-  },
-  {
-    "repo": "yuzono/tachiyomi-extensions",
+    "repo": "jkjkil4/JAnim",
     "recommendation": "APPROVE",
-    "total_score": 74.9,
+    "total_score": 76.675,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 45.5,
-      "project_maturity": 74.1
+      "developer_engagement": 26.7,
+      "project_maturity": 100
     },
     "metadata": {
-      "description": "Source code of extensions for Komikku / Mihon & forks.",
-      "stars": 330,
-      "forks": 25,
-      "language": "Kotlin",
+      "description": "A library for creating smooth animations",
+      "stars": 197,
+      "forks": 14,
+      "language": "Python",
       "topics": [
-        "extension",
-        "komikku",
-        "manga",
-        "mihon",
-        "tachiyomi"
+        "animation",
+        "janim",
+        "python"
       ],
-      "license": "Apache License 2.0",
-      "created_at": "2023-11-18T17:05:11Z",
-      "updated_at": "2025-11-29T03:11:47Z",
-      "pushed_at": "2025-11-29T03:11:43Z",
+      "license": "MIT License",
+      "created_at": "2022-10-03T00:48:11Z",
+      "updated_at": "2025-11-29T03:19:34Z",
+      "pushed_at": "2025-11-29T03:19:30Z",
       "readme": ""
     }
   },
   {
-    "repo": "Multiverse/Multiverse-Inventories",
+    "repo": "MHaggis/ClickGrab",
+    "recommendation": "REJECT",
+    "total_score": 54.9,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 17.1,
+      "project_maturity": 22.5
+    },
+    "metadata": {
+      "description": "Finding ClickFix and FakeCAPTCHA like it's 1999",
+      "stars": 106,
+      "forks": 13,
+      "language": "HTML",
+      "topics": [
+        "clickfix",
+        "fakecaptcha"
+      ],
+      "license": "Apache License 2.0",
+      "created_at": "2025-04-17T20:22:34Z",
+      "updated_at": "2025-11-29T03:19:10Z",
+      "pushed_at": "2025-11-29T03:19:06Z",
+      "readme": ""
+    }
+  },
+  {
+    "repo": "catlog22/Claude-Code-Workflow",
     "recommendation": "APPROVE",
-    "total_score": 85.875,
+    "total_score": 66.225,
     "scores": {
       "commit_activity": 100,
       "code_quality": 90,
-      "developer_engagement": 53.5,
-      "project_maturity": 100
+      "developer_engagement": 66.7,
+      "project_maturity": 8.2
     },
     "metadata": {
-      "description": "Per world inventories made easy!",
-      "stars": 120,
-      "forks": 83,
-      "language": "Java",
+      "description": " JSON-driven multi-agent development framework with   intelligent CLI orchestration (Gemini/Qwen/Codex),   context-first architecture, and automated workflow   execution",
+      "stars": 437,
+      "forks": 46,
+      "language": "HTML",
       "topics": [
-        "bukkit",
-        "bukkit-plugin",
-        "hacktoberfest",
-        "java",
-        "multiverse"
+        "claude",
+        "claude-code",
+        "cli-tools",
+        "codex",
+        "context-management",
+        "gemini-cli",
+        "json-driven",
+        "qwen-code",
+        "task-orchestration",
+        "workflow-automation"
       ],
-      "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-      "created_at": "2012-01-19T04:23:50Z",
-      "updated_at": "2025-11-29T03:11:23Z",
-      "pushed_at": "2025-11-29T03:11:21Z",
+      "license": "MIT License",
+      "created_at": "2025-09-07T09:40:18Z",
+      "updated_at": "2025-11-29T03:19:04Z",
+      "pushed_at": "2025-11-29T03:19:17Z",
       "readme": ""
     }
   },
   {
-    "repo": "MatinGhanbari/v2ray-configs",
-    "recommendation": "APPROVE",
-    "total_score": 60.375,
+    "repo": "MattParkerDev/SharpIDE",
+    "recommendation": "REJECT",
+    "total_score": 56.325,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 39.3,
-      "project_maturity": 22.2
+      "developer_engagement": 43.3,
+      "project_maturity": 2.0
     },
     "metadata": {
-      "description": "\u267e\ufe0f Free V2ray Configs, Updating Every 15 minutes. ",
-      "stars": 293,
-      "forks": 20,
-      "language": "HTML",
+      "description": "A modern, cross platform IDE for .NET, built with .NET & Godot",
+      "stars": 378,
+      "forks": 11,
+      "language": "C#",
       "topics": [
-        "gfw",
-        "shadowsocks",
-        "trojan",
-        "v2config",
-        "v2ray",
-        "v2ray-core",
-        "v2rayng",
-        "vless",
-        "vmess",
-        "vpn",
-        "vpn-service"
+        "csharp",
+        "dotnet",
+        "godot",
+        "razor",
+        "roslyn"
       ],
       "license": "MIT License",
-      "created_at": "2025-04-20T13:11:58Z",
-      "updated_at": "2025-11-29T03:11:00Z",
-      "pushed_at": "2025-11-29T03:10:56Z",
+      "created_at": "2025-11-08T13:01:42Z",
+      "updated_at": "2025-11-29T03:18:50Z",
+      "pushed_at": "2025-11-29T03:18:46Z",
       "readme": ""
     }
   }

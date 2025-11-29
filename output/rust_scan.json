@@ -1,131 +1,136 @@
 [
   {
-    "name": "speed-github",
-    "full_name": "jvxiao/speed-github",
-    "html_url": "https://github.com/jvxiao/speed-github",
-    "description": "\u4e00\u952e\u89e3\u51b3github\u5728\u56fd\u5185\u7f51\u9875\u52a0\u8f7d\u548c\u4e0b\u8f7d\u901f\u5ea6\u6162\u7684\u95ee\u9898",
-    "stargazers_count": 331,
-    "forks_count": 47,
+    "name": "registration",
+    "full_name": "nextcloud/registration",
+    "html_url": "https://github.com/nextcloud/registration",
+    "description": "User registration app for Nextcloud",
+    "stargazers_count": 141,
+    "forks_count": 77,
+    "language": "JavaScript",
+    "license": {
+      "name": "GNU Affero General Public License v3.0",
+      "spdx_id": "AGPL-3.0"
+    },
+    "created_at": "2014-08-28T15:28:39Z",
+    "updated_at": "2025-11-29T03:19:38Z",
+    "pushed_at": "2025-11-29T03:19:35Z",
+    "size": 80415,
+    "open_issues": 43,
+    "has_wiki": false,
+    "has_pages": false,
+    "topics": [
+      "hacktoberfest",
+      "nextcloud",
+      "registration",
+      "signup"
+    ]
+  },
+  {
+    "name": "JAnim",
+    "full_name": "jkjkil4/JAnim",
+    "html_url": "https://github.com/jkjkil4/JAnim",
+    "description": "A library for creating smooth animations",
+    "stargazers_count": 197,
+    "forks_count": 14,
     "language": "Python",
     "license": {
-      "name": "GNU General Public License v3.0",
-      "spdx_id": "GPL-3.0"
+      "name": "MIT License",
+      "spdx_id": "MIT"
     },
-    "created_at": "2020-03-20T13:56:34Z",
-    "updated_at": "2025-11-29T03:12:24Z",
-    "pushed_at": "2025-11-29T03:12:21Z",
-    "size": 2384,
+    "created_at": "2022-10-03T00:48:11Z",
+    "updated_at": "2025-11-29T03:19:34Z",
+    "pushed_at": "2025-11-29T03:19:30Z",
+    "size": 49587,
     "open_issues": 2,
     "has_wiki": true,
     "has_pages": false,
-    "topics": []
+    "topics": [
+      "animation",
+      "janim",
+      "python"
+    ]
   },
   {
-    "name": "flymd",
-    "full_name": "flyhunterl/flymd",
-    "html_url": "https://github.com/flyhunterl/flymd",
-    "description": "\u4ec57MB\u7684\u9ad8\u6027\u80fdMarkdown\u7b14\u8bb0\u5de5\u5177\uff01\u5185\u7f6e\u514d\u8d39AI\u6a21\u578b\uff0c\u667a\u80fd\u751f\u6210TODO\u4fbf\u7b7e\u3001\u4e3b\u52a8\u63d0\u9192\u63a8\u9001\u3001\u591a\u4eba\u534f\u540c\u7f16\u8f91\u3002\u6beb\u79d2\u7ea7\u542f\u52a8\uff0c\u5185\u5b58\u5360\u7528\u6781\u4f4e\uff0c\u77ed\u5c0f\u7cbe\u608d\uff01  A 7MB high-performance Markdown note tool! Built-in free AI model for smart TODO generation, proactive reminders, and collaborative editing. Lightning-fast startup with minimal memory footprint\u2014compact yet powerful!",
-    "stargazers_count": 311,
-    "forks_count": 21,
-    "language": "TypeScript",
-    "license": {
-      "name": "Other",
-      "spdx_id": "NOASSERTION"
-    },
-    "created_at": "2025-10-24T01:35:37Z",
-    "updated_at": "2025-11-29T03:12:21Z",
-    "pushed_at": "2025-11-29T03:12:18Z",
-    "size": 2930,
-    "open_issues": 1,
-    "has_wiki": false,
-    "has_pages": false,
-    "topics": []
-  },
-  {
-    "name": "tachiyomi-extensions",
-    "full_name": "yuzono/tachiyomi-extensions",
-    "html_url": "https://github.com/yuzono/tachiyomi-extensions",
-    "description": "Source code of extensions for Komikku / Mihon & forks.",
-    "stargazers_count": 330,
-    "forks_count": 25,
-    "language": "Kotlin",
+    "name": "ClickGrab",
+    "full_name": "MHaggis/ClickGrab",
+    "html_url": "https://github.com/MHaggis/ClickGrab",
+    "description": "Finding ClickFix and FakeCAPTCHA like it's 1999",
+    "stargazers_count": 106,
+    "forks_count": 13,
+    "language": "HTML",
     "license": {
       "name": "Apache License 2.0",
       "spdx_id": "Apache-2.0"
     },
-    "created_at": "2023-11-18T17:05:11Z",
-    "updated_at": "2025-11-29T03:11:47Z",
-    "pushed_at": "2025-11-29T03:11:43Z",
-    "size": 422529,
-    "open_issues": 118,
+    "created_at": "2025-04-17T20:22:34Z",
+    "updated_at": "2025-11-29T03:19:10Z",
+    "pushed_at": "2025-11-29T03:19:06Z",
+    "size": 64024,
+    "open_issues": 0,
     "has_wiki": false,
-    "has_pages": false,
-    "topics": [
-      "extension",
-      "komikku",
-      "manga",
-      "mihon",
-      "tachiyomi"
-    ]
-  },
-  {
-    "name": "Multiverse-Inventories",
-    "full_name": "Multiverse/Multiverse-Inventories",
-    "html_url": "https://github.com/Multiverse/Multiverse-Inventories",
-    "description": "Per world inventories made easy!",
-    "stargazers_count": 120,
-    "forks_count": 83,
-    "language": "Java",
-    "license": {
-      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
-      "spdx_id": "BSD-3-Clause"
-    },
-    "created_at": "2012-01-19T04:23:50Z",
-    "updated_at": "2025-11-29T03:11:23Z",
-    "pushed_at": "2025-11-29T03:11:21Z",
-    "size": 6786,
-    "open_issues": 7,
-    "has_wiki": true,
     "has_pages": true,
     "topics": [
-      "bukkit",
-      "bukkit-plugin",
-      "hacktoberfest",
-      "java",
-      "multiverse"
+      "clickfix",
+      "fakecaptcha"
     ]
   },
   {
-    "name": "v2ray-configs",
-    "full_name": "MatinGhanbari/v2ray-configs",
-    "html_url": "https://github.com/MatinGhanbari/v2ray-configs",
-    "description": "\u267e\ufe0f Free V2ray Configs, Updating Every 15 minutes. ",
-    "stargazers_count": 293,
-    "forks_count": 20,
+    "name": "Claude-Code-Workflow",
+    "full_name": "catlog22/Claude-Code-Workflow",
+    "html_url": "https://github.com/catlog22/Claude-Code-Workflow",
+    "description": " JSON-driven multi-agent development framework with   intelligent CLI orchestration (Gemini/Qwen/Codex),   context-first architecture, and automated workflow   execution",
+    "stargazers_count": 437,
+    "forks_count": 46,
     "language": "HTML",
     "license": {
       "name": "MIT License",
       "spdx_id": "MIT"
     },
-    "created_at": "2025-04-20T13:11:58Z",
-    "updated_at": "2025-11-29T03:11:00Z",
-    "pushed_at": "2025-11-29T03:10:56Z",
-    "size": 376172,
+    "created_at": "2025-09-07T09:40:18Z",
+    "updated_at": "2025-11-29T03:19:04Z",
+    "pushed_at": "2025-11-29T03:19:17Z",
+    "size": 4754,
     "open_issues": 0,
-    "has_wiki": false,
-    "has_pages": true,
+    "has_wiki": true,
+    "has_pages": false,
     "topics": [
-      "gfw",
-      "shadowsocks",
-      "trojan",
-      "v2config",
-      "v2ray",
-      "v2ray-core",
-      "v2rayng",
-      "vless",
-      "vmess",
-      "vpn",
-      "vpn-service"
+      "claude",
+      "claude-code",
+      "cli-tools",
+      "codex",
+      "context-management",
+      "gemini-cli",
+      "json-driven",
+      "qwen-code",
+      "task-orchestration",
+      "workflow-automation"
+    ]
+  },
+  {
+    "name": "SharpIDE",
+    "full_name": "MattParkerDev/SharpIDE",
+    "html_url": "https://github.com/MattParkerDev/SharpIDE",
+    "description": "A modern, cross platform IDE for .NET, built with .NET & Godot",
+    "stargazers_count": 378,
+    "forks_count": 11,
+    "language": "C#",
+    "license": {
+      "name": "MIT License",
+      "spdx_id": "MIT"
+    },
+    "created_at": "2025-11-08T13:01:42Z",
+    "updated_at": "2025-11-29T03:18:50Z",
+    "pushed_at": "2025-11-29T03:18:46Z",
+    "size": 11743,
+    "open_issues": 8,
+    "has_wiki": false,
+    "has_pages": false,
+    "topics": [
+      "csharp",
+      "dotnet",
+      "godot",
+      "razor",
+      "roslyn"
     ]
   }
 ]
