@@ -59,23 +59,23 @@ def convert_to_page_bundle(md_file: Path, target_category_dir: Path) -> Path:
     Returns the path to the new index.md file.
     """
     slug = get_slug_from_filename(md_file.name)
-    
+
     # Create bundle directory
     bundle_dir = target_category_dir / slug
     bundle_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Move/copy content to index.md
     index_path = bundle_dir / "index.md"
-    
+
     with open(md_file, 'r', encoding='utf-8') as f:
         content = f.read()
-    
+
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(content)
-    
+
     # Remove original file
     md_file.unlink()
-    
+
     return index_path
 
 
@@ -87,7 +87,7 @@ def organize_posts():
 
     # Get all .md files in the root of blog_dir and category subdirs
     md_files = list(blog_dir.glob("*.md"))
-    
+
     # Also check category directories for .md files that aren't in bundles
     for category_dir in blog_dir.iterdir():
         if category_dir.is_dir():
@@ -98,12 +98,12 @@ def organize_posts():
         return
 
     converted_count = 0
-    
+
     for file_path in md_files:
         # Skip if already in a bundle (parent is not a category dir)
         if file_path.name == "index.md":
             continue
-            
+
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
@@ -126,7 +126,7 @@ def organize_posts():
             # Convert to page bundle
             new_path = convert_to_page_bundle(file_path, target_dir)
             converted_count += 1
-            
+
             slug = get_slug_from_filename(file_path.name)
             print(f"  ✅ Converted {file_path.name} -> {primary_category}/{slug}/index.md")
 
