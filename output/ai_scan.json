@@ -1,308 +1,233 @@
 [
   {
-    "repo": "linuxfoundation/insights",
-    "recommendation": "REJECT",
-    "total_score": 58.775,
+    "repo": "carlosperate/arm-none-eabi-gcc-action",
+    "recommendation": "APPROVE",
+    "total_score": 76.375,
     "scores": {
       "commit_activity": 100,
       "code_quality": 80,
-      "developer_engagement": 23.7,
-      "project_maturity": 31.4
-    },
-    "metadata": {
-      "description": "Insights into the world's most critical open source software.",
-      "stars": 127,
-      "forks": 22,
-      "language": "TypeScript",
-      "topics": [],
-      "license": "MIT License",
-      "created_at": "2025-01-17T14:23:53Z",
-      "updated_at": "2025-11-28T08:06:17Z",
-      "pushed_at": "2025-11-28T08:06:14Z",
-      "readme": ""
-    },
-    "ai_review": null
-  },
-  {
-    "repo": "junobuild/juno",
-    "recommendation": "APPROVE",
-    "total_score": 84.575,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 70,
-      "developer_engagement": 68.3,
+      "developer_engagement": 25.5,
       "project_maturity": 100
     },
     "metadata": {
-      "description": "Build serverless apps with self-hosting control",
-      "stars": 338,
-      "forks": 69,
+      "description": "GitHub Action to set-up the `arm-none-eabi-gcc` GNU Arm Embedded Toolchain.",
+      "stars": 125,
+      "forks": 26,
       "language": "TypeScript",
       "topics": [
-        "analytics",
-        "authentication",
-        "backend-as-a-service",
-        "container",
-        "database",
-        "hacktoberfest",
-        "hosting",
-        "internet-computer",
-        "self-hosting",
-        "serverless",
-        "serverless-functions",
-        "storage",
-        "wasm"
-      ],
-      "license": "Other",
-      "created_at": "2023-01-20T07:07:40Z",
-      "updated_at": "2025-11-28T08:05:56Z",
-      "pushed_at": "2025-11-28T08:05:53Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "StarCitizenTools/mediawiki-skins-Citizen",
-    "recommendation": "APPROVE",
-    "total_score": 91.4,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 100,
-      "developer_engagement": 65.6,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "A beautiful, usable, responsive MediaWiki skin with in-depth extension support. Originally developed for the Star Citizen Wiki.",
-      "stars": 301,
-      "forks": 71,
-      "language": "Less",
-      "topics": [
-        "mediawiki-skin"
-      ],
-      "license": "GNU General Public License v3.0",
-      "created_at": "2019-12-25T20:32:29Z",
-      "updated_at": "2025-11-28T08:05:46Z",
-      "pushed_at": "2025-11-28T08:05:42Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "idleberg/php-wordpress-vite-assets",
-    "recommendation": "APPROVE",
-    "total_score": 75.45,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 21.799999999999997,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "Injects assets from a Vite manifest to the Wordpress head, supports themes and plugins",
-      "stars": 143,
-      "forks": 15,
-      "language": "PHP",
-      "topics": [
-        "manifest-json",
-        "vite",
-        "vitejs",
-        "wordpress"
-      ],
-      "license": "MIT License",
-      "created_at": "2022-02-21T15:53:11Z",
-      "updated_at": "2025-11-28T08:05:05Z",
-      "pushed_at": "2025-11-28T08:05:01Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "loresoft/EntityFrameworkCore.Generator",
-    "recommendation": "APPROVE",
-    "total_score": 93.9,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 90,
-      "developer_engagement": 85.6,
-      "project_maturity": 100
-    },
-    "metadata": {
-      "description": "Generate Entity Framework Core model from an existing database",
-      "stars": 386,
-      "forks": 94,
-      "language": "C#",
-      "topics": [
-        "database-schema",
-        "dbcontext",
-        "entity-framework"
-      ],
-      "license": "MIT License",
-      "created_at": "2018-09-18T14:44:17Z",
-      "updated_at": "2025-11-28T08:05:02Z",
-      "pushed_at": "2025-11-28T08:05:05Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "CNSeniorious000/free-chat",
-    "recommendation": "APPROVE",
-    "total_score": 85.7,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 100,
-      "developer_engagement": 45.5,
-      "project_maturity": 97.3
-    },
-    "metadata": {
-      "description": "An elegant LLM chat UI forked from chatgpt-demo of @anse-app. Index site at https://free-chat.asia",
-      "stars": 190,
-      "forks": 53,
-      "language": "TypeScript",
-      "topics": [
-        "aibot",
-        "astro",
-        "chatgpt",
-        "openai",
-        "openai-api",
-        "solidjs",
-        "tiktoken"
-      ],
-      "license": "MIT License",
-      "created_at": "2023-03-30T15:49:55Z",
-      "updated_at": "2025-11-28T08:04:55Z",
-      "pushed_at": "2025-11-28T08:04:50Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "JustLookAtNow/pt_mate",
-    "recommendation": "REJECT",
-    "total_score": 58.775,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 90,
-      "developer_engagement": 36.0,
-      "project_maturity": 9.1
-    },
-    "metadata": {
-      "description": "基于 Flutter（Material Design 3）开发的私有种子站点客户端，支持多种PT站点的种子浏览、搜索和下载管理。目前支持M-Team和NexusPHP类型的站点。",
-      "stars": 290,
-      "forks": 14,
-      "language": "Dart",
-      "topics": [
-        "m-team",
-        "nexusphp",
-        "pt"
-      ],
-      "license": "MIT License",
-      "created_at": "2025-08-29T02:02:28Z",
-      "updated_at": "2025-11-28T08:04:47Z",
-      "pushed_at": "2025-11-28T08:04:43Z",
-      "readme": ""
-    },
-    "ai_review": null
-  },
-  {
-    "repo": "KaylorBen/nixcord",
-    "recommendation": "APPROVE",
-    "total_score": 66.75,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 80,
-      "developer_engagement": 34.599999999999994,
-      "project_maturity": 52.4
-    },
-    "metadata": {
-      "description": "Declarative Vencord plugins + options",
-      "stars": 201,
-      "forks": 29,
-      "language": "TypeScript",
-      "topics": [
-        "discord",
-        "home-manager-module",
-        "nix",
-        "nix-flake",
-        "nixos",
-        "vencord"
-      ],
-      "license": "MIT License",
-      "created_at": "2024-06-22T07:37:28Z",
-      "updated_at": "2025-11-28T08:04:43Z",
-      "pushed_at": "2025-11-28T08:04:39Z",
-      "readme": ""
-    },
-    "ai_review": {
-      "error": "GrokReviewer.review_repository() got an unexpected keyword argument 'owner'",
-      "quality_score": 0
-    }
-  },
-  {
-    "repo": "exelearning/exelearning",
-    "recommendation": "REJECT",
-    "total_score": 57.1,
-    "scores": {
-      "commit_activity": 100,
-      "code_quality": 90,
-      "developer_engagement": 18.1,
-      "project_maturity": 20.3
-    },
-    "metadata": {
-      "description": "eXeLearning 3 is an AGPL-licensed free/libre tool to create and publish open educational resources.",
-      "stars": 111,
-      "forks": 14,
-      "language": "JavaScript",
-      "topics": [
-        "educational",
-        "exelearning",
+        "arm-gcc",
+        "arm-none-eabi-gcc",
+        "gcc",
+        "gcc-arm-toolchain",
+        "gcc-cross-compiler",
+        "github-actions",
         "hacktoberfest"
       ],
-      "license": "GNU Affero General Public License v3.0",
-      "created_at": "2025-05-08T08:10:19Z",
-      "updated_at": "2025-11-28T08:04:41Z",
-      "pushed_at": "2025-11-28T08:04:37Z",
+      "license": "MIT License",
+      "created_at": "2021-10-17T16:08:04Z",
+      "updated_at": "2025-11-29T01:59:52Z",
+      "pushed_at": "2025-11-29T01:59:52Z",
       "readme": ""
     },
-    "ai_review": null
+    "ai_review": {
+      "architecture": 7,
+      "documentation": 5,
+      "testing": 6,
+      "best_practices": 7,
+      "innovation": 6,
+      "quality_score": 62.0,
+      "reasoning": "This GitHub Action provides a useful service for setting up the arm-none-eabi-gcc toolchain, but could benefit from improved documentation and testing.",
+      "strengths": [
+        "Provides a convenient way to set up the arm-none-eabi-gcc toolchain in GitHub Actions.",
+        "Uses TypeScript, which improves code maintainability and reduces errors.",
+        "Addresses a common need for embedded development workflows."
+      ],
+      "weaknesses": [
+        "Improve README with usage examples and configuration options.",
+        "Increase test coverage, especially for different operating systems and toolchain versions.",
+        "Consider adding caching mechanisms to speed up action execution."
+      ]
+    }
   },
   {
-    "repo": "Olshansk/rss-feeds",
-    "recommendation": "REJECT",
-    "total_score": 58.0,
+    "repo": "stephenjude/laravel-payment-gateways",
+    "recommendation": "APPROVE",
+    "total_score": 75.975,
     "scores": {
       "commit_activity": 100,
-      "code_quality": 70,
-      "developer_engagement": 29.3,
-      "project_maturity": 32.7
+      "code_quality": 80,
+      "developer_engagement": 23.9,
+      "project_maturity": 100
     },
     "metadata": {
-      "description": "Generate RSS feeds for all the blogs that don't have one",
-      "stars": 178,
-      "forks": 23,
-      "language": "Python",
+      "description": "A simple Laravel API implementation for all payment providers.",
+      "stars": 109,
+      "forks": 26,
+      "language": "PHP",
       "topics": [],
       "license": "MIT License",
-      "created_at": "2025-01-04T18:44:43Z",
-      "updated_at": "2025-11-28T08:04:38Z",
-      "pushed_at": "2025-11-28T08:04:35Z",
+      "created_at": "2022-05-21T09:44:19Z",
+      "updated_at": "2025-11-29T01:59:17Z",
+      "pushed_at": "2025-11-29T01:59:13Z",
       "readme": ""
     },
-    "ai_review": null
+    "ai_review": {
+      "architecture": 5,
+      "documentation": 1,
+      "testing": 1,
+      "best_practices": 5,
+      "innovation": 3,
+      "quality_score": 30.0,
+      "reasoning": "This project has potential but requires significant improvements in documentation, testing, and architecture to become a reliable and valuable payment gateway solution for Laravel applications.",
+      "strengths": [
+        "Potential for simplified payment integration in Laravel",
+        "Clear intent to support multiple providers",
+        "Relatively small codebase, making it easier to understand initially"
+      ],
+      "weaknesses": [
+        "Add comprehensive documentation, including setup, usage examples, and API references",
+        "Implement robust testing with high code coverage and CI/CD integration",
+        "Refactor the architecture to promote modularity, extensibility, and maintainability, possibly using design patterns"
+      ]
+    }
+  },
+  {
+    "repo": "Ezard/semantic-prs",
+    "recommendation": "APPROVE",
+    "total_score": 77.05,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 28.2,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "A GitHub app to check that pull requests follow the Conventional Commits spec",
+      "stars": 142,
+      "forks": 28,
+      "language": "TypeScript",
+      "topics": [],
+      "license": "MIT License",
+      "created_at": "2022-05-06T09:33:49Z",
+      "updated_at": "2025-11-29T01:59:12Z",
+      "pushed_at": "2025-11-29T01:59:09Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 6,
+      "documentation": 2,
+      "testing": 4,
+      "best_practices": 7,
+      "innovation": 5,
+      "quality_score": 48.0,
+      "reasoning": "This project has a solid foundation but requires significant improvements in documentation and testing to become a robust and widely adopted tool.",
+      "strengths": [
+        "Clear purpose and focused functionality.",
+        "Use of TypeScript for type safety.",
+        "Addresses a common need in software development workflows."
+      ],
+      "weaknesses": [
+        "Significantly improve README with setup instructions, usage examples, and contribution guidelines.",
+        "Increase test coverage to ensure reliability and prevent regressions.",
+        "Consider modularizing the code for better maintainability and scalability."
+      ]
+    }
+  },
+  {
+    "repo": "dangmai/prettier-plugin-apex",
+    "recommendation": "APPROVE",
+    "total_score": 82.55,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 80,
+      "developer_engagement": 50.2,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "Code formatter for the Apex Programming Language",
+      "stars": 267,
+      "forks": 47,
+      "language": "Apex",
+      "topics": [
+        "apex",
+        "cli-application",
+        "formatter",
+        "prettier",
+        "salesforce",
+        "soql"
+      ],
+      "license": "MIT License",
+      "created_at": "2018-08-18T03:24:25Z",
+      "updated_at": "2025-11-29T01:59:13Z",
+      "pushed_at": "2025-11-29T01:59:08Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 6,
+      "documentation": 3,
+      "testing": 5,
+      "best_practices": 6,
+      "innovation": 7,
+      "quality_score": 54.0,
+      "reasoning": "This project offers a valuable tool for Apex developers, but it needs improved documentation and testing to ensure wider adoption and long-term maintainability.",
+      "strengths": [
+        "Provides a much-needed formatter for Apex code.",
+        "Integrates with the popular Prettier ecosystem.",
+        "Addresses a specific pain point for Salesforce developers."
+      ],
+      "weaknesses": [
+        "Significantly improve README documentation with installation instructions, usage examples, and configuration options.",
+        "Increase test coverage to ensure robustness and prevent regressions.",
+        "Refactor code for better modularity and maintainability."
+      ]
+    }
+  },
+  {
+    "repo": "ALIILAPRO/Proxy",
+    "recommendation": "APPROVE",
+    "total_score": 79.0,
+    "scores": {
+      "commit_activity": 100,
+      "code_quality": 90,
+      "developer_engagement": 26.0,
+      "project_maturity": 100
+    },
+    "metadata": {
+      "description": "Get new and fast proxy list every hour.",
+      "stars": 165,
+      "forks": 19,
+      "language": "CSS",
+      "topics": [
+        "aliilapro",
+        "http",
+        "proxy",
+        "socks4",
+        "socks5"
+      ],
+      "license": "MIT License",
+      "created_at": "2023-02-26T03:29:06Z",
+      "updated_at": "2025-11-29T01:58:58Z",
+      "pushed_at": "2025-11-29T01:58:56Z",
+      "readme": ""
+    },
+    "ai_review": {
+      "architecture": 1,
+      "documentation": 1,
+      "testing": 1,
+      "best_practices": 1,
+      "innovation": 1,
+      "quality_score": 10.0,
+      "reasoning": "This project, in its current state, is essentially a placeholder and requires substantial development to fulfill its stated purpose.",
+      "strengths": [
+        "Clear topic focus",
+        "Active development (implied by description)",
+        "Simple concept"
+      ],
+      "weaknesses": [
+        "Add a README with instructions and context",
+        "Implement actual proxy retrieval logic",
+        "Include tests and CI/CD"
+      ]
+    }
   }
 ]
