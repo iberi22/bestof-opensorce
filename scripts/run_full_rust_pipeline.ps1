@@ -47,4 +47,24 @@ Write-Host "`n4️⃣  Generating Blogs..." -ForegroundColor Cyan
 python scripts/generate_blogs_from_analysis.py $AiOutput
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
+# 5. Generate Images with Gemini (with fallback to SVG)
+Write-Host "`n5️⃣  Generating Images..." -ForegroundColor Cyan
+if ($env:GOOGLE_API_KEY) {
+    Write-Host "   Using Gemini Imagen API for high-quality images..." -ForegroundColor Yellow
+    python scripts/generate_blog_images.py --limit 5
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "   ⚠️  Gemini failed, falling back to SVG placeholders..." -ForegroundColor Yellow
+        python scripts/generate_placeholder_headers.py
+    }
+} else {
+    Write-Host "   No API key found, using SVG placeholders..." -ForegroundColor Yellow
+    python scripts/generate_placeholder_headers.py
+}
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
+# 6. Sync Images
+Write-Host "`n6️⃣  Syncing Images to Public..." -ForegroundColor Cyan
+python scripts/sync_blog_images.py
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
 Write-Host "`n✅ Pipeline Complete!" -ForegroundColor Green

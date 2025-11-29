@@ -22,6 +22,7 @@ _Última Actualización: 27 de noviembre de 2025 - Sprint de Puesta a Punto_
 - [🟢] 🔧 Setup & Dependencies: 100% (7/7 tareas) ✅
 - [🟡] 🔄 CI/CD & Automation: 85% (Deploy funcionando, webhook pendiente)
 - [🟢] 📚 Documentación: 100% (15/15 tareas) ✅
+- [🟢] 🖼️ Image Generation: 100% (Gemini API + SVG Fallback) ✅ **NUEVO**
 
 **Progreso por Componente (Repositorio Privado - bestof-pipeline):**
 
@@ -100,5 +101,48 @@ _Última Actualización: 27 de noviembre de 2025 - Sprint de Puesta a Punto_
 - [x] 11.3: Rutas de imágenes
 - [x] 11.4: Syntax highlighting mejorado
 - [x] 11.5: Responsive design refinado
+
+## 🖼️ FASE 16: Image Generation with Gemini API (✅ COMPLETADO - 29 nov 2025)
+**Objetivo:** Generar imágenes de alta calidad para blog posts usando Gemini Imagen API
+
+- [x] 16.1: Crear `scripts/generate_blog_images.py` con Gemini Imagen 4.0
+  - API key rotation para load balancing
+  - Prompts contextuales por lenguaje y categoría
+  - Rate limit handling y retry logic
+  - 16:9 aspect ratio, 4K quality
+
+- [x] 16.2: Mejorar SVG placeholders con título
+  - Añadir título del proyecto al diseño
+  - Mantener colores temáticos y emoji
+
+- [x] 16.3: Integrar generación en pipeline local
+  - `run_full_rust_pipeline.ps1` con fallback automático
+  - Intentar Gemini primero, SVG si falla
+
+- [x] 16.4: Integrar en GitHub Actions workflow
+  - Usar secrets de API keys con rotación
+  - Continue-on-error para no bloquear deployment
+  - SVG fallback siempre ejecutado
+
+- [x] 16.5: Documentación completa
+  - Crear `docs/IMAGE_GENERATION_GUIDE.md`
+  - Configuración de API keys
+  - Troubleshooting y FAQs
+  - Ejemplos de uso
+
+**Características Implementadas:**
+- ✅ Generación AI con Gemini Imagen 4.0 (PNG 4K)
+- ✅ Fallback SVG profesional con título
+- ✅ Multi-key rotation para rate limits
+- ✅ Prompts contextuales (lenguaje + categoría)
+- ✅ Pipeline automático integrado
+- ✅ CI/CD con manejo de errores robusto
+
+**Archivos Creados/Modificados:**
+- `scripts/generate_blog_images.py` (nuevo)
+- `scripts/generate_placeholder_headers.py` (mejorado)
+- `scripts/run_full_rust_pipeline.ps1` (actualizado)
+- `.github/workflows/rust_blog_automation.yml` (actualizado)
+- `docs/IMAGE_GENERATION_GUIDE.md` (nuevo)
 
 ---

@@ -113,13 +113,25 @@ jobs:
           python scripts/run_scanner.py
         fi
 
-        # Generate Images using Gemini
-        echo "🎨 Checking for missing images..."
-        python image-generation/generate_images_gemini.py
+    - name: Generate Images with Gemini API
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        GOOGLE_API_KEY_2: ${{ secrets.GOOGLE_API_KEY_2 }}
+        GOOGLE_API_KEY_3: ${{ secrets.GOOGLE_API_KEY_3 }}
+      run: |
+        echo "🎨 Generating images with Gemini API..."
+        python scripts/generate_blog_images.py --limit 10
+      continue-on-error: true
 
-        # Sync images to public folder
-        echo "🔄 Syncing images to public..."
-        python scripts/sync_images_to_public.py
+    - name: Generate SVG Placeholders (Fallback)
+      run: |
+        echo "📐 Generating SVG placeholders for posts without images..."
+        python scripts/generate_placeholder_headers.py
+
+    - name: Sync Images to Public
+      run: |
+        echo "🔄 Syncing images to public folder..."
+        python scripts/sync_blog_images.py
 
     - name: Check for changes
       id: git-check

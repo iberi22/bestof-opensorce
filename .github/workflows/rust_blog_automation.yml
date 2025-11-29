@@ -87,17 +87,24 @@ jobs:
         run: |
           python scripts/generate_blogs_from_analysis.py output/ai_scan.json
 
-      - name: 5. Generate Professional Infographics (Gemini Imagen 4K)
+      - name: 5. Generate Images with Gemini API
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_API_KEY_2: ${{ secrets.GOOGLE_API_KEY_2 }}
           GOOGLE_API_KEY_3: ${{ secrets.GOOGLE_API_KEY_3 }}
         run: |
-          cd image-generation
-          python generate_infographics.py --blog-dir ../website/src/content/blog --limit 5
+          python scripts/generate_blog_images.py --limit 5
         continue-on-error: true
 
-      - name: 6. Organize Blog Posts
+      - name: 6. Generate SVG Placeholders (Fallback)
+        run: |
+          python scripts/generate_placeholder_headers.py
+
+      - name: 7. Sync Images to Public
+        run: |
+          python scripts/sync_blog_images.py
+
+      - name: 8. Organize Blog Posts
         run: |
           python scripts/organize_blog_posts.py
 
