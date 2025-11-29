@@ -22,8 +22,8 @@ def test_reel_creation():
         "solution": "Automate everything with this simple tool",
     }
 
-    # Ensure dummy images exist
-    img_dir = Path("blog/assets/images/test-reel-project")
+    # Ensure dummy images exist in tests output directory (not in blog assets)
+    img_dir = Path(__file__).parent / "output" / "test-images"
     img_dir.mkdir(parents=True, exist_ok=True)
 
     # Create dummy images using PIL if they don't exist
@@ -45,7 +45,9 @@ def test_reel_creation():
     }
 
     try:
-        creator = ReelCreator(output_dir="blog/assets/videos")
+        output_dir = Path(__file__).parent / "output_videos"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        creator = ReelCreator(output_dir=str(output_dir))
         print("✅ ReelCreator initialized")
 
         output_path = creator.create_reel(

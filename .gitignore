@@ -51,6 +51,10 @@ output/test_images/
 generated_videos/
 artifacts/
 
+# Test artifacts
+blog/assets/images/test-reel-project/
+tests/output_videos/
+
 # Logs
 *.log
 npm-debug.log*
