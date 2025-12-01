@@ -53,12 +53,35 @@ def get_slug_from_filename(filename: str) -> str:
     return name
 
 
-def convert_to_page_bundle(md_file: Path, target_category_dir: Path) -> Path:
+def get_repo_slug_from_content(content: str) -> str:
+    """Extract owner-repo slug from frontmatter content."""
+    # Look for repo: owner/name or full_name in repo_data
+    match = re.search(r'^repo:\s*([^\n]+)', content, re.MULTILINE)
+    if match:
+        repo_value = match.group(1).strip().strip('"\'')
+        # Convert owner/repo to owner-repo format
+        return repo_value.lower().replace('/', '-').replace(' ', '-')
+    
+    match = re.search(r'full_name:\s*["\']?([^"\'\n]+)', content)
+    if match:
+        repo_value = match.group(1).strip()
+        return repo_value.lower().replace('/', '-').replace(' ', '-')
+    
+    return None
+
+
+def convert_to_page_bundle(md_file: Path, target_category_dir: Path, content: str = None) -> Path:
     """
     Convert a .md file to a page bundle (folder with index.md).
     Returns the path to the new index.md file.
     """
-    slug = get_slug_from_filename(md_file.name)
+    # Try to get slug from content (repo field) first for consistency
+    if content:
+        slug = get_repo_slug_from_content(content)
+    
+    # Fallback to filename
+    if not slug:
+        slug = get_slug_from_filename(md_file.name)
 
     # Create bundle directory
     bundle_dir = target_category_dir / slug
@@ -67,8 +90,9 @@ def convert_to_page_bundle(md_file: Path, target_category_dir: Path) -> Path:
     # Move/copy content to index.md
     index_path = bundle_dir / "index.md"
 
-    with open(md_file, 'r', encoding='utf-8') as f:
-        content = f.read()
+    if content is None:
+        with open(md_file, 'r', encoding='utf-8') as f:
+            content = f.read()
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -77,7 +101,6 @@ def convert_to_page_bundle(md_file: Path, target_category_dir: Path) -> Path:
     md_file.unlink()
 
     return index_path
-
 
 def organize_posts():
     blog_dir = Path(__file__).parent.parent / 'website' / 'src' / 'content' / 'blog'
@@ -123,11 +146,12 @@ def organize_posts():
             target_dir = blog_dir / primary_category
             target_dir.mkdir(parents=True, exist_ok=True)
 
-            # Convert to page bundle
-            new_path = convert_to_page_bundle(file_path, target_dir)
+            # Convert to page bundle (pass content to extract slug from repo field)
+            new_path = convert_to_page_bundle(file_path, target_dir, content)
             converted_count += 1
 
-            slug = get_slug_from_filename(file_path.name)
+            # Get final slug for logging
+            slug = get_repo_slug_from_content(content) or get_slug_from_filename(file_path.name)
             print(f"  ✅ Converted {file_path.name} -> {primary_category}/{slug}/index.md")
 
         except Exception as e:

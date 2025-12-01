@@ -54,14 +54,22 @@ class MarkdownWriter:
             )
             primary_category = categories[0].lower().replace(" ", "-") if categories else "general"
 
-            # Generate filename
+            # Generate filename using FULL repo name (owner-repo) to avoid duplicates
             date_str = datetime.now().strftime("%Y-%m-%d")
-            repo_name = repo_data.get("name", "unknown").lower().replace(" ", "-")
-            filename = f"{date_str}-{repo_name}.md"
+            full_name = repo_data.get("full_name", "unknown/unknown")
+            # Convert owner/repo to owner-repo format
+            repo_slug = full_name.lower().replace("/", "-").replace(" ", "-")
+            filename = f"{date_str}-{repo_slug}.md"
 
-            # Create category directory
+            # Check if post already exists (avoid duplicates)
             category_dir = self.output_dir / primary_category
             category_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Check for existing posts with same repo
+            existing_post = self._find_existing_post(full_name)
+            if existing_post:
+                self.logger.info(f"⚠️ Post already exists for {full_name}: {existing_post}")
+                return str(existing_post)
 
             filepath = category_dir / filename
 
@@ -83,6 +91,41 @@ class MarkdownWriter:
         except Exception as e:
             self.logger.error(f"Failed to create post: {e}")
             raise
+
+    def _find_existing_post(self, full_name: str) -> Optional[Path]:
+        """
+        Check if a blog post already exists for this repository.
+        
+        Args:
+            full_name: Full repository name (owner/repo).
+            
+        Returns:
+            Path to existing post if found, None otherwise.
+        """
+        import re
+        
+        for md_file in self.output_dir.rglob('index.md'):
+            try:
+                content = md_file.read_text(encoding='utf-8', errors='ignore')
+                
+                # Check for repo field match
+                match = re.search(r'^repo:\s*([^\n]+)', content, re.MULTILINE)
+                if match:
+                    repo_value = match.group(1).strip().strip('"\'')
+                    if repo_value.lower() == full_name.lower():
+                        return md_file
+                
+                # Also check full_name in repo_data
+                match = re.search(r'full_name:\s*["\']?([^"\'\n]+)', content)
+                if match:
+                    repo_value = match.group(1).strip()
+                    if repo_value.lower() == full_name.lower():
+                        return md_file
+                        
+            except Exception:
+                continue
+        
+        return None
 
     def _determine_categories(self, tags: List[str], language: str) -> List[str]:
         """

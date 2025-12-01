@@ -2,8 +2,8 @@
 
 ## ⚡ Resumen de 30 Segundos
 
-**Estado actual:** SVG placeholders (muy buenos)  
-**Para activar AI:** Billing de Google Cloud + $20 USD  
+**Estado actual:** SVG placeholders (muy buenos)
+**Para activar AI:** Billing de Google Cloud + $20 USD
 **Resultado:** Imágenes 4K profesionales generadas por Gemini
 
 ---
@@ -122,19 +122,19 @@ python scripts/generate_placeholder_headers.py
 ## 🔍 Troubleshooting
 
 ### Error: "RESOURCE_EXHAUSTED" o "limit: 0"
-**Causa:** Billing no activado  
+**Causa:** Billing no activado
 **Solución:** Ir a https://console.cloud.google.com/billing y vincular tarjeta
 
 ### Error: "INVALID_ARGUMENT: Imagen API is only accessible to billed users"
-**Causa:** Mismo que arriba  
+**Causa:** Mismo que arriba
 **Solución:** Activar billing en Google Cloud
 
 ### Error: "429 Quota exceeded"
-**Causa:** Muchas requests en poco tiempo  
+**Causa:** Muchas requests en poco tiempo
 **Solución:** El script tiene retry automático, esperar 1 minuto
 
 ### Imágenes se ven mal
-**Causa:** SVG placeholder usado (billing no activo)  
+**Causa:** SVG placeholder usado (billing no activo)
 **Solución:** Activar billing y regenerar con `--regenerate-all`
 
 ---
